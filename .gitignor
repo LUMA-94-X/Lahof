@@ -1,0 +1,26 @@
+# Logs & temp
+*.log
+*.tmp
+__pycache__/
+*.pyc
+
+# EnergyPlus Outputs
+**/output/**
+eplusout.*
+eplustbl.*
+*.rdd
+*.mdd
+*.mtr
+*.shd
+*.err
+*.audit
+*.bnd
+*.eio
+*.end
+
+# Notebooks/Exports
+*.xlsx
+*.csv
+
+# VS Code
+.vscode/

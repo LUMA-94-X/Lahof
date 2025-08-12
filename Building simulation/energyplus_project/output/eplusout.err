@@ -1,5 +1,9 @@
-Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 15:35,
-   ** Warning ** ManageSizing: For a zone sizing run, there must be at least 1 Sizing:Zone input object. SimulationControl Zone Sizing option ignored.
+Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 19:49,
+   ** Severe  ** Output:PreprocessorMessage="EPMacro" has the following Severe conditions:
+   **   ~~~   ** at approximately input line number=6: column=11
+   **   ~~~   ** cannot find/read include file
+   **   ~~~   ** symbol=../resources/materials/AT_Baumaterialien.idf
+   **   ~~~   ** refer to <file>.epmdet for details.
    ************* Testing Individual Branch Integrity
    ************* All Branches passed integrity testing
    ************* Testing Individual Supply Air Path Integrity
@@ -10,5 +14,5 @@ Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 15:35,
    ************* Beginning Simulation
    ************* Simulation Error Summary *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Sizing Error Summary. During Sizing: 1 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 1 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  4.98sec
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 0 Warning; 1 Severe Errors; Elapsed Time=00hr 00min  4.17sec

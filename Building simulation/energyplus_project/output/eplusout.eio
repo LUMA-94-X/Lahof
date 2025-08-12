@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 15:35
+Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 19:49
 ! <Version>, Version ID
  Version, 25.1
 ! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
@@ -6,7 +6,7 @@ Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 15:35
 ! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations, Minimum Plant Iterations, Maximum Plant Iterations
  System Convergence Limits, 1, 20, 2, 8
 ! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation, Do HVAC Sizing Simulation
- Simulation Control, Yes, No, No, No, Yes, No
+ Simulation Control, No, No, No, No, Yes, No
 ! <Performance Precision Tradeoffs>, Use Coil Direct Simulation, Zone Radiant Exchange Algorithm, Override Mode, Number of Timestep In Hour, Force Euler Method, Minimum Number of Warmup Days, Force Suppress All Begin Environment Resets, Minimum System Timestep, MaxZoneTempDiff, MaxAllowedDelTemp
  Performance Precision Tradeoffs, No, ScriptF, Normal, 6, No, 1, No, 1.0, 0.300, 2.0000E-003
 ! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time

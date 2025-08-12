@@ -1,0 +1,138 @@
+
+
+ ****************************** EPMacro processing begun.
+
+
+      *   1 * !
+      *   2 * Version,
+      *   3 *     25.1;                    !- Version Identifier
+      *   4 * !-   ===========  Used Ressources ===========
+      *   5 *
+      #   6 # ##include ../resources/materials/AT_Baumaterialien.idf
+  *ERROR***  ********** =========================================== ***************************cannot find/read include file
+      *   7 *
+      *   8 * !-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
+      *   9 *
+      *  10 * SimulationControl,
+      *  11 *     No,                      !- Do Zone Sizing Calculation
+      *  12 *     No,                      !- Do System Sizing Calculation
+      *  13 *     No,                      !- Do Plant Sizing Calculation
+      *  14 *     No,                      !- Run Simulation for Sizing Periods
+      *  15 *     Yes,                     !- Run Simulation for Weather File Run Periods
+      *  16 *     No,                      !- Do HVAC Sizing Simulation for Sizing Periods
+      *  17 *     1;                       !- Maximum Number of HVAC Sizing Simulation Passes
+      *  18 *
+      *  19 *
+      *  20 * !-   ===========  ALL OBJECTS IN CLASS: BUILDING ===========
+      *  21 *
+      *  22 * Building,
+      *  23 *     None,                    !- Name
+      *  24 *     0,                       !- North Axis {deg}
+      *  25 *     Suburbs,                 !- Terrain
+      *  26 *     0.04,                    !- Loads Convergence Tolerance Value {W}
+      *  27 *     0.40,                    !- Temperature Convergence Tolerance Value {deltaC}
+      *  28 *     FullInteriorAndExterior, !- Solar Distribution
+      *  29 *     25,                      !- Maximum Number of Warmup Days
+      *  30 *     6;                       !- Minimum Number of Warmup Days
+      *  31 *
+      *  32 *
+      *  33 * !-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
+      *  34 *
+      *  35 * Timestep,
+      *  36 *     6;                       !- Number of Timesteps per Hour
+      *  37 *
+      *  38 *
+      *  39 * !-   ===========  ALL OBJECTS IN CLASS: SITE:LOCATION ===========
+      *  40 *
+      *  41 * Site:Location,
+      *  42 *     Salzburg.AP_SZ_AUT Design_Conditions,  !- Name
+      *  43 *     47.79,                   !- Latitude {deg}
+      *  44 *     13.00,                   !- Longitude {deg}
+      *  45 *     1.00,                    !- Time Zone {hr}
+      *  46 *     445.00;                  !- Elevation {m}
+      *  47 *
+      *  48 *
+      *  49 * !-   ===========  ALL OBJECTS IN CLASS: RUNPERIOD ===========
+      *  50 *
+      *  51 * RunPeriod,
+      *  52 *     Run Period 1,            !- Name
+      *  53 *     1,                       !- Begin Month
+      *  54 *     1,                       !- Begin Day of Month
+      *  55 *     ,                        !- Begin Year
+      *  56 *     12,                      !- End Month
+      *  57 *     31,                      !- End Day of Month
+      *  58 *     ,                        !- End Year
+      *  59 *     Tuesday,                 !- Day of Week for Start Day
+      *  60 *     Yes,                     !- Use Weather File Holidays and Special Days
+      *  61 *     Yes,                     !- Use Weather File Daylight Saving Period
+      *  62 *     No,                      !- Apply Weekend Holiday Rule
+      *  63 *     Yes,                     !- Use Weather File Rain Indicators
+      *  64 *     Yes;                     !- Use Weather File Snow Indicators
+      *  65 *
+      *  66 *
+      *  67 * !-   ===========  ALL OBJECTS IN CLASS: GLOBALGEOMETRYRULES ===========
+      *  68 *
+      *  69 * GlobalGeometryRules,
+      *  70 *     UpperLeftCorner,         !- Starting Vertex Position
+      *  71 *     CounterClockWise,        !- Vertex Entry Direction
+      *  72 *     World;                   !- Coordinate System
+      *  73 *
+      *  74 *
+      *  75 * !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLEDICTIONARY ===========
+      *  76 *
+      *  77 * Output:VariableDictionary,
+      *  78 *     Regular;                 !- Key Field
+      *  79 *
+      *  80 *
+      *  81 * !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
+      *  82 *
+      *  83 * Output:Table:SummaryReports,
+      *  84 *     AllSummary;              !- Report 1 Name
+      *  85 *
+      *  86 *
+      *  87 * !-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
+      *  88 *
+      *  89 * OutputControl:Table:Style,
+      *  90 *     HTML;                    !- Column Separator
+      *  91 *
+      *  92 *
+      *  93 * !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLE ===========
+      *  94 *
+      *  95 * Output:Variable,
+      *  96 *     *,                       !- Key Value
+      *  97 *     Site Outdoor Air Drybulb Temperature,  !- Variable Name
+      *  98 *     Timestep;                !- Reporting Frequency
+      *  99 *
+      * 100 * Output:Variable,
+      * 101 *     *,                       !- Key Value
+      * 102 *     Site Outdoor Air Wetbulb Temperature,  !- Variable Name
+      * 103 *     Timestep;                !- Reporting Frequency
+      * 104 *
+      * 105 * Output:Variable,
+      * 106 *     *,                       !- Key Value
+      * 107 *     Site Outdoor Air Dewpoint Temperature,  !- Variable Name
+      * 108 *     Timestep;                !- Reporting Frequency
+      * 109 *
+      * 110 * Output:Variable,
+      * 111 *     *,                       !- Key Value
+      * 112 *     Site Solar Azimuth Angle,!- Variable Name
+      * 113 *     Timestep;                !- Reporting Frequency
+      * 114 *
+      * 115 * Output:Variable,
+      * 116 *     *,                       !- Key Value
+      * 117 *     Site Solar Altitude Angle,  !- Variable Name
+      * 118 *     Timestep;                !- Reporting Frequency
+      * 119 *
+      * 120 * Output:Variable,
+      * 121 *     *,                       !- Key Value
+      * 122 *     Site Direct Solar Radiation Rate per Area,  !- Variable Name
+      * 123 *     Timestep;                !- Reporting Frequency
+      * 124 *
+      * 125 * Output:Variable,
+      * 126 *     *,                       !- Key Value
+      * 127 *     Site Diffuse Solar Radiation Rate per Area,  !- Variable Name
+      * 128 *     Timestep;                !- Reporting Frequency
+      * 129 *
+
+
+ ****************************** EPMacro processing terminated.

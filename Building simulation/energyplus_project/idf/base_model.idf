@@ -1,7 +1,9 @@
 !
 Version,
     25.1;                    !- Version Identifier
+!-   ===========  Used Ressources ===========
 
+##include //cadfemhost/work/ansys01/MLu/lahof/Building simulation/energyplus_project/resources/materials/AT_Baumaterialien.idf
 
 !-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
 

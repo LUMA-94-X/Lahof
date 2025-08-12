@@ -7,11 +7,11 @@
  MonthlyTablesCount=           0
  MonthlyColumnsCount=           0
  sizeReportName=         100
- numReportName=          18
- sizeSubTable=         200
- numSubTable=         103
+ numReportName=          17
+ sizeSubTable=         100
+ numSubTable=          95
  sizeColumnTag=        1600
- numColumnTag=         922
+ numColumnTag=         837
  sizeTableEntry=         800
  numTableEntry=         571
  sizeCompSizeTableEntry=           0
