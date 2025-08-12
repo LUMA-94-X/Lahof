@@ -1,0 +1,55 @@
+Version, 25.1;  ! Version der verwendeten EnergyPlus-Engine
+
+Timestep, 6;  ! Anzahl der Zeitschritte pro Stunde (6 = alle 10 Minuten)
+
+SimulationControl,
+  No,  ! Do Zone Sizing Calculation: Ja = Heiz-/Kühllastberechnung für Zonen durchführen
+  No,  ! Do System Sizing Calculation: Ja = Auslegung von Lüftungs-/Heizsystemen durchführen
+  No,  ! Do Plant Sizing Calculation: Ja = Auslegung von Kälte-/Wärmeerzeugern
+  No,   ! Run Simulation for Sizing Periods: Nein = keine Simulation für Auslegungszeiträume
+  Yes;  ! Run Simulation for Weather File Run Periods: Ja = Simulation über Wetterdatei
+
+RunPeriod,
+  Annual,     ! Name des Simulationszeitraums
+  1,          ! Begin Month: Januar
+  1,          ! Begin Day: 1.
+  ,           ! Begin Year: leer = automatisch
+  12,         ! End Month: Dezember
+  31,         ! End Day: 31.
+  ,           ! End Year: leer = automatisch
+  ,           ! Day of Week for Start Day: leer = aus Wetterdatei ableiten
+  Yes,        ! Use Weather File Holidays and Special Days
+  Yes,        ! Use Weather File Daylight Saving Period
+  No,         ! Apply Weekend Holiday Rule
+  Yes,        ! Use Weather File Rain Indicators
+  Yes,        ! Use Weather File Snow Indicators
+  No;         ! Treat Weather as Actual: Nein = Zeitliche Zuordnung irrelevant
+
+Site:Location,
+  Salzburg AUT,  ! Name des Standorts
+  47.8,          ! Breitengrad in Dezimalgrad (positiv = Nordhalbkugel)
+  13.0,          ! Längengrad in Dezimalgrad (positiv = östlich von Greenwich)
+  1,         ! Höhenlage über Meer in Metern
+  450.0;           ! Zeitzone (UTC+1 = Mitteleuropäische Zeit)
+
+Building,
+  SimpleBuilding,             ! Name des Gebäudes
+  0.0,                        ! Nord-Ausrichtung des Modells in Grad
+  City,                      ! Umgebung (City, Suburbs, Country)
+  0.04,                      ! Konvergenztoleranz für Lastberechnung (empfohlen: 0.04)
+  0.4,                       ! Temperatur-Konvergenztoleranz (empfohlen: 0.4 K)
+  FullInteriorAndExterior,  ! Solare Einstrahlung: Innen & Außen berücksichtigen
+  25;                        ! Maximale Anzahl an Warmup-Tagen
+
+GlobalGeometryRules,
+  UpperLeftCorner,     ! Startpunkt für Koordinatensystem der Zonen (z. B. CAD-Export)
+  CounterClockWise,    ! Richtung der Flächendefinition (positiv = gegen Uhrzeigersinn)
+  World;               ! Koordinatensystem: "World" = global bezogen
+
+Output:VariableDictionary, IDF;  ! Aktiviert die klassische IDF-Ausgabevariablenliste
+
+Output:Variable,
+  *, Zone Mean Air Temperature, hourly;  ! Temperaturmittelwert jeder Zone, stündlich
+
+OutputControl:Table:Style,
+  HTML;  ! Format für tabellarische Ausgaben (HTML)
