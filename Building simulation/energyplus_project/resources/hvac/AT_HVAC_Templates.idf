@@ -1,0 +1,412 @@
+! ========================================================================
+! ÖSTERREICHISCHE HVAC-SYSTEME & TEMPLATES
+! Typische Haustechnik-Lösungen für EnergyPlus Simulationen
+! Basierend auf österreichischen Standards und Praxis
+! ========================================================================
+
+! ========================================================================
+! HEIZUNGSANLAGEN - WÄRMEPUMPEN
+! ========================================================================
+
+! Luft-Wasser Wärmepumpe (Standard österreichische Anlage)
+Coil:Heating:WaterToAirHeatPump:EquationFit,
+    AT_LWWP_Heizung,             !- Name
+    Mixed Air Node,              !- Water-to-Air Heat Pump Air Inlet Node Name
+    Supply Fan Inlet Node,       !- Water-to-Air Heat Pump Air Outlet Node Name
+    autosize,                    !- Rated Air Flow Rate {m3/s}
+    autosize,                    !- Rated Water Flow Rate {m3/s}
+    autosize,                    !- Gross Rated Heating Capacity {W}
+    4.5,                         !- Gross Rated Heating COP
+    -8.33,                       !- Rated Entering Water Temperature {C}
+    21.11,                       !- Rated Entering Air Temperature {C}
+    35.0,                        !- Rated Leaving Water Temperature {C}
+    22.22,                       !- Rated Leaving Air Temperature {C}
+    WP Heat Cap Curve,           !- Heating Capacity Curve Name
+    WP Heat Power Curve,         !- Heating Power Consumption Curve Name
+    WP Heat PLF Curve;           !- Part Load Fraction Correlation Curve Name
+
+! Sole-Wasser Wärmepumpe (Erdwärme)
+Coil:Heating:WaterToAirHeatPump:EquationFit,
+    AT_SWWP_Heizung,             !- Name
+    Mixed Air Node,              !- Water-to-Air Heat Pump Air Inlet Node Name
+    Supply Fan Inlet Node,       !- Water-to-Air Heat Pump Air Outlet Node Name
+    autosize,                    !- Rated Air Flow Rate {m3/s}
+    autosize,                    !- Rated Water Flow Rate {m3/s}
+    autosize,                    !- Gross Rated Heating Capacity {W}
+    5.2,                         !- Gross Rated Heating COP
+    0.0,                         !- Rated Entering Water Temperature {C}
+    20.0,                        !- Rated Entering Air Temperature {C}
+    35.0,                        !- Rated Leaving Water Temperature {C}
+    22.0;                        !- Rated Leaving Air Temperature {C}
+
+! ========================================================================
+! LÜFTUNGSANLAGEN - KONTROLLIERTE WOHNRAUMLÜFTUNG (KWL)
+! ========================================================================
+
+! KWL mit Wärmerückgewinnung (Standard österreichisch)
+HeatExchanger:AirToAir:SensibleAndLatent,
+    AT_KWL_Wärmetauscher,        !- Name
+    ,                            !- Inlet Air Temperature Schedule Name
+    ,                            !- Inlet Air Humidity Schedule Name
+    WaterHeater:Mixed,           !- Tank Object Type
+    AT_WW_Speicher,              !- Tank Name
+    Coil:WaterHeating:AirToWaterHeatPump:Pumped, !- DX Coil Object Type
+    AT_WWWP_DX_Coil,             !- DX Coil Name
+    7.2,                         !- Minimum Inlet Air Temperature for Compressor Operation {C}
+    48.9,                        !- Maximum Inlet Air Temperature for Compressor Operation {C}
+    Zone,                        !- Compressor Location
+    ,                            !- Compressor Ambient Temperature Schedule Name
+    Fan:OnOff,                   !- Fan Object Type
+    AT_WWWP_Fan,                 !- Fan Name
+    DrawThrough,                 !- Fan Placement
+    15.0,                        !- On Cycle Parasitic Electric Load {W}
+    5.0,                         !- Off Cycle Parasitic Electric Load {W}
+    Zone;                        !- Parasitic Heat Rejection Location
+
+! Warmwasser-Speicher (300L Standard)
+WaterHeater:Mixed,
+    AT_WW_Speicher,              !- Name
+    0.3,                         !- Tank Volume {m3}
+    WW Temperature Setpoint Schedule, !- Setpoint Temperature Schedule Name
+    2.0,                         !- Deadband Temperature Difference {deltaC}
+    60.0,                        !- Maximum Temperature Limit {C}
+    Cycle,                       !- Heater Control Type
+    15000.0,                     !- Heater Maximum Capacity {W}
+    ,                            !- Heater Minimum Capacity {W}
+    ,                            !- Heater Ignition Minimum Flow Rate {m3/s}
+    ,                            !- Heater Ignition Delay {s}
+    Electricity,                 !- Heater Fuel Type
+    0.95,                        !- Heater Thermal Efficiency
+    ,                            !- Part Load Factor Curve Name
+    20.0,                        !- Off Cycle Parasitic Fuel Consumption Rate {W}
+    Electricity,                 !- Off Cycle Parasitic Fuel Type
+    0.8,                         !- Off Cycle Parasitic Heat Fraction to Tank
+    ,                            !- On Cycle Parasitic Fuel Consumption Rate {W}
+    ,                            !- On Cycle Parasitic Fuel Type
+    ,                            !- On Cycle Parasitic Heat Fraction to Tank
+    Zone,                        !- Ambient Temperature Indicator
+    ,                            !- Ambient Temperature Schedule Name
+    Basement Zone,               !- Ambient Temperature Zone Name
+    ,                            !- Ambient Temperature Outdoor Air Node Name
+    2.0,                         !- Off Cycle Loss Coefficient to Ambient Temperature {W/K}
+    ,                            !- Off Cycle Loss Fraction to Zone
+    2.0,                         !- On Cycle Loss Coefficient to Ambient Temperature {W/K}
+    ,                            !- On Cycle Loss Fraction to Zone
+    ,                            !- Peak Use Flow Rate {m3/s}
+    ,                            !- Use Flow Rate Fraction Schedule Name
+    ,                            !- Cold Water Supply Temperature Schedule Name
+    WW Supply Inlet Node,        !- Use Side Inlet Node Name
+    WW Supply Outlet Node,       !- Use Side Outlet Node Name
+    1.0,                         !- Use Side Effectiveness
+    WW Source Outlet Node,       !- Source Side Inlet Node Name
+    WW Source Inlet Node,        !- Source Side Outlet Node Name
+    1.0,                         !- Source Side Effectiveness
+    autosize,                    !- Use Side Design Flow Rate {m3/s}
+    autosize,                    !- Source Side Design Flow Rate {m3/s}
+    1.5;                         !- Indirect Water Heating Recovery Time {hr}
+
+! ========================================================================
+! SOLARANLAGE (THERMISCH)
+! ========================================================================
+
+! Solarkollektoren (Flachkollektor Standard)
+SolarCollector:FlatPlate:Water,
+    AT_Solarkollektor,           !- Name
+    Solar Kollektor Surface,     !- Surface Name
+    SolarCollectorParameters:FlatPlate, !- Solar Collector Parameters Name
+    Solar Collector Inlet Node,  !- Inlet Node Name
+    Solar Collector Outlet Node, !- Outlet Node Name
+    autosize,                    !- Maximum Flow Rate {m3/s}
+    Solar Pump Schedule;         !- Solar Pump Schedule Name
+
+SolarCollectorParameters:FlatPlate,
+    AT_Flachkollektor_Parameter, !- Name
+    Copper,                      !- Gross Area {m2}
+    0.9,                         !- Collector Efficiency
+    6.3,                         !- FR UL Value
+    1.132,                       !- FR Alpha Value
+    2,                           !- Intercept of Efficiency Curve
+    0.0105,                      !- Slope of Efficiency Curve vs Temperature Difference
+    0.0,                         !- Slope of Efficiency Curve vs Temperature Difference Squared
+    0.2,                         !- Fluid Specific Heat {J/kg-K}
+    1000.0;                      !- Fluid Density {kg/m3}
+
+! ========================================================================
+! PHOTOVOLTAIK
+! ========================================================================
+
+! PV-Generator (Standard österreichische Anlage)
+Generator:Photovoltaic,
+    AT_PV_Anlage,                !- Name
+    PV Surface,                  !- Surface Name
+    PhotovoltaicPerformance:Simple, !- Photovoltaic Performance Object Type
+    AT_PV_Performance,           !- Module Performance Name
+    Decoupled,                   !- Heat Transfer Integration Mode
+    1.0,                         !- Number of Series Strings in Parallel {dimensionless}
+    1.0;                         !- Number of Modules in Series {dimensionless}
+
+PhotovoltaicPerformance:Simple,
+    AT_PV_Performance,           !- Name
+    0.12,                        !- Fraction of Surface Area with Active Solar Cells {dimensionless}
+    Fixed,                       !- Conversion Efficiency Input Mode
+    0.20;                        !- Value for Cell Efficiency if Fixed
+
+! ========================================================================
+! REGELUNG & STEUERUNG
+! ========================================================================
+
+! Thermostat für Einzelraumregelung
+ZoneControl:Thermostat,
+    AT_Raumthermostat,           !- Name
+    Zone Name,                   !- Zone or ZoneList Name
+    Zone Control Type Sched,     !- Control Type Schedule Name
+    ThermostatSetpoint:DualSetpoint, !- Control Object Type
+    AT_Dual_Setpoint;            !- Control Name
+
+ThermostatSetpoint:DualSetpoint,
+    AT_Dual_Setpoint,            !- Name
+    Heating Setpoint Schedule,   !- Heating Setpoint Temperature Schedule Name
+    Cooling Setpoint Schedule;   !- Cooling Setpoint Temperature Schedule Name
+
+! ========================================================================
+! ZEITPLÄNE (TYPISCH ÖSTERREICHISCH)
+! ========================================================================
+
+! Heizung Zeitplan (österreichische Heizperiode)
+Schedule:Compact,
+    AT_Heizung_Zeitplan,         !- Name
+    Temperature,                 !- Schedule Type Limits Name
+    Through: 4/30,               !- Field 1
+    For: AllDays,                !- Field 2
+    Until: 6:00,18.0,            !- Field 3
+    Until: 22:00,21.0,           !- Field 5
+    Until: 24:00,18.0,           !- Field 7
+    Through: 9/30,               !- Field 9
+    For: AllDays,                !- Field 10
+    Until: 24:00,18.0,           !- Field 11
+    Through: 12/31,              !- Field 13
+    For: AllDays,                !- Field 14
+    Until: 6:00,18.0,            !- Field 15
+    Until: 22:00,21.0,           !- Field 17
+    Until: 24:00,18.0;           !- Field 19
+
+! Kühlung Zeitplan
+Schedule:Compact,
+    AT_Kühlung_Zeitplan,         !- Name
+    Temperature,                 !- Schedule Type Limits Name
+    Through: 5/31,               !- Field 1
+    For: AllDays,                !- Field 2
+    Until: 24:00,30.0,           !- Field 3
+    Through: 9/30,               !- Field 5
+    For: AllDays,                !- Field 6
+    Until: 6:00,30.0,            !- Field 7
+    Until: 22:00,24.0,           !- Field 9
+    Until: 24:00,30.0,           !- Field 11
+    Through: 12/31,              !- Field 13
+    For: AllDays,                !- Field 14
+    Until: 24:00,30.0;           !- Field 15
+
+! Lüftung Zeitplan (KWL)
+Schedule:Compact,
+    AT_Lüftung_Zeitplan,         !- Name
+    Fraction,                    !- Schedule Type Limits Name
+    Through: 12/31,              !- Field 1
+    For: Weekdays,               !- Field 2
+    Until: 7:00,0.3,             !- Field 3 (Nachtabsenkung)
+    Until: 18:00,0.7,            !- Field 5 (Tagbetrieb)
+    Until: 22:00,1.0,            !- Field 7 (Abendbetrieb)
+    Until: 24:00,0.3,            !- Field 9
+    For: Weekends Holidays,      !- Field 11
+    Until: 9:00,0.3,             !- Field 12
+    Until: 22:00,0.7,            !- Field 14
+    Until: 24:00,0.3;            !- Field 16
+
+! Warmwasser Zeitplan
+Schedule:Compact,
+    AT_Warmwasser_Zeitplan,      !- Name
+    Temperature,                 !- Schedule Type Limits Name
+    Through: 12/31,              !- Field 1
+    For: AllDays,                !- Field 2
+    Until: 5:00,45.0,            !- Field 3
+    Until: 8:00,60.0,            !- Field 5 (Morgen)
+    Until: 17:00,45.0,           !- Field 7
+    Until: 22:00,60.0,           !- Field 9 (Abend)
+    Until: 24:00,45.0;           !- Field 11
+
+! ========================================================================
+! GEBÄUDEAUTOMATION & SMART HOME
+! ========================================================================
+
+! Einzelraumregelung mit Präsenzmelder
+EnergyManagementSystem:Sensor,
+    Zone_Occupancy_Sensor,       !- Name
+    Zone Name,                   !- Output:Variable or Output:Meter Index Key Name
+    Zone People Occupant Count;  !- Output:Variable or Output:Meter Name
+
+EnergyManagementSystem:Actuator,
+    Zone_Heating_Setpoint,       !- Name
+    AT_Dual_Setpoint,            !- Actuated Component Unique Name
+    Schedule:Compact,            !- Actuated Component Type
+    Schedule Value;              !- Actuated Component Control Type
+
+! ========================================================================
+! KOMMENTARE & VERWENDUNGSHINWEISE
+! ========================================================================
+
+! Diese HVAC-Bibliothek enthält typische österreichische Haustechnik-Lösungen:
+!
+! WÄRMEPUMPEN:
+! - Luft-Wasser WP: COP 4.5 (typisch für AT-Markt)
+! - Sole-Wasser WP: COP 5.2 (mit Erdwärme)
+!
+! LÜFTUNG:
+! - KWL mit 85% Wärmerückgewinnung (österreichischer Standard)
+! - Automatische Frostschutzsteuerung
+!
+! HEIZVERTEILUNG:
+! - Radiatoren für Bestand/Sanierung
+! - Fußbodenheizung für Neubau (Vorlauf 35°C)
+!
+! KÜHLUNG:
+! - Split-Klimageräte (marktüblich in Österreich)
+! - Passive Kühlung über Lüftung
+!
+! WARMWASSER:
+! - 300L Speicher (Standard EFH)
+! - Legionellenschutz durch Temperaturspreizung
+!
+! ERNEUERBARE:
+! - Solarthermie: 6m² für 4-Personen-Haushalt
+! - PV: 20% Wirkungsgrad (aktueller Standard)
+!
+! REGELUNG:
+! - Österreichische Heizperiode (Oktober-April)
+! - Comfort-Temperaturen: 21°C Heizen, 24°C Kühlen
+! - Warmwasser: 60°C (Legionellenschutz)
+!
+! INTEGRATION:
+! 1. Diese Datei als "AT_HVAC_Templates.idf" speichern
+! 2. In Haupt-IDF einbinden: "##include resources/AT_HVAC_Templates.idf"
+! 3. Zone Names und Node Names an Projekt anpassen
+! 4. Sizing:Zone und Sizing:System entsprechend definieren
+!
+! ÖSTERREICHISCHE NORMEN:
+! - ÖNORM B 8110 (Wärmeschutz)
+! - ÖNORM H 5056 (Lüftung)
+! - OIB Richtlinie 6 (Energieeinsparung)
+!                            !- Fraction of Radiant Energy
+    0.3;                         !- Fraction of Radiant Energy to Surface
+
+! Fußbodenheizung (Standard österreichische FBH)
+ZoneHVAC:LowTemperatureRadiant:VariableFlow,
+    AT_Fußbodenheizung,          !- Name
+    ,                            !- Availability Schedule Name
+    Zone Name,                   !- Zone Name
+    FBH Surface List,            !- Surface Name or Radiant Surface Group Name
+    0.012,                       !- Hydronic Tubing Inside Diameter {m}
+    0.016,                       !- Hydronic Tubing Outside Diameter {m}
+    0.35,                        !- Hydronic Tubing Conductivity {W/m-K}
+    autosize,                    !- Temperature Control Type
+    HeatingDesignCapacity,       !- Heating Design Capacity Method
+    autosize,                    !- Heating Design Capacity {W}
+    ,                            !- Heating Design Capacity Per Floor Area {W/m2}
+    ,                            !- Fraction of Autosized Heating Design Capacity
+    2.0,                         !- Maximum Hot Water Flow Rate {m3/s}
+    FBH Heating Water Inlet Node,!- Heating Water Inlet Node Name
+    FBH Heating Water Outlet Node,!- Heating Water Outlet Node Name
+    CoolingDesignCapacity,       !- Cooling Design Capacity Method
+    0.0,                         !- Cooling Design Capacity {W}
+    ,                            !- Cooling Design Capacity Per Floor Area {W/m2}
+    ,                            !- Fraction of Autosized Cooling Design Capacity
+    0.0,                         !- Maximum Cold Water Flow Rate {m3/s}
+    ,                            !- Cooling Water Inlet Node Name
+    ,                            !- Cooling Water Outlet Node Name
+    ,                            !- Number of Circuits
+    0.15;                        !- Circuit Length {m}
+
+! ========================================================================
+! KÜHLUNG - SPLIT-KLIMAGERÄTE
+! ========================================================================
+
+! Inverter Split-Gerät (typisch österreichische Lösung)
+ZoneHVAC:PackagedTerminalAirConditioner,
+    AT_Split_Klimagerät,         !- Name
+    ,                            !- Availability Schedule Name
+    Mixed Air Node,              !- Air Inlet Node Name
+    Air Outlet Node,             !- Air Outlet Node Name
+    OutdoorAir:Mixer,            !- Outdoor Air Mixer Object Type
+    OA Mixer Name,               !- Outdoor Air Mixer Name
+    autosize,                    !- Supply Air Flow Rate During Cooling Operation {m3/s}
+    autosize,                    !- Supply Air Flow Rate During Heating Operation {m3/s}
+    autosize,                    !- Supply Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    0.0,                         !- Outdoor Air Flow Rate During Cooling Operation {m3/s}
+    0.0,                         !- Outdoor Air Flow Rate During Heating Operation {m3/s}
+    0.0,                         !- Outdoor Air Flow Rate When No Cooling or Heating is Needed {m3/s}
+    Fan:OnOff,                   !- Supply Air Fan Object Type
+    Supply Fan,                  !- Supply Air Fan Name
+    Coil:Heating:DX:SingleSpeed, !- Heating Coil Object Type
+    AT_Split_Heizung,            !- Heating Coil Name
+    Coil:Cooling:DX:SingleSpeed, !- Cooling Coil Object Type
+    AT_Split_Kühlung,            !- Cooling Coil Name
+    BlowThrough,                 !- Fan Placement
+    FanAvailSched;               !- Supply Air Fan Operating Mode Schedule Name
+
+! ========================================================================
+! WARMWASSERBEREITUNG
+! ========================================================================
+
+! Warmwasser-Wärmepumpe (Brauchwasser)
+WaterHeater:HeatPump:PumpedCondenser,
+    AT_WWWP_Boiler,              !- Name
+    ,                            !- Availability Schedule Name
+    Compressor Setpoint Temperature Schedule, !- Compressor Setpoint Temperature Schedule Name
+    2.0,                         !- Dead Band Temperature Difference {deltaC}
+    WW Condenser Bottom,         !- Condenser Water Inlet Node Name
+    WW Condenser Top,            !- Condenser Water Outlet Node Name
+    autosize,                    !- Condenser Water Flow Rate {m3/s}
+    WW Evaporator Air Inlet,     !- Evaporator Air Inlet Node Name
+    WW Evaporator Air Outlet,    !- Evaporator Air Outlet Node Name
+    autosize,                    !- Evaporator Air Flow Rate {m3/s}
+    OutdoorAirOnly,              !- Inlet Air Configuration
+    ,                            !- Air Inlet Node Name
+    ,                            !- Air Outlet Node Name
+    ,                            !- Outdoor Air Node Name
+    ,                            !- Exhaust Air Node Name
+    ,                            !- Availability Schedule Name
+    autosize,                    !- Nominal Supply Air Flow Rate {m3/s}
+    0.85,                        !- Sensible Effectiveness at 100% Heating Air Flow
+    0.75,                        !- Latent Effectiveness at 100% Heating Air Flow
+    0.85,                        !- Sensible Effectiveness at 75% Heating Air Flow
+    0.75,                        !- Latent Effectiveness at 75% Heating Air Flow
+    0.85,                        !- Sensible Effectiveness at 100% Cooling Air Flow
+    0.75,                        !- Latent Effectiveness at 100% Cooling Air Flow
+    0.85,                        !- Sensible Effectiveness at 75% Cooling Air Flow
+    0.75,                        !- Latent Effectiveness at 75% Cooling Air Flow
+    Supply Air Inlet Node,       !- Supply Air Inlet Node Name
+    Supply Air Outlet Node,      !- Supply Air Outlet Node Name
+    Exhaust Air Inlet Node,      !- Exhaust Air Inlet Node Name
+    Exhaust Air Outlet Node,     !- Exhaust Air Outlet Node Name
+    200.0,                       !- Nominal Electric Power {W}
+    Yes,                         !- Supply Air Outlet Node Temperature Control
+    Rotary,                      !- Heat Exchanger Type
+    MinimumExhaustTemperature,   !- Frost Control Type
+    1.7,                         !- Threshold Temperature {C}
+    0.083,                       !- Initial Defrost Time Fraction
+    0.012;                       !- Rate of Defrost Time Fraction Increase
+
+! ========================================================================
+! HEIZKÖRPER & FLÄCHENHEIZUNG
+! ========================================================================
+
+! Radiatoren (Standard österreichische Heizkörper)
+ZoneHVAC:Baseboard:RadiantConvective:Water,
+    AT_Radiator_Standard,        !- Name
+    ,                            !- Availability Schedule Name
+    Radiator Water Inlet Node,   !- Inlet Node Name
+    Radiator Water Outlet Node,  !- Outlet Node Name
+    autosize,                    !- Rated Average Water Temperature {C}
+    autosize,                    !- Rated Water Mass Flow Rate {kg/s}
+    HeatingDesignCapacity,       !- Heating Design Capacity Method
+    autosize,                    !- Heating Design Capacity {W}
+    ,                            !- Heating Design Capacity Per Floor Area {W/m2}
+    ,

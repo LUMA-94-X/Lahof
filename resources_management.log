@@ -1,0 +1,38 @@
+2025-08-12 13:22:02,905 - INFO - Suche IDFs unter: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources
+2025-08-12 13:22:02,906 - INFO - Lade existierende Resources...
+2025-08-12 13:22:02,914 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\my_library.idf
+2025-08-12 13:22:02,915 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\hvac\AT_HVAC_Templates.idf
+2025-08-12 13:22:02,916 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\materials\AT_Baumaterialien.idf
+2025-08-12 13:22:02,919 - INFO -   -> 0 Material, 0 NoMass, 0 AirGap, 0 SimpleGlazing, 0 Konstruktionen in my_library.idf
+2025-08-12 13:22:02,944 - INFO -   -> 0 Material, 0 NoMass, 0 AirGap, 0 SimpleGlazing, 0 Konstruktionen in AT_HVAC_Templates.idf
+2025-08-12 13:22:02,962 - INFO -   -> 17 Material, 0 NoMass, 2 AirGap, 2 SimpleGlazing, 16 Konstruktionen in AT_Baumaterialien.idf
+2025-08-12 13:22:02,962 - INFO - Geladen: 17 Materialien, 16 Konstruktionen
+2025-08-12 13:23:32,573 - INFO - Suche IDFs unter: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources
+2025-08-12 13:23:32,573 - INFO - Lade existierende Resources...
+2025-08-12 13:23:32,573 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\my_library.idf
+2025-08-12 13:23:32,573 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\hvac\AT_HVAC_Templates.idf
+2025-08-12 13:23:32,573 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\materials\AT_Baumaterialien.idf
+2025-08-12 13:23:32,588 - INFO -   -> 0 Material, 0 NoMass, 0 AirGap, 0 SimpleGlazing, 0 Konstruktionen in my_library.idf
+2025-08-12 13:23:32,619 - INFO -   -> 0 Material, 0 NoMass, 0 AirGap, 0 SimpleGlazing, 0 Konstruktionen in AT_HVAC_Templates.idf
+2025-08-12 13:23:32,644 - INFO -   -> 17 Material, 0 NoMass, 2 AirGap, 2 SimpleGlazing, 16 Konstruktionen in AT_Baumaterialien.idf
+2025-08-12 13:23:32,644 - INFO - Geladen: 17 Materialien, 16 Konstruktionen
+2025-08-12 13:48:35,490 - INFO - Suche IDFs unter: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources
+2025-08-12 13:48:35,491 - INFO - Lade existierende Resources...
+2025-08-12 13:48:35,500 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\my_library.idf
+2025-08-12 13:48:35,501 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\hvac\AT_HVAC_Templates.idf
+2025-08-12 13:48:35,503 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\materials\AT_Baumaterialien.idf
+2025-08-12 13:48:35,507 - INFO -   -> 0 Material, 0 NoMass, 0 AirGap, 0 SimpleGlazing, 0 Konstruktionen in my_library.idf
+2025-08-12 13:48:35,524 - INFO -   -> 0 Material, 0 NoMass, 0 AirGap, 0 SimpleGlazing, 0 Konstruktionen in AT_HVAC_Templates.idf
+2025-08-12 13:48:35,552 - INFO -   -> 17 Material, 0 NoMass, 2 AirGap, 2 SimpleGlazing, 16 Konstruktionen in AT_Baumaterialien.idf
+2025-08-12 13:48:35,552 - INFO - Geladen: 17 Materialien, 16 Konstruktionen
+2025-08-12 13:48:35,593 - INFO - DF-Cache aktualisiert (CSV): \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\cache\materials.csv / \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\cache\constructions.csv
+2025-08-12 14:42:16,698 - INFO - Suche IDFs unter: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources
+2025-08-12 14:42:16,698 - INFO - Lade existierende Resources...
+2025-08-12 14:42:16,698 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\my_library.idf
+2025-08-12 14:42:16,698 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\hvac\AT_HVAC_Templates.idf
+2025-08-12 14:42:16,714 - INFO - Gefundenes IDF: \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\resources\materials\AT_Baumaterialien.idf
+2025-08-12 14:42:16,717 - INFO -   -> 0 Material, 0 NoMass, 0 AirGap, 0 SimpleGlazing, 0 Konstruktionen in my_library.idf
+2025-08-12 14:42:16,740 - INFO -   -> 0 Material, 0 NoMass, 0 AirGap, 0 SimpleGlazing, 0 Konstruktionen in AT_HVAC_Templates.idf
+2025-08-12 14:42:16,763 - INFO -   -> 17 Material, 0 NoMass, 2 AirGap, 2 SimpleGlazing, 16 Konstruktionen in AT_Baumaterialien.idf
+2025-08-12 14:42:16,765 - INFO - Geladen: 17 Materialien, 16 Konstruktionen
+2025-08-12 14:42:16,827 - INFO - DF-Cache aktualisiert (CSV): \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\cache\materials.csv / \\cadfemhost\work\ansys01\MLu\lahof\Building simulation\energyplus_project\cache\constructions.csv

@@ -1,0 +1,17 @@
+Name,Kategorie,Anzahl Schichten,Schichten,U-Wert [W/m²K],OIB-konform,Passivhaus-tauglich,last_updated
+AT_Außenwand_2schalig,Unbekannt,5,AT_Kalkzementputz_2cm | AT_Ziegel_25cm | AT_Steinwolle_16cm | AT_Luftschicht_5cm | AT_Ziegel_25cm,0.165,N/A,N/A,2025-08-12T14:42:16
+AT_Außenwand_Holzbau,Unbekannt,5,AT_Kalkzementputz_2cm | AT_OSB_Platte_1.5cm | AT_Steinwolle_16cm | AT_OSB_Platte_1.5cm | AT_Gipskarton_1.25cm,0.198,N/A,N/A,2025-08-12T14:42:16
+AT_Außenwand_Passivhaus,Unbekannt,5,AT_Kalkzementputz_2cm | AT_Ziegel_38cm | AT_EPS_WDVS_16cm | AT_Steinwolle_16cm | AT_Gipskarton_1.25cm,0.098,N/A,N/A,2025-08-12T14:42:16
+AT_Außenwand_WDVS_Standard,Unbekannt,4,AT_Kalkzementputz_2cm | AT_Ziegel_25cm | AT_EPS_WDVS_16cm | AT_Gipskarton_1.25cm,0.186,N/A,N/A,2025-08-12T14:42:16
+AT_Bodenplatte_Standard,Unbekannt,3,AT_Stahlbeton_20cm | AT_EPS_WDVS_16cm | AT_Bitumen_Abdichtung,0.206,N/A,N/A,2025-08-12T14:42:16
+AT_Dach_Passivhaus,Unbekannt,6,AT_Tondachziegel | AT_Luftschicht_5cm | AT_OSB_Platte_1.5cm | AT_Zellulose_Dämmung_18cm | AT_Steinwolle_16cm | AT_Gipskarton_1.25cm,0.104,N/A,N/A,2025-08-12T14:42:16
+AT_Fenster_3fach_Standard,Unbekannt,1,AT_3fach_Verglasung,0.8,N/A,N/A,2025-08-12T14:42:16
+AT_Fenster_Passivhaus,Unbekannt,1,AT_Passivhaus_Fenster,0.6,N/A,N/A,2025-08-12T14:42:16
+AT_Flachdach_Warmdach,Unbekannt,4,AT_Bitumen_Abdichtung | AT_PUR_Dachdämmung_20cm | AT_Stahlbeton_20cm | AT_Gipskarton_1.25cm,0.12,N/A,N/A,2025-08-12T14:42:16
+AT_Haustür_gedämmt,Unbekannt,3,AT_Massivholz_BSH_20cm | AT_Steinwolle_16cm | AT_Massivholz_BSH_20cm,0.128,N/A,N/A,2025-08-12T14:42:16
+AT_Innentür_Standard,Unbekannt,1,AT_Massivholz_BSH_20cm,0.587,N/A,N/A,2025-08-12T14:42:16
+AT_Innenwand_Ziegel_14cm,Unbekannt,3,AT_Gipskarton_1.25cm | AT_Ziegel_25cm | AT_Gipskarton_1.25cm,1.219,N/A,N/A,2025-08-12T14:42:16
+AT_Oberste_Geschoßdecke,Unbekannt,3,AT_Gipskarton_1.25cm | AT_Stahlbeton_20cm | AT_Steinwolle_16cm,0.205,N/A,N/A,2025-08-12T14:42:16
+AT_Steildach_Standard,Unbekannt,5,AT_Tondachziegel | AT_Luftschicht_5cm | AT_OSB_Platte_1.5cm | AT_Steinwolle_16cm | AT_Gipskarton_1.25cm,0.196,N/A,N/A,2025-08-12T14:42:16
+AT_Trennwand_Leichtbau,Unbekannt,3,AT_Gipskarton_1.25cm | AT_Steinwolle_16cm | AT_Gipskarton_1.25cm,0.207,N/A,N/A,2025-08-12T14:42:16
+AT_Zwischendecke_Standard,Unbekannt,3,AT_Gipskarton_1.25cm | AT_Stahlbeton_20cm | AT_Gipskarton_1.25cm,2.841,N/A,N/A,2025-08-12T14:42:16

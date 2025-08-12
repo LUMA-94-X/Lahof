@@ -1,6 +1,4 @@
-! Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 10:05,
-! Output:Meter Objects (applicable to this run)
-Output:Meter,Carbon Equivalent:Facility,hourly; !- [kg]
-Output:Meter:Cumulative,Carbon Equivalent:Facility,hourly; !- [kg]
-Output:Meter,CarbonEquivalentEmissions:Carbon Equivalent,hourly; !- [kg]
-Output:Meter:Cumulative,CarbonEquivalentEmissions:Carbon Equivalent,hourly; !- [kg]
+Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 15:35,
+Var Type (reported time step),Var Report Type,Variable Name [Units]
+Zone,Meter,Carbon Equivalent:Facility [kg]
+Zone,Meter,CarbonEquivalentEmissions:Carbon Equivalent [kg]

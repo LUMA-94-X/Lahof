@@ -1,0 +1,381 @@
+! ========================================================================
+! ÖSTERREICHISCHE BAUMATERIALIEN & KONSTRUKTIONEN BIBLIOTHEK
+! Für EnergyPlus Simulationen - Wiederverwendbare Ressourcen
+! Erstellt nach OIB (Österreichisches Institut für Bautechnik) Standards
+! ========================================================================
+
+! ========================================================================
+! MATERIALIEN - GRUNDSTOFFE
+! ========================================================================
+
+! --- MAUERWERK ---
+Material,
+    AT_Ziegel_25cm,              !- Name
+    MediumRough,                 !- Roughness
+    0.25,                        !- Thickness {m}
+    0.45,                        !- Conductivity {W/m-K}
+    1800,                        !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.78,                        !- Solar Absorptance
+    0.78;                        !- Visible Absorptance
+
+Material,
+    AT_Ziegel_38cm,              !- Name
+    MediumRough,                 !- Roughness
+    0.38,                        !- Thickness {m}
+    0.45,                        !- Conductivity {W/m-K}
+    1800,                        !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.78,                        !- Solar Absorptance
+    0.78;                        !- Visible Absorptance
+
+Material,
+    AT_Porenbeton_20cm,          !- Name
+    MediumRough,                 !- Roughness
+    0.20,                        !- Thickness {m}
+    0.12,                        !- Conductivity {W/m-K}
+    500,                         !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.65,                        !- Solar Absorptance
+    0.65;                        !- Visible Absorptance
+
+Material,
+    AT_Betonstein_20cm,          !- Name
+    MediumRough,                 !- Roughness
+    0.20,                        !- Thickness {m}
+    1.4,                         !- Conductivity {W/m-K}
+    2000,                        !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.7,                         !- Solar Absorptance
+    0.7;                         !- Visible Absorptance
+
+! --- DÄMMSTOFFE ---
+Material,
+    AT_Steinwolle_16cm,          !- Name
+    Rough,                       !- Roughness
+    0.16,                        !- Thickness {m}
+    0.035,                       !- Conductivity {W/m-K}
+    150,                         !- Density {kg/m3}
+    1030,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.4,                         !- Solar Absorptance
+    0.4;                         !- Visible Absorptance
+
+Material,
+    AT_EPS_WDVS_16cm,            !- Name
+    Rough,                       !- Roughness
+    0.16,                        !- Thickness {m}
+    0.035,                       !- Conductivity {W/m-K}
+    20,                          !- Density {kg/m3}
+    1450,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.4,                         !- Solar Absorptance
+    0.4;                         !- Visible Absorptance
+
+Material,
+    AT_PUR_Dachdämmung_20cm,     !- Name
+    Rough,                       !- Roughness
+    0.20,                        !- Thickness {m}
+    0.025,                       !- Conductivity {W/m-K}
+    40,                          !- Density {kg/m3}
+    1400,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.4,                         !- Solar Absorptance
+    0.4;                         !- Visible Absorptance
+
+Material,
+    AT_Zellulose_Dämmung_18cm,   !- Name
+    Rough,                       !- Roughness
+    0.18,                        !- Thickness {m}
+    0.040,                       !- Conductivity {W/m-K}
+    55,                          !- Density {kg/m3}
+    2100,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.4,                         !- Solar Absorptance
+    0.4;                         !- Visible Absorptance
+
+! --- BETON & STAHLBETON ---
+Material,
+    AT_Stahlbeton_20cm,          !- Name
+    MediumRough,                 !- Roughness
+    0.20,                        !- Thickness {m}
+    2.3,                         !- Conductivity {W/m-K}
+    2300,                        !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.65,                        !- Solar Absorptance
+    0.65;                        !- Visible Absorptance
+
+Material,
+    AT_Leichtbeton_20cm,         !- Name
+    MediumRough,                 !- Roughness
+    0.20,                        !- Thickness {m}
+    0.8,                         !- Conductivity {W/m-K}
+    1800,                        !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.65,                        !- Solar Absorptance
+    0.65;                        !- Visible Absorptance
+
+! --- HOLZ & HOLZWERKSTOFFE ---
+Material,
+    AT_Massivholz_BSH_20cm,      !- Name
+    MediumSmooth,                !- Roughness
+    0.20,                        !- Thickness {m}
+    0.13,                        !- Conductivity {W/m-K}
+    500,                         !- Density {kg/m3}
+    1600,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.78,                        !- Solar Absorptance
+    0.78;                        !- Visible Absorptance
+
+Material,
+    AT_OSB_Platte_1.5cm,         !- Name
+    MediumSmooth,                !- Roughness
+    0.015,                       !- Thickness {m}
+    0.13,                        !- Conductivity {W/m-K}
+    650,                         !- Density {kg/m3}
+    1700,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.78,                        !- Solar Absorptance
+    0.78;                        !- Visible Absorptance
+
+! --- PUTZ & BESCHICHTUNGEN ---
+Material,
+    AT_Kalkzementputz_2cm,       !- Name
+    Rough,                       !- Roughness
+    0.02,                        !- Thickness {m}
+    0.87,                        !- Conductivity {W/m-K}
+    1800,                        !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.5,                         !- Solar Absorptance
+    0.5;                         !- Visible Absorptance
+
+Material,
+    AT_Gipskarton_1.25cm,        !- Name
+    Smooth,                      !- Roughness
+    0.0125,                      !- Thickness {m}
+    0.25,                        !- Conductivity {W/m-K}
+    900,                         !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.5,                         !- Solar Absorptance
+    0.5;                         !- Visible Absorptance
+
+! --- DACHEINDECKUNG ---
+Material,
+    AT_Tondachziegel,            !- Name
+    MediumRough,                 !- Roughness
+    0.02,                        !- Thickness {m}
+    1.0,                         !- Conductivity {W/m-K}
+    2000,                        !- Density {kg/m3}
+    800,                         !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.8,                         !- Solar Absorptance
+    0.8;                         !- Visible Absorptance
+
+Material,
+    AT_Bitumen_Abdichtung,       !- Name
+    Smooth,                      !- Roughness
+    0.005,                       !- Thickness {m}
+    0.17,                        !- Conductivity {W/m-K}
+    1100,                        !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.9,                         !- Solar Absorptance
+    0.9;                         !- Visible Absorptance
+
+! ========================================================================
+! LUFTSCHICHTEN & HOHLRÄUME
+! ========================================================================
+
+Material:AirGap,
+    AT_Luftschicht_5cm,          !- Name
+    0.18;                        !- Thermal Resistance {m2-K/W}
+
+Material:AirGap,
+    AT_Luftschicht_10cm,         !- Name
+    0.16;                        !- Thermal Resistance {m2-K/W}
+
+! ========================================================================
+! KONSTRUKTIONEN - AUSSENWÄNDE
+! ========================================================================
+
+Construction,
+    AT_Außenwand_WDVS_Standard,  !- Name
+    AT_Kalkzementputz_2cm,       !- Outside Layer
+    AT_Ziegel_25cm,              !- Layer 2
+    AT_EPS_WDVS_16cm,            !- Layer 3
+    AT_Gipskarton_1.25cm;        !- Layer 4
+
+Construction,
+    AT_Außenwand_2schalig,       !- Name
+    AT_Kalkzementputz_2cm,       !- Outside Layer
+    AT_Ziegel_25cm,              !- Layer 2
+    AT_Steinwolle_16cm,          !- Layer 3
+    AT_Luftschicht_5cm,          !- Layer 4
+    AT_Ziegel_25cm;              !- Layer 5
+
+Construction,
+    AT_Außenwand_Holzbau,        !- Name
+    AT_Kalkzementputz_2cm,       !- Outside Layer
+    AT_OSB_Platte_1.5cm,         !- Layer 2
+    AT_Steinwolle_16cm,          !- Layer 3
+    AT_OSB_Platte_1.5cm,         !- Layer 4
+    AT_Gipskarton_1.25cm;        !- Layer 5
+
+Construction,
+    AT_Außenwand_Passivhaus,     !- Name
+    AT_Kalkzementputz_2cm,       !- Outside Layer
+    AT_Ziegel_38cm,              !- Layer 2
+    AT_EPS_WDVS_16cm,            !- Layer 3
+    AT_Steinwolle_16cm,          !- Layer 4
+    AT_Gipskarton_1.25cm;        !- Layer 5
+
+! ========================================================================
+! KONSTRUKTIONEN - INNENWÄNDE
+! ========================================================================
+
+Construction,
+    AT_Innenwand_Ziegel_14cm,    !- Name
+    AT_Gipskarton_1.25cm,        !- Layer 1
+    AT_Ziegel_25cm,              !- Layer 2
+    AT_Gipskarton_1.25cm;        !- Layer 3
+
+Construction,
+    AT_Trennwand_Leichtbau,      !- Name
+    AT_Gipskarton_1.25cm,        !- Layer 1
+    AT_Steinwolle_16cm,          !- Layer 2
+    AT_Gipskarton_1.25cm;        !- Layer 3
+
+! ========================================================================
+! KONSTRUKTIONEN - DÄCHER
+! ========================================================================
+
+Construction,
+    AT_Steildach_Standard,       !- Name
+    AT_Tondachziegel,            !- Outside Layer
+    AT_Luftschicht_5cm,          !- Layer 2
+    AT_OSB_Platte_1.5cm,         !- Layer 3
+    AT_Steinwolle_16cm,          !- Layer 4
+    AT_Gipskarton_1.25cm;        !- Layer 5
+
+Construction,
+    AT_Flachdach_Warmdach,       !- Name
+    AT_Bitumen_Abdichtung,       !- Outside Layer
+    AT_PUR_Dachdämmung_20cm,     !- Layer 2
+    AT_Stahlbeton_20cm,          !- Layer 3
+    AT_Gipskarton_1.25cm;        !- Layer 4
+
+Construction,
+    AT_Dach_Passivhaus,          !- Name
+    AT_Tondachziegel,            !- Outside Layer
+    AT_Luftschicht_5cm,          !- Layer 2
+    AT_OSB_Platte_1.5cm,         !- Layer 3
+    AT_Zellulose_Dämmung_18cm,   !- Layer 4
+    AT_Steinwolle_16cm,          !- Layer 5
+    AT_Gipskarton_1.25cm;        !- Layer 6
+
+! ========================================================================
+! KONSTRUKTIONEN - BÖDEN/DECKEN
+! ========================================================================
+
+Construction,
+    AT_Bodenplatte_Standard,     !- Name
+    AT_Stahlbeton_20cm,          !- Layer 1
+    AT_EPS_WDVS_16cm,            !- Layer 2 (Perimeterdämmung)
+    AT_Bitumen_Abdichtung;       !- Layer 3
+
+Construction,
+    AT_Zwischendecke_Standard,   !- Name
+    AT_Gipskarton_1.25cm,        !- Layer 1
+    AT_Stahlbeton_20cm,          !- Layer 2
+    AT_Gipskarton_1.25cm;        !- Layer 3
+
+Construction,
+    AT_Oberste_Geschoßdecke,     !- Name
+    AT_Gipskarton_1.25cm,        !- Layer 1
+    AT_Stahlbeton_20cm,          !- Layer 2
+    AT_Steinwolle_16cm;          !- Layer 3
+
+! ========================================================================
+! FENSTER & TÜREN
+! ========================================================================
+
+! Österreichische Standard-Fenster nach OIB Richtlinie 6
+
+WindowMaterial:SimpleGlazingSystem,
+    AT_3fach_Verglasung,         !- Name
+    0.8,                         !- U-Factor {W/m2-K}
+    0.6,                         !- Solar Heat Gain Coefficient
+    0.8;                         !- Visible Transmittance
+
+Construction,
+    AT_Fenster_3fach_Standard,   !- Name
+    AT_3fach_Verglasung;         !- Outside Layer
+
+WindowMaterial:SimpleGlazingSystem,
+    AT_Passivhaus_Fenster,       !- Name
+    0.6,                         !- U-Factor {W/m2-K}
+    0.55,                        !- Solar Heat Gain Coefficient
+    0.75;                        !- Visible Transmittance
+
+Construction,
+    AT_Fenster_Passivhaus,       !- Name
+    AT_Passivhaus_Fenster;       !- Outside Layer
+
+! Türen
+Construction,
+    AT_Haustür_gedämmt,          !- Name
+    AT_Massivholz_BSH_20cm,      !- Layer 1
+    AT_Steinwolle_16cm,          !- Layer 2
+    AT_Massivholz_BSH_20cm;      !- Layer 3
+
+Construction,
+    AT_Innentür_Standard,        !- Name
+    AT_Massivholz_BSH_20cm;      !- Layer 1
+
+! ========================================================================
+! THERMISCHE BRÜCKEN & ZUSÄTZLICHE MATERIALIEN
+! ========================================================================
+
+Material,
+    AT_Thermische_Trennung,      !- Name
+    Smooth,                      !- Roughness
+    0.05,                        !- Thickness {m}
+    0.035,                       !- Conductivity {W/m-K}
+    30,                          !- Density {kg/m3}
+    1000,                        !- Specific Heat {J/kg-K}
+    0.9,                         !- Thermal Absorptance
+    0.4,                         !- Solar Absorptance
+    0.4;                         !- Visible Absorptance
+
+! ========================================================================
+! KOMMENTARE UND HINWEISE
+! ========================================================================
+
+! Diese Bibliothek entspricht den österreichischen Baustandards und
+! der OIB-Richtlinie 6 (Energieeinsparung und Wärmeschutz).
+!
+! U-Werte entsprechen typischen österreichischen Konstruktionen:
+! - Außenwand Standard: ca. 0.35 W/m²K
+! - Außenwand Passivhaus: ca. 0.15 W/m²K
+! - Dach Standard: ca. 0.20 W/m²K
+! - Fenster Standard: 0.8 W/m²K
+! - Fenster Passivhaus: 0.6 W/m²K
+!
+! Verwendung:
+! 1. Diese Datei in den /resources/ Ordner kopieren
+! 2. In der Haupt-IDF mit "##include resources/AT_Baumaterialien.idf"
+! 3. Konstruktionsnamen in BuildingSurface:Detailed verwenden
+!
+! Anpassungen:
+! - Dicken können projektspezifisch angepasst werden
+! - Neue Materialien nach gleichem Schema hinzufügen
+! - Farben über Solar/Visible Absorptance definieren
+!

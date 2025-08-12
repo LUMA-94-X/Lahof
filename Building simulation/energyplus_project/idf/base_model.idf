@@ -1,55 +1,127 @@
-Version, 25.1;  ! Version der verwendeten EnergyPlus-Engine
+!
+Version,
+    25.1;                    !- Version Identifier
 
-Timestep, 6;  ! Anzahl der Zeitschritte pro Stunde (6 = alle 10 Minuten)
+
+!-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
 
 SimulationControl,
-  No,  ! Do Zone Sizing Calculation: Ja = Heiz-/Kühllastberechnung für Zonen durchführen
-  No,  ! Do System Sizing Calculation: Ja = Auslegung von Lüftungs-/Heizsystemen durchführen
-  No,  ! Do Plant Sizing Calculation: Ja = Auslegung von Kälte-/Wärmeerzeugern
-  No,   ! Run Simulation for Sizing Periods: Nein = keine Simulation für Auslegungszeiträume
-  Yes;  ! Run Simulation for Weather File Run Periods: Ja = Simulation über Wetterdatei
+    No,                      !- Do Zone Sizing Calculation
+    No,                      !- Do System Sizing Calculation
+    No,                      !- Do Plant Sizing Calculation
+    No,                      !- Run Simulation for Sizing Periods
+    Yes,                     !- Run Simulation for Weather File Run Periods
+    No,                      !- Do HVAC Sizing Simulation for Sizing Periods
+    1;                       !- Maximum Number of HVAC Sizing Simulation Passes
 
-RunPeriod,
-  Annual,     ! Name des Simulationszeitraums
-  1,          ! Begin Month: Januar
-  1,          ! Begin Day: 1.
-  ,           ! Begin Year: leer = automatisch
-  12,         ! End Month: Dezember
-  31,         ! End Day: 31.
-  ,           ! End Year: leer = automatisch
-  ,           ! Day of Week for Start Day: leer = aus Wetterdatei ableiten
-  Yes,        ! Use Weather File Holidays and Special Days
-  Yes,        ! Use Weather File Daylight Saving Period
-  No,         ! Apply Weekend Holiday Rule
-  Yes,        ! Use Weather File Rain Indicators
-  Yes,        ! Use Weather File Snow Indicators
-  No;         ! Treat Weather as Actual: Nein = Zeitliche Zuordnung irrelevant
 
-Site:Location,
-  Salzburg AUT,  ! Name des Standorts
-  47.8,          ! Breitengrad in Dezimalgrad (positiv = Nordhalbkugel)
-  13.0,          ! Längengrad in Dezimalgrad (positiv = östlich von Greenwich)
-  1,         ! Höhenlage über Meer in Metern
-  450.0;           ! Zeitzone (UTC+1 = Mitteleuropäische Zeit)
+!-   ===========  ALL OBJECTS IN CLASS: BUILDING ===========
 
 Building,
-  SimpleBuilding,             ! Name des Gebäudes
-  0.0,                        ! Nord-Ausrichtung des Modells in Grad
-  City,                      ! Umgebung (City, Suburbs, Country)
-  0.04,                      ! Konvergenztoleranz für Lastberechnung (empfohlen: 0.04)
-  0.4,                       ! Temperatur-Konvergenztoleranz (empfohlen: 0.4 K)
-  FullInteriorAndExterior,  ! Solare Einstrahlung: Innen & Außen berücksichtigen
-  25;                        ! Maximale Anzahl an Warmup-Tagen
+    None,                    !- Name
+    0,                       !- North Axis {deg}
+    Suburbs,                 !- Terrain
+    0.04,                    !- Loads Convergence Tolerance Value {W}
+    0.40,                    !- Temperature Convergence Tolerance Value {deltaC}
+    FullInteriorAndExterior, !- Solar Distribution
+    25,                      !- Maximum Number of Warmup Days
+    6;                       !- Minimum Number of Warmup Days
+
+
+!-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
+
+Timestep,
+    6;                       !- Number of Timesteps per Hour
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SITE:LOCATION ===========
+
+Site:Location,
+    Salzburg.AP_SZ_AUT Design_Conditions,  !- Name
+    47.79,                   !- Latitude {deg}
+    13.00,                   !- Longitude {deg}
+    1.00,                    !- Time Zone {hr}
+    445.00;                  !- Elevation {m}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: RUNPERIOD ===========
+
+RunPeriod,
+    Run Period 1,            !- Name
+    1,                       !- Begin Month
+    1,                       !- Begin Day of Month
+    ,                        !- Begin Year
+    12,                      !- End Month
+    31,                      !- End Day of Month
+    ,                        !- End Year
+    Tuesday,                 !- Day of Week for Start Day
+    Yes,                     !- Use Weather File Holidays and Special Days
+    Yes,                     !- Use Weather File Daylight Saving Period
+    No,                      !- Apply Weekend Holiday Rule
+    Yes,                     !- Use Weather File Rain Indicators
+    Yes;                     !- Use Weather File Snow Indicators
+
+
+!-   ===========  ALL OBJECTS IN CLASS: GLOBALGEOMETRYRULES ===========
 
 GlobalGeometryRules,
-  UpperLeftCorner,     ! Startpunkt für Koordinatensystem der Zonen (z. B. CAD-Export)
-  CounterClockWise,    ! Richtung der Flächendefinition (positiv = gegen Uhrzeigersinn)
-  World;               ! Koordinatensystem: "World" = global bezogen
+    UpperLeftCorner,         !- Starting Vertex Position
+    CounterClockWise,        !- Vertex Entry Direction
+    World;                   !- Coordinate System
 
-Output:VariableDictionary, IDF;  ! Aktiviert die klassische IDF-Ausgabevariablenliste
 
-Output:Variable,
-  *, Zone Mean Air Temperature, hourly;  ! Temperaturmittelwert jeder Zone, stündlich
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLEDICTIONARY ===========
+
+Output:VariableDictionary,
+    Regular;                 !- Key Field
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
+
+Output:Table:SummaryReports,
+    AllSummary;              !- Report 1 Name
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
 
 OutputControl:Table:Style,
-  HTML;  ! Format für tabellarische Ausgaben (HTML)
+    HTML;                    !- Column Separator
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLE ===========
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Outdoor Air Drybulb Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Outdoor Air Wetbulb Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Outdoor Air Dewpoint Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Solar Azimuth Angle,!- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Solar Altitude Angle,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Direct Solar Radiation Rate per Area,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Diffuse Solar Radiation Rate per Area,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+

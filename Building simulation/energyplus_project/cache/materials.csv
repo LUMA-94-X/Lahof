@@ -1,0 +1,20 @@
+Name,Dicke [m],Wärmeleitfähigkeit [W/mK],Dichte [kg/m³],Spez. Wärmekapazität [J/kgK],Wärmewiderstand [m²K/W],Thermische Trägheit [kJ/m²K],Solar Absorptionsgrad,Kategorie,last_updated
+AT_Betonstein_20cm,0.2,1.4,2000.0,1000.0,0.14285714285714288,400.0,0.7,Mauerwerk,2025-08-12T14:42:16
+AT_Bitumen_Abdichtung,0.005,0.17,1100.0,1000.0,0.029411764705882353,5.5,0.9,Dacheindeckung,2025-08-12T14:42:16
+AT_EPS_WDVS_16cm,0.16,0.035,20.0,1450.0,4.571428571428571,4.64,0.4,Dämmstoffe,2025-08-12T14:42:16
+AT_Gipskarton_1.25cm,0.0125,0.25,900.0,1000.0,0.05,11.25,0.5,Putze & Beschichtungen,2025-08-12T14:42:16
+AT_Kalkzementputz_2cm,0.02,0.87,1800.0,1000.0,0.022988505747126436,36.0,0.5,Putze & Beschichtungen,2025-08-12T14:42:16
+AT_Leichtbeton_20cm,0.2,0.8,1800.0,1000.0,0.25,360.0,0.65,Mauerwerk,2025-08-12T14:42:16
+AT_Luftschicht_10cm,,,,,0.16,,,NoMass/AirGap,2025-08-12T14:42:16
+AT_Luftschicht_5cm,,,,,0.18,,,NoMass/AirGap,2025-08-12T14:42:16
+AT_Massivholz_BSH_20cm,0.2,0.13,500.0,1600.0,1.5384615384615385,160.0,0.78,Holzwerkstoffe,2025-08-12T14:42:16
+AT_OSB_Platte_1.5cm,0.015,0.13,650.0,1700.0,0.11538461538461538,16.575,0.78,Holzwerkstoffe,2025-08-12T14:42:16
+AT_PUR_Dachdämmung_20cm,0.2,0.025,40.0,1400.0,8.0,11.2,0.4,Dämmstoffe,2025-08-12T14:42:16
+AT_Porenbeton_20cm,0.2,0.12,500.0,1000.0,1.6666666666666667,100.0,0.65,Mauerwerk,2025-08-12T14:42:16
+AT_Stahlbeton_20cm,0.2,2.3,2300.0,1000.0,0.08695652173913045,460.0,0.65,Mauerwerk,2025-08-12T14:42:16
+AT_Steinwolle_16cm,0.16,0.035,150.0,1030.0,4.571428571428571,24.72,0.4,Dämmstoffe,2025-08-12T14:42:16
+AT_Thermische_Trennung,0.05,0.035,30.0,1000.0,1.4285714285714286,1.5,0.4,Sonstige,2025-08-12T14:42:16
+AT_Tondachziegel,0.02,1.0,2000.0,800.0,0.02,32.0,0.8,Mauerwerk,2025-08-12T14:42:16
+AT_Zellulose_Dämmung_18cm,0.18,0.04,55.0,2100.0,4.5,20.79,0.4,Dämmstoffe,2025-08-12T14:42:16
+AT_Ziegel_25cm,0.25,0.45,1800.0,1000.0,0.5555555555555556,450.0,0.78,Mauerwerk,2025-08-12T14:42:16
+AT_Ziegel_38cm,0.38,0.45,1800.0,1000.0,0.8444444444444444,684.0,0.78,Mauerwerk,2025-08-12T14:42:16

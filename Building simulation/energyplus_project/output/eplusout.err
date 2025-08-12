@@ -1,4 +1,5 @@
-Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 10:05,
+Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 15:35,
+   ** Warning ** ManageSizing: For a zone sizing run, there must be at least 1 Sizing:Zone input object. SimulationControl Zone Sizing option ignored.
    ************* Testing Individual Branch Integrity
    ************* All Branches passed integrity testing
    ************* Testing Individual Supply Air Path Integrity
@@ -8,10 +9,6 @@ Program Version,EnergyPlus, Version 25.1.0-68a4a7c774, YMD=2025.08.12 10:05,
    ************* No node connection errors were found.
    ************* Beginning Simulation
    ************* Simulation Error Summary *************
-   ** Warning ** The following Report Variables were requested but not generated -- check.rdd file
-   **   ~~~   ** Either the IDF did not contain these elements, the variable name is misspelled,
-   **   ~~~   ** or the requested variable is an advanced output which requires Output : Diagnostics, DisplayAdvancedReportVariables;
-   ************* Key=*, VarName=ZONE MEAN AIR TEMPERATURE, Frequency=Hourly
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 0 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  0.98sec
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 1 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 1 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  4.98sec
