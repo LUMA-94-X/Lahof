@@ -1,0 +1,650 @@
+
+
+ ****************************** EPMacro processing begun.
+
+
+      *   1 * !
+      *   2 * Version,
+      *   3 *     25.1;                    !- Version Identifier
+      *   4 *
+      *   5 * !-   ===========  Used Resources ===========
+      *   6 *
+      #   7 # ##include //cadfemhost/work/ansys01/MLu/lahof/Building simulation/energyplus_project/resources/materials/AT_Baumaterialien.idf
+ 1    *   1 * ! ========================================================================
+ 1    *   2 * ! ÖSTERREICHISCHE BAUMATERIALIEN & KONSTRUKTIONEN BIBLIOTHEK
+ 1    *   3 * ! Für EnergyPlus Simulationen - Wiederverwendbare Ressourcen
+ 1    *   4 * ! Erstellt nach OIB (Österreichisches Institut für Bautechnik) Standards
+ 1    *   5 * ! ========================================================================
+ 1    *   6 *
+ 1    *   7 * ! ========================================================================
+ 1    *   8 * ! MATERIALIEN - GRUNDSTOFFE
+ 1    *   9 * ! ========================================================================
+ 1    *  10 *
+ 1    *  11 * ! --- MAUERWERK ---
+ 1    *  12 * Material,
+ 1    *  13 *     AT_Ziegel_25cm,              !- Name
+ 1    *  14 *     MediumRough,                 !- Roughness
+ 1    *  15 *     0.25,                        !- Thickness {m}
+ 1    *  16 *     0.45,                        !- Conductivity {W/m-K}
+ 1    *  17 *     1800,                        !- Density {kg/m3}
+ 1    *  18 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    *  19 *     0.9,                         !- Thermal Absorptance
+ 1    *  20 *     0.78,                        !- Solar Absorptance
+ 1    *  21 *     0.78;                        !- Visible Absorptance
+ 1    *  22 *
+ 1    *  23 * Material,
+ 1    *  24 *     AT_Ziegel_38cm,              !- Name
+ 1    *  25 *     MediumRough,                 !- Roughness
+ 1    *  26 *     0.38,                        !- Thickness {m}
+ 1    *  27 *     0.45,                        !- Conductivity {W/m-K}
+ 1    *  28 *     1800,                        !- Density {kg/m3}
+ 1    *  29 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    *  30 *     0.9,                         !- Thermal Absorptance
+ 1    *  31 *     0.78,                        !- Solar Absorptance
+ 1    *  32 *     0.78;                        !- Visible Absorptance
+ 1    *  33 *
+ 1    *  34 * Material,
+ 1    *  35 *     AT_Porenbeton_20cm,          !- Name
+ 1    *  36 *     MediumRough,                 !- Roughness
+ 1    *  37 *     0.20,                        !- Thickness {m}
+ 1    *  38 *     0.12,                        !- Conductivity {W/m-K}
+ 1    *  39 *     500,                         !- Density {kg/m3}
+ 1    *  40 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    *  41 *     0.9,                         !- Thermal Absorptance
+ 1    *  42 *     0.65,                        !- Solar Absorptance
+ 1    *  43 *     0.65;                        !- Visible Absorptance
+ 1    *  44 *
+ 1    *  45 * Material,
+ 1    *  46 *     AT_Betonstein_20cm,          !- Name
+ 1    *  47 *     MediumRough,                 !- Roughness
+ 1    *  48 *     0.20,                        !- Thickness {m}
+ 1    *  49 *     1.4,                         !- Conductivity {W/m-K}
+ 1    *  50 *     2000,                        !- Density {kg/m3}
+ 1    *  51 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    *  52 *     0.9,                         !- Thermal Absorptance
+ 1    *  53 *     0.7,                         !- Solar Absorptance
+ 1    *  54 *     0.7;                         !- Visible Absorptance
+ 1    *  55 *
+ 1    *  56 * ! --- DÄMMSTOFFE ---
+ 1    *  57 * Material,
+ 1    *  58 *     AT_Steinwolle_16cm,          !- Name
+ 1    *  59 *     Rough,                       !- Roughness
+ 1    *  60 *     0.16,                        !- Thickness {m}
+ 1    *  61 *     0.035,                       !- Conductivity {W/m-K}
+ 1    *  62 *     150,                         !- Density {kg/m3}
+ 1    *  63 *     1030,                        !- Specific Heat {J/kg-K}
+ 1    *  64 *     0.9,                         !- Thermal Absorptance
+ 1    *  65 *     0.4,                         !- Solar Absorptance
+ 1    *  66 *     0.4;                         !- Visible Absorptance
+ 1    *  67 *
+ 1    *  68 * Material,
+ 1    *  69 *     AT_EPS_WDVS_16cm,            !- Name
+ 1    *  70 *     Rough,                       !- Roughness
+ 1    *  71 *     0.16,                        !- Thickness {m}
+ 1    *  72 *     0.035,                       !- Conductivity {W/m-K}
+ 1    *  73 *     20,                          !- Density {kg/m3}
+ 1    *  74 *     1450,                        !- Specific Heat {J/kg-K}
+ 1    *  75 *     0.9,                         !- Thermal Absorptance
+ 1    *  76 *     0.4,                         !- Solar Absorptance
+ 1    *  77 *     0.4;                         !- Visible Absorptance
+ 1    *  78 *
+ 1    *  79 * Material,
+ 1    *  80 *     AT_PUR_Dachdämmung_20cm,     !- Name
+ 1    *  81 *     Rough,                       !- Roughness
+ 1    *  82 *     0.20,                        !- Thickness {m}
+ 1    *  83 *     0.025,                       !- Conductivity {W/m-K}
+ 1    *  84 *     40,                          !- Density {kg/m3}
+ 1    *  85 *     1400,                        !- Specific Heat {J/kg-K}
+ 1    *  86 *     0.9,                         !- Thermal Absorptance
+ 1    *  87 *     0.4,                         !- Solar Absorptance
+ 1    *  88 *     0.4;                         !- Visible Absorptance
+ 1    *  89 *
+ 1    *  90 * Material,
+ 1    *  91 *     AT_Zellulose_Dämmung_18cm,   !- Name
+ 1    *  92 *     Rough,                       !- Roughness
+ 1    *  93 *     0.18,                        !- Thickness {m}
+ 1    *  94 *     0.040,                       !- Conductivity {W/m-K}
+ 1    *  95 *     55,                          !- Density {kg/m3}
+ 1    *  96 *     2100,                        !- Specific Heat {J/kg-K}
+ 1    *  97 *     0.9,                         !- Thermal Absorptance
+ 1    *  98 *     0.4,                         !- Solar Absorptance
+ 1    *  99 *     0.4;                         !- Visible Absorptance
+ 1    * 100 *
+ 1    * 101 * ! --- BETON & STAHLBETON ---
+ 1    * 102 * Material,
+ 1    * 103 *     AT_Stahlbeton_20cm,          !- Name
+ 1    * 104 *     MediumRough,                 !- Roughness
+ 1    * 105 *     0.20,                        !- Thickness {m}
+ 1    * 106 *     2.3,                         !- Conductivity {W/m-K}
+ 1    * 107 *     2300,                        !- Density {kg/m3}
+ 1    * 108 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    * 109 *     0.9,                         !- Thermal Absorptance
+ 1    * 110 *     0.65,                        !- Solar Absorptance
+ 1    * 111 *     0.65;                        !- Visible Absorptance
+ 1    * 112 *
+ 1    * 113 * Material,
+ 1    * 114 *     AT_Leichtbeton_20cm,         !- Name
+ 1    * 115 *     MediumRough,                 !- Roughness
+ 1    * 116 *     0.20,                        !- Thickness {m}
+ 1    * 117 *     0.8,                         !- Conductivity {W/m-K}
+ 1    * 118 *     1800,                        !- Density {kg/m3}
+ 1    * 119 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    * 120 *     0.9,                         !- Thermal Absorptance
+ 1    * 121 *     0.65,                        !- Solar Absorptance
+ 1    * 122 *     0.65;                        !- Visible Absorptance
+ 1    * 123 *
+ 1    * 124 * ! --- HOLZ & HOLZWERKSTOFFE ---
+ 1    * 125 * Material,
+ 1    * 126 *     AT_Massivholz_BSH_20cm,      !- Name
+ 1    * 127 *     MediumSmooth,                !- Roughness
+ 1    * 128 *     0.20,                        !- Thickness {m}
+ 1    * 129 *     0.13,                        !- Conductivity {W/m-K}
+ 1    * 130 *     500,                         !- Density {kg/m3}
+ 1    * 131 *     1600,                        !- Specific Heat {J/kg-K}
+ 1    * 132 *     0.9,                         !- Thermal Absorptance
+ 1    * 133 *     0.78,                        !- Solar Absorptance
+ 1    * 134 *     0.78;                        !- Visible Absorptance
+ 1    * 135 *
+ 1    * 136 * Material,
+ 1    * 137 *     AT_OSB_Platte_1.5cm,         !- Name
+ 1    * 138 *     MediumSmooth,                !- Roughness
+ 1    * 139 *     0.015,                       !- Thickness {m}
+ 1    * 140 *     0.13,                        !- Conductivity {W/m-K}
+ 1    * 141 *     650,                         !- Density {kg/m3}
+ 1    * 142 *     1700,                        !- Specific Heat {J/kg-K}
+ 1    * 143 *     0.9,                         !- Thermal Absorptance
+ 1    * 144 *     0.78,                        !- Solar Absorptance
+ 1    * 145 *     0.78;                        !- Visible Absorptance
+ 1    * 146 *
+ 1    * 147 * ! --- PUTZ & BESCHICHTUNGEN ---
+ 1    * 148 * Material,
+ 1    * 149 *     AT_Kalkzementputz_2cm,       !- Name
+ 1    * 150 *     Rough,                       !- Roughness
+ 1    * 151 *     0.02,                        !- Thickness {m}
+ 1    * 152 *     0.87,                        !- Conductivity {W/m-K}
+ 1    * 153 *     1800,                        !- Density {kg/m3}
+ 1    * 154 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    * 155 *     0.9,                         !- Thermal Absorptance
+ 1    * 156 *     0.5,                         !- Solar Absorptance
+ 1    * 157 *     0.5;                         !- Visible Absorptance
+ 1    * 158 *
+ 1    * 159 * Material,
+ 1    * 160 *     AT_Gipskarton_1.25cm,        !- Name
+ 1    * 161 *     Smooth,                      !- Roughness
+ 1    * 162 *     0.0125,                      !- Thickness {m}
+ 1    * 163 *     0.25,                        !- Conductivity {W/m-K}
+ 1    * 164 *     900,                         !- Density {kg/m3}
+ 1    * 165 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    * 166 *     0.9,                         !- Thermal Absorptance
+ 1    * 167 *     0.5,                         !- Solar Absorptance
+ 1    * 168 *     0.5;                         !- Visible Absorptance
+ 1    * 169 *
+ 1    * 170 * ! --- DACHEINDECKUNG ---
+ 1    * 171 * Material,
+ 1    * 172 *     AT_Tondachziegel,            !- Name
+ 1    * 173 *     MediumRough,                 !- Roughness
+ 1    * 174 *     0.02,                        !- Thickness {m}
+ 1    * 175 *     1.0,                         !- Conductivity {W/m-K}
+ 1    * 176 *     2000,                        !- Density {kg/m3}
+ 1    * 177 *     800,                         !- Specific Heat {J/kg-K}
+ 1    * 178 *     0.9,                         !- Thermal Absorptance
+ 1    * 179 *     0.8,                         !- Solar Absorptance
+ 1    * 180 *     0.8;                         !- Visible Absorptance
+ 1    * 181 *
+ 1    * 182 * Material,
+ 1    * 183 *     AT_Bitumen_Abdichtung,       !- Name
+ 1    * 184 *     Smooth,                      !- Roughness
+ 1    * 185 *     0.005,                       !- Thickness {m}
+ 1    * 186 *     0.17,                        !- Conductivity {W/m-K}
+ 1    * 187 *     1100,                        !- Density {kg/m3}
+ 1    * 188 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    * 189 *     0.9,                         !- Thermal Absorptance
+ 1    * 190 *     0.9,                         !- Solar Absorptance
+ 1    * 191 *     0.9;                         !- Visible Absorptance
+ 1    * 192 *
+ 1    * 193 * ! ========================================================================
+ 1    * 194 * ! LUFTSCHICHTEN & HOHLRÄUME
+ 1    * 195 * ! ========================================================================
+ 1    * 196 *
+ 1    * 197 * Material:AirGap,
+ 1    * 198 *     AT_Luftschicht_5cm,          !- Name
+ 1    * 199 *     0.18;                        !- Thermal Resistance {m2-K/W}
+ 1    * 200 *
+ 1    * 201 * Material:AirGap,
+ 1    * 202 *     AT_Luftschicht_10cm,         !- Name
+ 1    * 203 *     0.16;                        !- Thermal Resistance {m2-K/W}
+ 1    * 204 *
+ 1    * 205 * ! ========================================================================
+ 1    * 206 * ! KONSTRUKTIONEN - AUSSENWÄNDE
+ 1    * 207 * ! ========================================================================
+ 1    * 208 *
+ 1    * 209 * Construction,
+ 1    * 210 *     AT_Außenwand_WDVS_Standard,  !- Name
+ 1    * 211 *     AT_Kalkzementputz_2cm,       !- Outside Layer
+ 1    * 212 *     AT_Ziegel_25cm,              !- Layer 2
+ 1    * 213 *     AT_EPS_WDVS_16cm,            !- Layer 3
+ 1    * 214 *     AT_Gipskarton_1.25cm;        !- Layer 4
+ 1    * 215 *
+ 1    * 216 * Construction,
+ 1    * 217 *     AT_Außenwand_2schalig,       !- Name
+ 1    * 218 *     AT_Kalkzementputz_2cm,       !- Outside Layer
+ 1    * 219 *     AT_Ziegel_25cm,              !- Layer 2
+ 1    * 220 *     AT_Steinwolle_16cm,          !- Layer 3
+ 1    * 221 *     AT_Luftschicht_5cm,          !- Layer 4
+ 1    * 222 *     AT_Ziegel_25cm;              !- Layer 5
+ 1    * 223 *
+ 1    * 224 * Construction,
+ 1    * 225 *     AT_Außenwand_Holzbau,        !- Name
+ 1    * 226 *     AT_Kalkzementputz_2cm,       !- Outside Layer
+ 1    * 227 *     AT_OSB_Platte_1.5cm,         !- Layer 2
+ 1    * 228 *     AT_Steinwolle_16cm,          !- Layer 3
+ 1    * 229 *     AT_OSB_Platte_1.5cm,         !- Layer 4
+ 1    * 230 *     AT_Gipskarton_1.25cm;        !- Layer 5
+ 1    * 231 *
+ 1    * 232 * Construction,
+ 1    * 233 *     AT_Außenwand_Passivhaus,     !- Name
+ 1    * 234 *     AT_Kalkzementputz_2cm,       !- Outside Layer
+ 1    * 235 *     AT_Ziegel_38cm,              !- Layer 2
+ 1    * 236 *     AT_EPS_WDVS_16cm,            !- Layer 3
+ 1    * 237 *     AT_Steinwolle_16cm,          !- Layer 4
+ 1    * 238 *     AT_Gipskarton_1.25cm;        !- Layer 5
+ 1    * 239 *
+ 1    * 240 * ! ========================================================================
+ 1    * 241 * ! KONSTRUKTIONEN - INNENWÄNDE
+ 1    * 242 * ! ========================================================================
+ 1    * 243 *
+ 1    * 244 * Construction,
+ 1    * 245 *     AT_Innenwand_Ziegel_14cm,    !- Name
+ 1    * 246 *     AT_Gipskarton_1.25cm,        !- Layer 1
+ 1    * 247 *     AT_Ziegel_25cm,              !- Layer 2
+ 1    * 248 *     AT_Gipskarton_1.25cm;        !- Layer 3
+ 1    * 249 *
+ 1    * 250 * Construction,
+ 1    * 251 *     AT_Trennwand_Leichtbau,      !- Name
+ 1    * 252 *     AT_Gipskarton_1.25cm,        !- Layer 1
+ 1    * 253 *     AT_Steinwolle_16cm,          !- Layer 2
+ 1    * 254 *     AT_Gipskarton_1.25cm;        !- Layer 3
+ 1    * 255 *
+ 1    * 256 * ! ========================================================================
+ 1    * 257 * ! KONSTRUKTIONEN - DÄCHER
+ 1    * 258 * ! ========================================================================
+ 1    * 259 *
+ 1    * 260 * Construction,
+ 1    * 261 *     AT_Steildach_Standard,       !- Name
+ 1    * 262 *     AT_Tondachziegel,            !- Outside Layer
+ 1    * 263 *     AT_Luftschicht_5cm,          !- Layer 2
+ 1    * 264 *     AT_OSB_Platte_1.5cm,         !- Layer 3
+ 1    * 265 *     AT_Steinwolle_16cm,          !- Layer 4
+ 1    * 266 *     AT_Gipskarton_1.25cm;        !- Layer 5
+ 1    * 267 *
+ 1    * 268 * Construction,
+ 1    * 269 *     AT_Flachdach_Warmdach,       !- Name
+ 1    * 270 *     AT_Bitumen_Abdichtung,       !- Outside Layer
+ 1    * 271 *     AT_PUR_Dachdämmung_20cm,     !- Layer 2
+ 1    * 272 *     AT_Stahlbeton_20cm,          !- Layer 3
+ 1    * 273 *     AT_Gipskarton_1.25cm;        !- Layer 4
+ 1    * 274 *
+ 1    * 275 * Construction,
+ 1    * 276 *     AT_Dach_Passivhaus,          !- Name
+ 1    * 277 *     AT_Tondachziegel,            !- Outside Layer
+ 1    * 278 *     AT_Luftschicht_5cm,          !- Layer 2
+ 1    * 279 *     AT_OSB_Platte_1.5cm,         !- Layer 3
+ 1    * 280 *     AT_Zellulose_Dämmung_18cm,   !- Layer 4
+ 1    * 281 *     AT_Steinwolle_16cm,          !- Layer 5
+ 1    * 282 *     AT_Gipskarton_1.25cm;        !- Layer 6
+ 1    * 283 *
+ 1    * 284 * ! ========================================================================
+ 1    * 285 * ! KONSTRUKTIONEN - BÖDEN/DECKEN
+ 1    * 286 * ! ========================================================================
+ 1    * 287 *
+ 1    * 288 * Construction,
+ 1    * 289 *     AT_Bodenplatte_Standard,     !- Name
+ 1    * 290 *     AT_Stahlbeton_20cm,          !- Layer 1
+ 1    * 291 *     AT_EPS_WDVS_16cm,            !- Layer 2 (Perimeterdämmung)
+ 1    * 292 *     AT_Bitumen_Abdichtung;       !- Layer 3
+ 1    * 293 *
+ 1    * 294 * Construction,
+ 1    * 295 *     AT_Zwischendecke_Standard,   !- Name
+ 1    * 296 *     AT_Gipskarton_1.25cm,        !- Layer 1
+ 1    * 297 *     AT_Stahlbeton_20cm,          !- Layer 2
+ 1    * 298 *     AT_Gipskarton_1.25cm;        !- Layer 3
+ 1    * 299 *
+ 1    * 300 * Construction,
+ 1    * 301 *     AT_Oberste_Geschoßdecke,     !- Name
+ 1    * 302 *     AT_Gipskarton_1.25cm,        !- Layer 1
+ 1    * 303 *     AT_Stahlbeton_20cm,          !- Layer 2
+ 1    * 304 *     AT_Steinwolle_16cm;          !- Layer 3
+ 1    * 305 *
+ 1    * 306 * ! ========================================================================
+ 1    * 307 * ! FENSTER & TÜREN
+ 1    * 308 * ! ========================================================================
+ 1    * 309 *
+ 1    * 310 * ! Österreichische Standard-Fenster nach OIB Richtlinie 6
+ 1    * 311 *
+ 1    * 312 * WindowMaterial:SimpleGlazingSystem,
+ 1    * 313 *     AT_3fach_Verglasung,         !- Name
+ 1    * 314 *     0.8,                         !- U-Factor {W/m2-K}
+ 1    * 315 *     0.6,                         !- Solar Heat Gain Coefficient
+ 1    * 316 *     0.8;                         !- Visible Transmittance
+ 1    * 317 *
+ 1    * 318 * Construction,
+ 1    * 319 *     AT_Fenster_3fach_Standard,   !- Name
+ 1    * 320 *     AT_3fach_Verglasung;         !- Outside Layer
+ 1    * 321 *
+ 1    * 322 * WindowMaterial:SimpleGlazingSystem,
+ 1    * 323 *     AT_Passivhaus_Fenster,       !- Name
+ 1    * 324 *     0.6,                         !- U-Factor {W/m2-K}
+ 1    * 325 *     0.55,                        !- Solar Heat Gain Coefficient
+ 1    * 326 *     0.75;                        !- Visible Transmittance
+ 1    * 327 *
+ 1    * 328 * Construction,
+ 1    * 329 *     AT_Fenster_Passivhaus,       !- Name
+ 1    * 330 *     AT_Passivhaus_Fenster;       !- Outside Layer
+ 1    * 331 *
+ 1    * 332 * ! Türen
+ 1    * 333 * Construction,
+ 1    * 334 *     AT_Haustür_gedämmt,          !- Name
+ 1    * 335 *     AT_Massivholz_BSH_20cm,      !- Layer 1
+ 1    * 336 *     AT_Steinwolle_16cm,          !- Layer 2
+ 1    * 337 *     AT_Massivholz_BSH_20cm;      !- Layer 3
+ 1    * 338 *
+ 1    * 339 * Construction,
+ 1    * 340 *     AT_Innentür_Standard,        !- Name
+ 1    * 341 *     AT_Massivholz_BSH_20cm;      !- Layer 1
+ 1    * 342 *
+ 1    * 343 * ! ========================================================================
+ 1    * 344 * ! THERMISCHE BRÜCKEN & ZUSÄTZLICHE MATERIALIEN
+ 1    * 345 * ! ========================================================================
+ 1    * 346 *
+ 1    * 347 * Material,
+ 1    * 348 *     AT_Thermische_Trennung,      !- Name
+ 1    * 349 *     Smooth,                      !- Roughness
+ 1    * 350 *     0.05,                        !- Thickness {m}
+ 1    * 351 *     0.035,                       !- Conductivity {W/m-K}
+ 1    * 352 *     30,                          !- Density {kg/m3}
+ 1    * 353 *     1000,                        !- Specific Heat {J/kg-K}
+ 1    * 354 *     0.9,                         !- Thermal Absorptance
+ 1    * 355 *     0.4,                         !- Solar Absorptance
+ 1    * 356 *     0.4;                         !- Visible Absorptance
+ 1    * 357 *
+ 1    * 358 * ! ========================================================================
+ 1    * 359 * ! KOMMENTARE UND HINWEISE
+ 1    * 360 * ! ========================================================================
+ 1    * 361 *
+ 1    * 362 * ! Diese Bibliothek entspricht den österreichischen Baustandards und
+ 1    * 363 * ! der OIB-Richtlinie 6 (Energieeinsparung und Wärmeschutz).
+ 1    * 364 * !
+ 1    * 365 * ! U-Werte entsprechen typischen österreichischen Konstruktionen:
+ 1    * 366 * ! - Außenwand Standard: ca. 0.35 W/m²K
+ 1    * 367 * ! - Außenwand Passivhaus: ca. 0.15 W/m²K
+ 1    * 368 * ! - Dach Standard: ca. 0.20 W/m²K
+ 1    * 369 * ! - Fenster Standard: 0.8 W/m²K
+ 1    * 370 * ! - Fenster Passivhaus: 0.6 W/m²K
+ 1    * 371 * !
+ 1    * 372 * ! Verwendung:
+ 1    * 373 * ! 1. Diese Datei in den /resources/ Ordner kopieren
+ 1    * 374 * ! 2. In der Haupt-IDF mit "##include resources/AT_Baumaterialien.idf"
+ 1    * 375 * ! 3. Konstruktionsnamen in BuildingSurface:Detailed verwenden
+ 1    * 376 * !
+ 1    * 377 * ! Anpassungen:
+ 1    * 378 * ! - Dicken können projektspezifisch angepasst werden
+ 1    * 379 * ! - Neue Materialien nach gleichem Schema hinzufügen
+ 1    * 380 * ! - Farben über Solar/Visible Absorptance definieren
+ 1    * 381 * !
+ file : in.imf
+      *   8 *
+      *   9 * !-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
+      *  10 *
+      *  11 * SimulationControl,
+      *  12 *     No,                      !- Do Zone Sizing Calculation
+      *  13 *     No,                      !- Do System Sizing Calculation
+      *  14 *     No,                      !- Do Plant Sizing Calculation
+      *  15 *     No,                      !- Run Simulation for Sizing Periods
+      *  16 *     Yes,                     !- Run Simulation for Weather File Run Periods
+      *  17 *     No,                      !- Do HVAC Sizing Simulation for Sizing Periods
+      *  18 *     1;                       !- Maximum Number of HVAC Sizing Simulation Passes
+      *  19 *
+      *  20 * !-   ===========  ALL OBJECTS IN CLASS: BUILDING ===========
+      *  21 *
+      *  22 * Building,
+      *  23 *     None,                    !- Name
+      *  24 *     0,                       !- North Axis {deg}
+      *  25 *     Suburbs,                 !- Terrain
+      *  26 *     0.04,                    !- Loads Convergence Tolerance Value {W}
+      *  27 *     0.40,                    !- Temperature Convergence Tolerance Value {deltaC}
+      *  28 *     FullInteriorAndExterior, !- Solar Distribution
+      *  29 *     25,                      !- Maximum Number of Warmup Days
+      *  30 *     6;                       !- Minimum Number of Warmup Days
+      *  31 *
+      *  32 * !-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
+      *  33 *
+      *  34 * Timestep,
+      *  35 *     6;                       !- Number of Timesteps per Hour
+      *  36 *
+      *  37 * !-   ===========  ALL OBJECTS IN CLASS: SITE:LOCATION ===========
+      *  38 *
+      *  39 * Site:Location,
+      *  40 *     Salzburg.AP_SZ_AUT Design_Conditions,  !- Name
+      *  41 *     47.79,                   !- Latitude {deg}
+      *  42 *     13.00,                   !- Longitude {deg}
+      *  43 *     1.00,                    !- Time Zone {hr}
+      *  44 *     445.00;                  !- Elevation {m}
+      *  45 *
+      *  46 * !-   ===========  ALL OBJECTS IN CLASS: RUNPERIOD ===========
+      *  47 *
+      *  48 * RunPeriod,
+      *  49 *     Run Period 1,            !- Name
+      *  50 *     1,                       !- Begin Month
+      *  51 *     1,                       !- Begin Day of Month
+      *  52 *     ,                        !- Begin Year
+      *  53 *     12,                      !- End Month
+      *  54 *     31,                      !- End Day of Month
+      *  55 *     ,                        !- End Year
+      *  56 *     Tuesday,                 !- Day of Week for Start Day
+      *  57 *     Yes,                     !- Use Weather File Holidays and Special Days
+      *  58 *     Yes,                     !- Use Weather File Daylight Saving Period
+      *  59 *     No,                      !- Apply Weekend Holiday Rule
+      *  60 *     Yes,                     !- Use Weather File Rain Indicators
+      *  61 *     Yes;                     !- Use Weather File Snow Indicators
+      *  62 *
+      *  63 * !-   ===========  ALL OBJECTS IN CLASS: GLOBALGEOMETRYRULES ===========
+      *  64 *
+      *  65 * GlobalGeometryRules,
+      *  66 *     UpperLeftCorner,         !- Starting Vertex Position
+      *  67 *     CounterClockWise,        !- Vertex Entry Direction
+      *  68 *     World;                   !- Coordinate System
+      *  69 *
+      *  70 * !-   ===========  GEOMETRIE: EINFACHE EINZELZONE ===========
+      *  71 *
+      *  72 * Zone,
+      *  73 *     Wohnzimmer,              !- Name
+      *  74 *     0,                       !- Direction of Relative North {deg}
+      *  75 *     0,                       !- X Origin {m}
+      *  76 *     0,                       !- Y Origin {m}
+      *  77 *     0,                       !- Z Origin {m}
+      *  78 *     1,                       !- Type
+      *  79 *     1,                       !- Multiplier
+      *  80 *     autocalculate,           !- Ceiling Height {m}
+      *  81 *     autocalculate;           !- Volume {m3}
+      *  82 *
+      *  83 * ! Boden (Ground: Space Name leer + NoSun/NoWind + autocalculate)
+      *  84 * BuildingSurface:Detailed,
+      *  85 *     Wohnzimmer_Boden,        !- Name
+      *  86 *     Floor,                   !- Surface Type
+      *  87 *     AT_Zwischendecke_Standard, !- Construction Name
+      *  88 *     Wohnzimmer,              !- Zone Name
+      *  89 *     ,                        !- Space Name
+      *  90 *     Ground,                  !- Outside Boundary Condition
+      *  91 *     ,                        !- Outside Boundary Condition Object
+      *  92 *     NoSun,                   !- Sun Exposure
+      *  93 *     NoWind,                  !- Wind Exposure
+      *  94 *     autocalculate,           !- View Factor to Ground
+      *  95 *     4,                       !- Number of Vertices
+      *  96 *     0.0,0.0,0.0,             !- X,Y,Z ==> Vertex 1 {m}
+      *  97 *     0.0,6.0,0.0,             !- X,Y,Z ==> Vertex 2 {m}
+      *  98 *     5.0,6.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
+      *  99 *     5.0,0.0,0.0;             !- X,Y,Z ==> Vertex 4 {m}
+      * 100 *
+      * 101 * ! Dach oben (Outdoors: Roof)
+      * 102 * BuildingSurface:Detailed,
+      * 103 *     Wohnzimmer_Decke,        !- Name
+      * 104 *     Roof,                    !- Surface Type
+      * 105 *     AT_Zwischendecke_Standard, !- Construction Name
+      * 106 *     Wohnzimmer,              !- Zone Name
+      * 107 *     ,                        !- Space Name
+      * 108 *     Outdoors,                !- Outside Boundary Condition
+      * 109 *     ,                        !- Outside Boundary Condition Object
+      * 110 *     SunExposed,              !- Sun Exposure
+      * 111 *     WindExposed,             !- Wind Exposure
+      * 112 *     0,                       !- View Factor to Ground
+      * 113 *     4,                       !- Number of Vertices
+      * 114 *     0.0,0.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
+      * 115 *     5.0,0.0,2.7,             !- X,Y,Z ==> Vertex 2 {m}
+      * 116 *     5.0,6.0,2.7,             !- X,Y,Z ==> Vertex 3 {m}
+      * 117 *     0.0,6.0,2.7;             !- X,Y,Z ==> Vertex 4 {m}
+      * 118 *
+      * 119 * ! Süd-Wand
+      * 120 * BuildingSurface:Detailed,
+      * 121 *     Wohnzimmer_Wand_Sued,    !- Name
+      * 122 *     Wall,                    !- Surface Type
+      * 123 *     AT_Außenwand_WDVS_Standard, !- Construction Name
+      * 124 *     Wohnzimmer,              !- Zone Name
+      * 125 *     ,                        !- Space Name
+      * 126 *     Outdoors,                !- Outside Boundary Condition
+      * 127 *     ,                        !- Outside Boundary Condition Object
+      * 128 *     SunExposed,              !- Sun Exposure
+      * 129 *     WindExposed,             !- Wind Exposure
+      * 130 *     0.5,                     !- View Factor to Ground
+      * 131 *     4,                       !- Number of Vertices
+      * 132 *     0.0,0.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
+      * 133 *     0.0,0.0,0.0,             !- X,Y,Z ==> Vertex 2 {m}
+      * 134 *     5.0,0.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
+      * 135 *     5.0,0.0,2.7;             !- X,Y,Z ==> Vertex 4 {m}
+      * 136 *
+      * 137 * ! Nord-Wand
+      * 138 * BuildingSurface:Detailed,
+      * 139 *     Wohnzimmer_Wand_Nord,    !- Name
+      * 140 *     Wall,                    !- Surface Type
+      * 141 *     AT_Außenwand_WDVS_Standard, !- Construction Name
+      * 142 *     Wohnzimmer,              !- Zone Name
+      * 143 *     ,                        !- Space Name
+      * 144 *     Outdoors,                !- Outside Boundary Condition
+      * 145 *     ,                        !- Outside Boundary Condition Object
+      * 146 *     SunExposed,              !- Sun Exposure
+      * 147 *     WindExposed,             !- Wind Exposure
+      * 148 *     0.5,                     !- View Factor to Ground
+      * 149 *     4,                       !- Number of Vertices
+      * 150 *     5.0,6.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
+      * 151 *     0.0,6.0,2.7,             !- X,Y,Z ==> Vertex 2 {m}
+      * 152 *     0.0,6.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
+      * 153 *     5.0,6.0,0.0;             !- X,Y,Z ==> Vertex 4 {m}
+      * 154 *
+      * 155 * ! West-Wand
+      * 156 * BuildingSurface:Detailed,
+      * 157 *     Wohnzimmer_Wand_West,    !- Name
+      * 158 *     Wall,                    !- Surface Type
+      * 159 *     AT_Außenwand_WDVS_Standard, !- Construction Name
+      * 160 *     Wohnzimmer,              !- Zone Name
+      * 161 *     ,                        !- Space Name
+      * 162 *     Outdoors,                !- Outside Boundary Condition
+      * 163 *     ,                        !- Outside Boundary Condition Object
+      * 164 *     SunExposed,              !- Sun Exposure
+      * 165 *     WindExposed,             !- Wind Exposure
+      * 166 *     0.5,                     !- View Factor to Ground
+      * 167 *     4,                       !- Number of Vertices
+      * 168 *     0.0,0.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
+      * 169 *     0.0,6.0,2.7,             !- X,Y,Z ==> Vertex 2 {m}
+      * 170 *     0.0,6.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
+      * 171 *     0.0,0.0,0.0;             !- X,Y,Z ==> Vertex 4 {m}
+      * 172 *
+      * 173 * ! Ost-Wand
+      * 174 * BuildingSurface:Detailed,
+      * 175 *     Wohnzimmer_Wand_Ost,     !- Name
+      * 176 *     Wall,                    !- Surface Type
+      * 177 *     AT_Außenwand_WDVS_Standard, !- Construction Name
+      * 178 *     Wohnzimmer,              !- Zone Name
+      * 179 *     ,                        !- Space Name
+      * 180 *     Outdoors,                !- Outside Boundary Condition
+      * 181 *     ,                        !- Outside Boundary Condition Object
+      * 182 *     SunExposed,              !- Sun Exposure
+      * 183 *     WindExposed,             !- Wind Exposure
+      * 184 *     0.5,                     !- View Factor to Ground
+      * 185 *     4,                       !- Number of Vertices
+      * 186 *     5.0,0.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
+      * 187 *     5.0,0.0,0.0,             !- X,Y,Z ==> Vertex 2 {m}
+      * 188 *     5.0,6.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
+      * 189 *     5.0,6.0,2.7;             !- X,Y,Z ==> Vertex 4 {m}
+      * 190 *
+      * 191 * ! Süd-Fenster
+      * 192 * FenestrationSurface:Detailed,
+      * 193 *     Wohnzimmer_Fenster_Sued, !- Name
+      * 194 *     Window,                  !- Surface Type
+      * 195 *     AT_Fenster_3fach_Standard, !- Construction Name
+      * 196 *     Wohnzimmer_Wand_Sued,    !- Building Surface Name
+      * 197 *     ,                        !- Outside Boundary Condition Object
+      * 198 *     0.5,                     !- View Factor to Ground
+      * 199 *     ,                        !- Frame and Divider Name
+      * 200 *     1,                       !- Multiplier
+      * 201 *     4,                       !- Number of Vertices
+      * 202 *     0.5,0.0,2.2,             !- X,Y,Z ==> Vertex 1 {m}
+      * 203 *     0.5,0.0,0.8,             !- X,Y,Z ==> Vertex 2 {m}
+      * 204 *     4.5,0.0,0.8,             !- X,Y,Z ==> Vertex 3 {m}
+      * 205 *     4.5,0.0,2.2;             !- X,Y,Z ==> Vertex 4 {m}
+      * 206 *
+      * 207 * !-   ===========  OUTPUTS ===========
+      * 208 *
+      * 209 * Output:VariableDictionary,
+      * 210 *     Regular;                 !- Key Field
+      * 211 *
+      * 212 * Output:Table:SummaryReports,
+      * 213 *     AllSummary;              !- Report 1 Name
+      * 214 *
+      * 215 * OutputControl:Table:Style,
+      * 216 *     HTML;                    !- Column Separator
+      * 217 *
+      * 218 * Output:Variable,
+      * 219 *     *,                       !- Key Value
+      * 220 *     Site Outdoor Air Drybulb Temperature,  !- Variable Name
+      * 221 *     Timestep;                !- Reporting Frequency
+      * 222 *
+      * 223 * Output:Variable,
+      * 224 *     *,                       !- Key Value
+      * 225 *     Site Outdoor Air Wetbulb Temperature,  !- Variable Name
+      * 226 *     Timestep;                !- Reporting Frequency
+      * 227 *
+      * 228 * Output:Variable,
+      * 229 *     *,                       !- Key Value
+      * 230 *     Site Outdoor Air Dewpoint Temperature,  !- Variable Name
+      * 231 *     Timestep;                !- Reporting Frequency
+      * 232 *
+      * 233 * Output:Variable,
+      * 234 *     *,                       !- Key Value
+      * 235 *     Site Solar Azimuth Angle,  !- Variable Name
+      * 236 *     Timestep;                !- Reporting Frequency
+      * 237 *
+      * 238 * Output:Variable,
+      * 239 *     *,                       !- Key Value
+      * 240 *     Site Solar Altitude Angle,  !- Variable Name
+      * 241 *     Timestep;                !- Reporting Frequency
+      * 242 *
+      * 243 * Output:Variable,
+      * 244 *     *,                       !- Key Value
+      * 245 *     Site Direct Solar Radiation Rate per Area,  !- Variable Name
+      * 246 *     Timestep;                !- Reporting Frequency
+      * 247 *
+      * 248 * Output:Variable,
+      * 249 *     *,                       !- Key Value
+      * 250 *     Site Diffuse Solar Radiation Rate per Area,  !- Variable Name
+      * 251 *     Timestep;                !- Reporting Frequency
+      * 252 *
+      * 253 * Output:Variable,
+      * 254 *     Wohnzimmer,              !- Key Value
+      * 255 *     Zone Air Temperature,    !- Variable Name
+      * 256 *     Timestep;                !- Reporting Frequency
+      * 257 *
+      * 258 * Output:Meter:MeterFileOnly,
+      * 259 *     Electricity:Facility,    !- Name (beliebiger Standard-Meter)
+      * 260 *     Hourly;                  !- Reporting Frequency
+
+
+ ****************************** EPMacro processing terminated.

@@ -1,0 +1,45 @@
+Shadowing Combinations
+..Solar Distribution=FullInteriorAndExterior
+..In the following, only the first 10 reference surfaces will be shown.
+..But all surfaces are used in the calculations.
+==================================
+Surface=WOHNZIMMER_WAND_SUED is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=5
+...Surface=WOHNZIMMER_WAND_NORD
+...Surface=WOHNZIMMER_WAND_WEST
+...Surface=WOHNZIMMER_WAND_OST
+...Surface=WOHNZIMMER_BODEN
+...Surface=WOHNZIMMER_DECKE
+Number of receiving sub surfaces=1
+....Surface=WOHNZIMMER_FENSTER_SUED
+==================================
+Surface=WOHNZIMMER_FENSTER_SUED is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=WOHNZIMMER_WAND_NORD is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=WOHNZIMMER_WAND_WEST is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=WOHNZIMMER_WAND_OST is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=WOHNZIMMER_BODEN is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=WOHNZIMMER_DECKE is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0

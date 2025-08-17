@@ -1,0 +1,429 @@
+! ========================================================================
+! ÖSTERREICHISCHE ZONEN TEMPLATES
+! Für EnergyPlus Simulationen - Wiederverwendbare Zone-Ressourcen
+! Modularer Aufbau für verschiedene Raumtypen
+! ========================================================================
+
+! ========================================================================
+! TEMPLATE: WOHNZIMMER (Standard österreichisches EFH)
+! ========================================================================
+
+Zone,
+    AT_Zone_Wohnzimmer,      !- Name
+    0,                       !- Direction of Relative North {deg}
+    0,                       !- X Origin {m}
+    0,                       !- Y Origin {m}
+    0,                       !- Z Origin {m}
+    1,                       !- Type
+    1,                       !- Multiplier
+    autocalculate,           !- Ceiling Height {m}
+    autocalculate;           !- Volume {m3}
+
+! Wohnzimmer Grundfläche (5m x 6m = 30m²)
+BuildingSurface:Detailed,
+    AT_WZ_Boden,             !- Name
+    Floor,                   !- Surface Type
+    AT_Zwischendecke_Standard, !- Construction Name
+    AT_Zone_Wohnzimmer,      !- Zone Name
+    OtherSideCoefficients,   !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    1.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0,0,0,                   !- X,Y,Z ==> Vertex 1 {m}
+    0,6,0,                   !- X,Y,Z ==> Vertex 2 {m}
+    5,6,0,                   !- X,Y,Z ==> Vertex 3 {m}
+    5,0,0;                   !- X,Y,Z ==> Vertex 4 {m}
+
+! Wohnzimmer Decke
+BuildingSurface:Detailed,
+    AT_WZ_Decke,             !- Name
+    Ceiling,                 !- Surface Type
+    AT_Zwischendecke_Standard, !- Construction Name
+    AT_Zone_Wohnzimmer,      !- Zone Name
+    OtherSideCoefficients,   !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0,                       !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0,0,2.7,                 !- X,Y,Z ==> Vertex 1 {m}
+    5,0,2.7,                 !- X,Y,Z ==> Vertex 2 {m}
+    5,6,2.7,                 !- X,Y,Z ==> Vertex 3 {m}
+    0,6,2.7;                 !- X,Y,Z ==> Vertex 4 {m}
+
+! Wohnzimmer Außenwand Süd (mit Fenster)
+BuildingSurface:Detailed,
+    AT_WZ_Wand_Sued,         !- Name
+    Wall,                    !- Surface Type
+    AT_Außenwand_WDVS_Standard, !- Construction Name
+    AT_Zone_Wohnzimmer,      !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    0.5,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0,0,2.7,                 !- X,Y,Z ==> Vertex 1 {m}
+    0,0,0,                   !- X,Y,Z ==> Vertex 2 {m}
+    5,0,0,                   !- X,Y,Z ==> Vertex 3 {m}
+    5,0,2.7;                 !- X,Y,Z ==> Vertex 4 {m}
+
+! Wohnzimmer Außenwand West
+BuildingSurface:Detailed,
+    AT_WZ_Wand_West,         !- Name
+    Wall,                    !- Surface Type
+    AT_Außenwand_WDVS_Standard, !- Construction Name
+    AT_Zone_Wohnzimmer,      !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    0.5,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0,0,2.7,                 !- X,Y,Z ==> Vertex 1 {m}
+    0,6,2.7,                 !- X,Y,Z ==> Vertex 2 {m}
+    0,6,0,                   !- X,Y,Z ==> Vertex 3 {m}
+    0,0,0;                   !- X,Y,Z ==> Vertex 4 {m}
+
+! Wohnzimmer Innenwand Nord (zu Küche)
+BuildingSurface:Detailed,
+    AT_WZ_Wand_Nord,         !- Name
+    Wall,                    !- Surface Type
+    AT_Innenwand_Ziegel_14cm, !- Construction Name
+    AT_Zone_Wohnzimmer,      !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    AT_KU_Wand_Sued,         !- Outside Boundary Condition Object (wird später definiert)
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0,                       !- View Factor to Ground
+    4,                       !- Number of Vertices
+    5,6,2.7,                 !- X,Y,Z ==> Vertex 1 {m}
+    0,6,2.7,                 !- X,Y,Z ==> Vertex 2 {m}
+    0,6,0,                   !- X,Y,Z ==> Vertex 3 {m}
+    5,6,0;                   !- X,Y,Z ==> Vertex 4 {m}
+
+! Wohnzimmer Innenwand Ost (zu Flur)
+BuildingSurface:Detailed,
+    AT_WZ_Wand_Ost,          !- Name
+    Wall,                    !- Surface Type
+    AT_Innenwand_Ziegel_14cm, !- Construction Name
+    AT_Zone_Wohnzimmer,      !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    AT_FL_Wand_West,         !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0,                       !- View Factor to Ground
+    4,                       !- Number of Vertices
+    5,0,2.7,                 !- X,Y,Z ==> Vertex 1 {m}
+    5,0,0,                   !- X,Y,Z ==> Vertex 2 {m}
+    5,6,0,                   !- X,Y,Z ==> Vertex 3 {m}
+    5,6,2.7;                 !- X,Y,Z ==> Vertex 4 {m}
+
+! Wohnzimmer Südfenster (große Fensterfront)
+FenestrationSurface:Detailed,
+    AT_WZ_Fenster_Sued,      !- Name
+    Window,                  !- Surface Type
+    AT_Fenster_3fach_Standard, !- Construction Name
+    AT_WZ_Wand_Sued,         !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    0.5,                     !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    0.5,0,2.2,               !- X,Y,Z ==> Vertex 1 {m}
+    0.5,0,0.8,               !- X,Y,Z ==> Vertex 2 {m}
+    4.5,0,0.8,               !- X,Y,Z ==> Vertex 3 {m}
+    4.5,0,2.2;               !- X,Y,Z ==> Vertex 4 {m}
+
+! ========================================================================
+! TEMPLATE: KÜCHE (österreichischer Standard)
+! ========================================================================
+
+Zone,
+    AT_Zone_Kueche,          !- Name
+    0,                       !- Direction of Relative North {deg}
+    0,                       !- X Origin {m}
+    7,                       !- Y Origin {m}
+    0,                       !- Z Origin {m}
+    1,                       !- Type
+    1,                       !- Multiplier
+    autocalculate,           !- Ceiling Height {m}
+    autocalculate;           !- Volume {m3}
+
+! Küche Grundfläche (4m x 3m = 12m²)
+BuildingSurface:Detailed,
+    AT_KU_Boden,             !- Name
+    Floor,                   !- Surface Type
+    AT_Zwischendecke_Standard, !- Construction Name
+    AT_Zone_Kueche,          !- Zone Name
+    OtherSideCoefficients,   !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    1.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0,7,0,                   !- X,Y,Z ==> Vertex 1 {m}
+    0,10,0,                  !- X,Y,Z ==> Vertex 2 {m}
+    4,10,0,                  !- X,Y,Z ==> Vertex 3 {m}
+    4,7,0;                   !- X,Y,Z ==> Vertex 4 {m}
+
+! Küche Decke
+BuildingSurface:Detailed,
+    AT_KU_Decke,             !- Name
+    Ceiling,                 !- Surface Type
+    AT_Zwischendecke_Standard, !- Construction Name
+    AT_Zone_Kueche,          !- Zone Name
+    OtherSideCoefficients,   !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0,                       !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0,7,2.7,                 !- X,Y,Z ==> Vertex 1 {m}
+    4,7,2.7,                 !- X,Y,Z ==> Vertex 2 {m}
+    4,10,2.7,                !- X,Y,Z ==> Vertex 3 {m}
+    0,10,2.7;                !- X,Y,Z ==> Vertex 4 {m}
+
+! Küche Außenwand Nord (mit Fenster)
+BuildingSurface:Detailed,
+    AT_KU_Wand_Nord,         !- Name
+    Wall,                    !- Surface Type
+    AT_Außenwand_WDVS_Standard, !- Construction Name
+    AT_Zone_Kueche,          !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    0.5,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    4,10,2.7,                !- X,Y,Z ==> Vertex 1 {m}
+    4,10,0,                  !- X,Y,Z ==> Vertex 2 {m}
+    0,10,0,                  !- X,Y,Z ==> Vertex 3 {m}
+    0,10,2.7;                !- X,Y,Z ==> Vertex 4 {m}
+
+! Küche Innenwand Süd (zu Wohnzimmer)
+BuildingSurface:Detailed,
+    AT_KU_Wand_Sued,         !- Name
+    Wall,                    !- Surface Type
+    AT_Innenwand_Ziegel_14cm, !- Construction Name
+    AT_Zone_Kueche,          !- Zone Name
+    Surface,                 !- Outside Boundary Condition
+    AT_WZ_Wand_Nord,         !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    0,                       !- View Factor to Ground
+    4,                       !- Number of Vertices
+    0,7,2.7,                 !- X,Y,Z ==> Vertex 1 {m}
+    4,7,2.7,                 !- X,Y,Z ==> Vertex 2 {m}
+    4,7,0,                   !- X,Y,Z ==> Vertex 3 {m}
+    0,7,0;                   !- X,Y,Z ==> Vertex 4 {m}
+
+! Küche Nordfenster
+FenestrationSurface:Detailed,
+    AT_KU_Fenster_Nord,      !- Name
+    Window,                  !- Surface Type
+    AT_Fenster_3fach_Standard, !- Construction Name
+    AT_KU_Wand_Nord,         !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    0.5,                     !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    3.2,10,2.2,              !- X,Y,Z ==> Vertex 1 {m}
+    3.2,10,0.8,              !- X,Y,Z ==> Vertex 2 {m}
+    0.8,10,0.8,              !- X,Y,Z ==> Vertex 3 {m}
+    0.8,10,2.2;              !- X,Y,Z ==> Vertex 4 {m}
+
+! ========================================================================
+! TEMPLATE: SCHLAFZIMMER
+! ========================================================================
+
+Zone,
+    AT_Zone_Schlafzimmer,    !- Name
+    0,                       !- Direction of Relative North {deg}
+    6,                       !- X Origin {m}
+    0,                       !- Y Origin {m}
+    0,                       !- Z Origin {m}
+    1,                       !- Type
+    1,                       !- Multiplier
+    autocalculate,           !- Ceiling Height {m}
+    autocalculate;           !- Volume {m3}
+
+! Schlafzimmer Grundfläche (4m x 4m = 16m²)
+BuildingSurface:Detailed,
+    AT_SZ_Boden,             !- Name
+    Floor,                   !- Surface Type
+    AT_Zwischendecke_Standard, !- Construction Name
+    AT_Zone_Schlafzimmer,    !- Zone Name
+    OtherSideCoefficients,   !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    1.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    6,0,0,                   !- X,Y,Z ==> Vertex 1 {m}
+    6,4,0,                   !- X,Y,Z ==> Vertex 2 {m}
+    10,4,0,                  !- X,Y,Z ==> Vertex 3 {m}
+    10,0,0;                  !- X,Y,Z ==> Vertex 4 {m}
+
+! Schlafzimmer Außenwand Süd
+BuildingSurface:Detailed,
+    AT_SZ_Wand_Sued,         !- Name
+    Wall,                    !- Surface Type
+    AT_Außenwand_WDVS_Standard, !- Construction Name
+    AT_Zone_Schlafzimmer,    !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    0.5,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    6,0,2.7,                 !- X,Y,Z ==> Vertex 1 {m}
+    6,0,0,                   !- X,Y,Z ==> Vertex 2 {m}
+    10,0,0,                  !- X,Y,Z ==> Vertex 3 {m}
+    10,0,2.7;                !- X,Y,Z ==> Vertex 4 {m}
+
+! Schlafzimmer Außenwand Ost
+BuildingSurface:Detailed,
+    AT_SZ_Wand_Ost,          !- Name
+    Wall,                    !- Surface Type
+    AT_Außenwand_WDVS_Standard, !- Construction Name
+    AT_Zone_Schlafzimmer,    !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    0.5,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    10,0,2.7,                !- X,Y,Z ==> Vertex 1 {m}
+    10,4,2.7,                !- X,Y,Z ==> Vertex 2 {m}
+    10,4,0,                  !- X,Y,Z ==> Vertex 3 {m}
+    10,0,0;                  !- X,Y,Z ==> Vertex 4 {m}
+
+! Schlafzimmer Südfenster
+FenestrationSurface:Detailed,
+    AT_SZ_Fenster_Sued,      !- Name
+    Window,                  !- Surface Type
+    AT_Fenster_3fach_Standard, !- Construction Name
+    AT_SZ_Wand_Sued,         !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    0.5,                     !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    7.5,0,2.2,               !- X,Y,Z ==> Vertex 1 {m}
+    7.5,0,0.8,               !- X,Y,Z ==> Vertex 2 {m}
+    8.5,0,0.8,               !- X,Y,Z ==> Vertex 3 {m}
+    8.5,0,2.2;               !- X,Y,Z ==> Vertex 4 {m}
+
+! ========================================================================
+! TEMPLATE: BADEZIMMER
+! ========================================================================
+
+Zone,
+    AT_Zone_Badezimmer,      !- Name
+    0,                       !- Direction of Relative North {deg}
+    4,                       !- X Origin {m}
+    7,                       !- Y Origin {m}
+    0,                       !- Z Origin {m}
+    1,                       !- Type
+    1,                       !- Multiplier
+    autocalculate,           !- Ceiling Height {m}
+    autocalculate;           !- Volume {m3}
+
+! Badezimmer Grundfläche (2.5m x 3m = 7.5m²)
+BuildingSurface:Detailed,
+    AT_BAD_Boden,            !- Name
+    Floor,                   !- Surface Type
+    AT_Zwischendecke_Standard, !- Construction Name
+    AT_Zone_Badezimmer,      !- Zone Name
+    OtherSideCoefficients,   !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    NoSun,                   !- Sun Exposure
+    NoWind,                  !- Wind Exposure
+    1.0,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    4,7,0,                   !- X,Y,Z ==> Vertex 1 {m}
+    4,10,0,                  !- X,Y,Z ==> Vertex 2 {m}
+    6.5,10,0,                !- X,Y,Z ==> Vertex 3 {m}
+    6.5,7,0;                 !- X,Y,Z ==> Vertex 4 {m}
+
+! Badezimmer Außenwand Nord (mit kleinem Fenster)
+BuildingSurface:Detailed,
+    AT_BAD_Wand_Nord,        !- Name
+    Wall,                    !- Surface Type
+    AT_Außenwand_WDVS_Standard, !- Construction Name
+    AT_Zone_Badezimmer,      !- Zone Name
+    Outdoors,                !- Outside Boundary Condition
+    ,                        !- Outside Boundary Condition Object
+    SunExposed,              !- Sun Exposure
+    WindExposed,             !- Wind Exposure
+    0.5,                     !- View Factor to Ground
+    4,                       !- Number of Vertices
+    6.5,10,2.7,              !- X,Y,Z ==> Vertex 1 {m}
+    6.5,10,0,                !- X,Y,Z ==> Vertex 2 {m}
+    4,10,0,                  !- X,Y,Z ==> Vertex 3 {m}
+    4,10,2.7;                !- X,Y,Z ==> Vertex 4 {m}
+
+! Badezimmer kleines Nordfenster (Milchglas)
+FenestrationSurface:Detailed,
+    AT_BAD_Fenster_Nord,     !- Name
+    Window,                  !- Surface Type
+    AT_Fenster_3fach_Standard, !- Construction Name
+    AT_BAD_Wand_Nord,        !- Building Surface Name
+    ,                        !- Outside Boundary Condition Object
+    0.5,                     !- View Factor to Ground
+    ,                        !- Frame and Divider Name
+    1,                       !- Multiplier
+    4,                       !- Number of Vertices
+    5.8,10,2.0,              !- X,Y,Z ==> Vertex 1 {m}
+    5.8,10,1.2,              !- X,Y,Z ==> Vertex 2 {m}
+    4.7,10,1.2,              !- X,Y,Z ==> Vertex 3 {m}
+    4.7,10,2.0;              !- X,Y,Z ==> Vertex 4 {m}
+
+! ========================================================================
+! KOMMENTARE & VERWENDUNGSHINWEISE
+! ========================================================================
+
+! Diese Zonen-Templates stellen typische österreichische Raumgrößen dar:
+!
+! WOHNZIMMER (30m²):
+! - Große Südverglasung für Solargewinne
+! - Offene Verbindung zur Küche möglich
+! - Standardraumhöhe 2.70m
+!
+! KÜCHE (12m²):
+! - Nordfenster über Arbeitsplatz
+! - Separate Zone für Feuchte-/Geruchsregulierung
+! - Verbindung zum Wohnbereich
+!
+! SCHLAFZIMMER (16m²):
+! - Südausrichtung mit moderater Verglasung
+! - Separate Zone für niedrigere Heiztemperaturen
+! - Ruhige Lage
+!
+! BADEZIMMER (7.5m²):
+! - Kleines Nordfenster für Tageslicht/Lüftung
+! - Feuchtraum-geeignete Konstruktionen
+! - Kompakte Größe nach österreichischem Standard
+!
+! VERWENDUNG:
+! 1. Diese Datei als "AT_Zones_Templates.idf" speichern
+! 2. In Hauptprojekt mit ##include einbinden
+! 3. Koordinaten an Gebäudegrundriss anpassen
+! 4. Surface-Verbindungen zwischen Zonen prüfen
+! 5. HVAC/Beleuchtung/People-Objekte ergänzen
+!
+! ANPASSUNG:
+! - X/Y-Origin je Zone für Positionierung ändern
+! - Abmessungen in BuildingSurface:Detailed anpassen
+! - Wandverbindungen über "Outside Boundary Condition Object"
+! - Konstruktionen projektspezifisch austauschen
+!
+! ERWEITERUNGEN:
+! - Weitere Zimmer nach gleichem Schema
+! - Obergeschoss mit Z-Offset
+! - Keller/Dachgeschoss als separate Zonen
+! - Garagen/Nebenräume
