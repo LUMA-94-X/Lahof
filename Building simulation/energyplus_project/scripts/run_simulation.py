@@ -97,7 +97,7 @@ def run_simulation(idf_path, epw_path, output_dir):
 
 if __name__ == "__main__":
     base = Path(__file__).resolve().parent
-    idf = base / "../idf/base_model.idf"
+    idf = base / "../idf/base_model_with_zone.idf"
     epw = base / "../weather/AUT_SZ_Salzburg.AP.111500_TMYx.2009-2023.epw"
     out = base / "../output"
     run_simulation(idf, epw, out)
