@@ -13,7 +13,7 @@ energyplus-project/
 ├── idf/                  # Enthält die .idf-Dateien (Gebäudemodelle)
 │   │── base_model.idf
 │   │── base_model_with_zone.idf
-│   └── base_model_lahof.idf
+│   └── base_model_lahof.idf  # Hauptmodell des Projektes
 │
 ├── weather/              # Wetterdaten (.epw) für die Simulation
 │   └── AUT_SZ_Salzburg.AP.111500_TMYx.2009-2023.epw
@@ -25,6 +25,8 @@ energyplus-project/
 │   └── resource_manager.py
 │
 ├── resources/            # Eigene Bibliotheken: Materialien, Konstruktionen etc.
+│   │── bindings
+│   │   └──INTERNAL_LOADS_BINDING.idf
 │   │── hvac
 │   │── internal_loads
 │   │   └──LAHOF_Internal_loads.idf
