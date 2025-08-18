@@ -11,23 +11,30 @@ Dieses Projekt bietet eine strukturierte Arbeitsumgebung für die Simulation mit
 energyplus-project/
 │
 ├── idf/                  # Enthält die .idf-Dateien (Gebäudemodelle)
-│   └── base_model.idf
+│   │── base_model.idf
+│   │── base_model_with_zone.idf
+│   └── base_model_lahof.idf
 │
 ├── weather/              # Wetterdaten (.epw) für die Simulation
-│   └── AUT_Vienna.epw
+│   └── AUT_SZ_Salzburg.AP.111500_TMYx.2009-2023.epw
 │
 ├── output/               # Ergebnisse und Logs nach der Simulation
 │
 ├── scripts/              # Python-Skripte zur Steuerung von EnergyPlus
-│   └── run_simulation.py
+│   │── run_simulation.py
+│   └── resource_manager.py
 │
 ├── resources/            # Eigene Bibliotheken: Materialien, Konstruktionen etc.
-│   └── my_library.idf
+│   │── hvac
+│   │── internal_loads
+│   │   └──LAHOF_Internal_loads.idf
+│   │── materials
+│   │   └──LAHOF_Konstruktionen.idf
+│   │── schedules
+│   │   └──LAHOF_Schedules.idf
+│   └── zones
+│       └──LAHOF_H4_Kinderwagenraum.idf
 │
-├── .vscode/              # VS Code Tasks zur automatisierten Ausführung
-│   └── tasks.json
-│
-├── requirements.txt      # Python-Abhängigkeiten (z. B. pyenergyplus)
 └── README.md             # Diese Dokumentation
 ```
 

@@ -68,7 +68,7 @@ def run_simulation(idf_path, epw_path, output_dir):
     print(f"OUT : {out}")
 
     # -w weather, -d output dir, -r => run ReadVarsESO to generate eplusout.csv
-    args = ["-m", "-x", "-w", str(epw), "-d", str(out), "-r", str(idf)]
+    args = ["--epmacro", "-x", "-w", str(epw), "-d", str(out), "-r", str(idf)]
     ok = api.runtime.run_energyplus(state, args)
     print("Simulation complete." if ok else "Simulation finished with errors (see eplusout.err).")
 
@@ -97,7 +97,7 @@ def run_simulation(idf_path, epw_path, output_dir):
 
 if __name__ == "__main__":
     base = Path(__file__).resolve().parent
-    idf = base / "../idf/base_model_with_zone.idf"
+    idf = base / "../idf/base_model_lahof.idf"
     epw = base / "../weather/AUT_SZ_Salzburg.AP.111500_TMYx.2009-2023.epw"
     out = base / "../output"
     run_simulation(idf, epw, out)

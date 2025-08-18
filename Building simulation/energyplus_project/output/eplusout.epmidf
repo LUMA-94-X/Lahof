@@ -1,340 +1,1074 @@
-!
+! ========================================================================
+! BASE MODEL - LAHOF Haus 4
+! Nutzt EP-Macro-Includes. Beim Start: energyplus --epmacro ...
+! ========================================================================
 Version,
     25.1;                    !- Version Identifier
 !-   ===========  Used Resources ===========
 ! ========================================================================
-! ÖSTERREICHISCHE BAUMATERIALIEN & KONSTRUKTIONEN BIBLIOTHEK
-! Für EnergyPlus Simulationen - Wiederverwendbare Ressourcen
-! Erstellt nach OIB (Österreichisches Institut für Bautechnik) Standards
+! LAHOF – Projektaufbauten (Materialien & Konstruktionen) für EnergyPlus
+! Schichtreihenfolge in Constructions: Außen -> Innen (Decken: unten -> oben)
 ! ========================================================================
-! ========================================================================
-! MATERIALIEN - GRUNDSTOFFE
-! ========================================================================
-! --- MAUERWERK ---
+! -------------------------
+! MATERIALIEN – BASIS/ALLGEMEIN
+! -------------------------
 Material,
-    AT_Ziegel_25cm,              !- Name
-    MediumRough,                 !- Roughness
-    0.25,                        !- Thickness {m}
-    0.45,                        !- Conductivity {W/m-K}
-    1800,                        !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.78,                        !- Solar Absorptance
-    0.78;                        !- Visible Absorptance
+  LAHOF_Sauberkeitsschicht_7cm,
+  MediumRough,
+  0.07,
+  1.40,
+  2000,
+  1000,
+  0.90,
+  0.65,
+  0.65 ;
 Material,
-    AT_Ziegel_38cm,              !- Name
-    MediumRough,                 !- Roughness
-    0.38,                        !- Thickness {m}
-    0.45,                        !- Conductivity {W/m-K}
-    1800,                        !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.78,                        !- Solar Absorptance
-    0.78;                        !- Visible Absorptance
+  LAHOF_XPS_035_10cm,
+  Rough,
+  0.10,
+  0.035,
+  35,
+  1400,
+  0.90,
+  0.40,
+  0.40 ;
 Material,
-    AT_Porenbeton_20cm,          !- Name
-    MediumRough,                 !- Roughness
-    0.20,                        !- Thickness {m}
-    0.12,                        !- Conductivity {W/m-K}
-    500,                         !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.65,                        !- Solar Absorptance
-    0.65;                        !- Visible Absorptance
+  LAHOF_PE_Folie_0p2mm,
+  Smooth,
+  0.0002,
+  0.33,
+  950,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
 Material,
-    AT_Betonstein_20cm,          !- Name
-    MediumRough,                 !- Roughness
-    0.20,                        !- Thickness {m}
-    1.4,                         !- Conductivity {W/m-K}
-    2000,                        !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.7,                         !- Solar Absorptance
-    0.7;                         !- Visible Absorptance
-! --- DÄMMSTOFFE ---
+  LAHOF_Stahlbeton_30cm,
+  MediumRough,
+  0.30,
+  2.30,
+  2300,
+  1000,
+  0.90,
+  0.65,
+  0.65 ;
 Material,
-    AT_Steinwolle_16cm,          !- Name
-    Rough,                       !- Roughness
-    0.16,                        !- Thickness {m}
-    0.035,                       !- Conductivity {W/m-K}
-    150,                         !- Density {kg/m3}
-    1030,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.4,                         !- Solar Absorptance
-    0.4;                         !- Visible Absorptance
+  LAHOF_Epoxidharz_Beschichtung_0p5cm,
+  Smooth,
+  0.005,
+  0.20,
+  1200,
+  1200,
+  0.90,
+  0.50,
+  0.50 ;
 Material,
-    AT_EPS_WDVS_16cm,            !- Name
-    Rough,                       !- Roughness
-    0.16,                        !- Thickness {m}
-    0.035,                       !- Conductivity {W/m-K}
-    20,                          !- Density {kg/m3}
-    1450,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.4,                         !- Solar Absorptance
-    0.4;                         !- Visible Absorptance
+  LAHOF_Noppenmatte_Grundmauerschutz_1p5cm,
+  MediumRough,
+  0.015,
+  0.40,
+  920,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
 Material,
-    AT_PUR_Dachdämmung_20cm,     !- Name
-    Rough,                       !- Roughness
-    0.20,                        !- Thickness {m}
-    0.025,                       !- Conductivity {W/m-K}
-    40,                          !- Density {kg/m3}
-    1400,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.4,                         !- Solar Absorptance
-    0.4;                         !- Visible Absorptance
+  LAHOF_Bauwerksabdichtung_OENORM_B3692_1cm,
+  Smooth,
+  0.01,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90 ;
 Material,
-    AT_Zellulose_Dämmung_18cm,   !- Name
-    Rough,                       !- Roughness
-    0.18,                        !- Thickness {m}
-    0.040,                       !- Conductivity {W/m-K}
-    55,                          !- Density {kg/m3}
-    2100,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.4,                         !- Solar Absorptance
-    0.4;                         !- Visible Absorptance
-! --- BETON & STAHLBETON ---
+  LAHOF_Stahlbeton_WU_30cm,
+  MediumRough,
+  0.30,
+  2.30,
+  2300,
+  1000,
+  0.90,
+  0.65,
+  0.65 ;
 Material,
-    AT_Stahlbeton_20cm,          !- Name
-    MediumRough,                 !- Roughness
-    0.20,                        !- Thickness {m}
-    2.3,                         !- Conductivity {W/m-K}
-    2300,                        !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.65,                        !- Solar Absorptance
-    0.65;                        !- Visible Absorptance
+  LAHOF_Tektalan_A2_SD100_10cm,
+  MediumRough,
+  0.10,
+  0.085,
+  350,
+  1400,
+  0.90,
+  0.60,
+  0.60 ;
 Material,
-    AT_Leichtbeton_20cm,         !- Name
-    MediumRough,                 !- Roughness
-    0.20,                        !- Thickness {m}
-    0.8,                         !- Conductivity {W/m-K}
-    1800,                        !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.65,                        !- Solar Absorptance
-    0.65;                        !- Visible Absorptance
-! --- HOLZ & HOLZWERKSTOFFE ---
+  LAHOF_Stahlbeton_20cm,
+  MediumRough,
+  0.20,
+  2.30,
+  2300,
+  1000,
+  0.90,
+  0.65,
+  0.65 ;
 Material,
-    AT_Massivholz_BSH_20cm,      !- Name
-    MediumSmooth,                !- Roughness
-    0.20,                        !- Thickness {m}
-    0.13,                        !- Conductivity {W/m-K}
-    500,                         !- Density {kg/m3}
-    1600,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.78,                        !- Solar Absorptance
-    0.78;                        !- Visible Absorptance
+  LAHOF_Duennputzspachtel_0p2cm,
+  Smooth,
+  0.002,
+  0.87,
+  1800,
+  1000,
+  0.90,
+  0.50,
+  0.50 ;
 Material,
-    AT_OSB_Platte_1.5cm,         !- Name
-    MediumSmooth,                !- Roughness
-    0.015,                       !- Thickness {m}
-    0.13,                        !- Conductivity {W/m-K}
-    650,                         !- Density {kg/m3}
-    1700,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.78,                        !- Solar Absorptance
-    0.78;                        !- Visible Absorptance
-! --- PUTZ & BESCHICHTUNGEN ---
+  LAHOF_Holzwolle_Steinwolle_10cm,
+  MediumRough,
+  0.10,
+  0.09,
+  350,
+  1400,
+  0.90,
+  0.60,
+  0.60 ;
 Material,
-    AT_Kalkzementputz_2cm,       !- Name
-    Rough,                       !- Roughness
-    0.02,                        !- Thickness {m}
-    0.87,                        !- Conductivity {W/m-K}
-    1800,                        !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.5,                         !- Solar Absorptance
-    0.5;                         !- Visible Absorptance
+  LAHOF_Holzwolle_Steinwolle_20cm,
+  MediumRough,
+  0.20,
+  0.09,
+  350,
+  1400,
+  0.90,
+  0.60,
+  0.60 ;
 Material,
-    AT_Gipskarton_1.25cm,        !- Name
-    Smooth,                      !- Roughness
-    0.0125,                      !- Thickness {m}
-    0.25,                        !- Conductivity {W/m-K}
-    900,                         !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.5,                         !- Solar Absorptance
-    0.5;                         !- Visible Absorptance
-! --- DACHEINDECKUNG ---
+  LAHOF_Bodenbelag_1cm,
+  MediumSmooth,
+  0.01,
+  0.20,
+  1200,
+  1200,
+  0.90,
+  0.50,
+  0.50 ;
 Material,
-    AT_Tondachziegel,            !- Name
-    MediumRough,                 !- Roughness
-    0.02,                        !- Thickness {m}
-    1.0,                         !- Conductivity {W/m-K}
-    2000,                        !- Density {kg/m3}
-    800,                         !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.8,                         !- Solar Absorptance
-    0.8;                         !- Visible Absorptance
+  LAHOF_Heizestrich_E225_7p5cm,
+  MediumRough,
+  0.075,
+  1.40,
+  2000,
+  1000,
+  0.90,
+  0.65,
+  0.65 ;
 Material,
-    AT_Bitumen_Abdichtung,       !- Name
-    Smooth,                      !- Roughness
-    0.005,                       !- Thickness {m}
-    0.17,                        !- Conductivity {W/m-K}
-    1100,                        !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.9,                         !- Solar Absorptance
-    0.9;                         !- Visible Absorptance
-! ========================================================================
-! LUFTSCHICHTEN & HOHLRÄUME
-! ========================================================================
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  Rough,
+  0.03,
+  0.033,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  Smooth,
+  0.0004,
+  0.33,
+  950,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_PP_Filter_Speicher_0p7cm,  !- Kombi aus 0,2 cm Filtervlies + 0,5 cm Speicherschutz
+  Smooth,
+  0.007,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Dampfbremse_sd250_0p04cm,
+  Smooth,
+  0.0004,
+  0.33,
+  950,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Daemmschuettung_050_14p5cm,
+  Rough,
+  0.145,
+  0.050,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Daemmschuettung_050_8cm,
+  Rough,
+  0.08,
+  0.050,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Daemmschuettung_050_4cm,
+  Rough,
+  0.04,
+  0.050,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  Smooth,
+  0.015,
+  0.25,
+  900,
+  1000,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  Smooth,
+  0.013,
+  0.25,
+  900,
+  1000,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Gipskarton_GKB12p5_1p5cm,
+  Smooth,
+  0.015,
+  0.25,
+  900,
+  1000,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Massivholz_BSH_10cm,
+  MediumSmooth,
+  0.10,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78 ;
+Material,
+  LAHOF_Massivholz_BSH_12cm,
+  MediumSmooth,
+  0.12,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78 ;
+Material,
+  LAHOF_Massivholz_BSH_18cm,
+  MediumSmooth,
+  0.18,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78 ;
+Material,
+  LAHOF_Massivholz_BSH_20cm,
+  MediumSmooth,
+  0.20,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78 ;
+Material,
+  LAHOF_Massivholz_BSH_22cm,
+  MediumSmooth,
+  0.22,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78 ;
+Material,
+  LAHOF_Massivholz_BSH_24cm,
+  MediumSmooth,
+  0.24,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78 ;
+Material,
+  LAHOF_Massivholz_Dreischicht_2p4cm,
+  MediumSmooth,
+  0.024,
+  0.13,
+  480,
+  1600,
+  0.90,
+  0.78,
+  0.78 ;
+Material,
+  LAHOF_Steinwolle_Trennwand_035_3cm,
+  Rough,
+  0.03,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Akustic_HWP2_3cm,
+  MediumRough,
+  0.03,
+  0.09,
+  600,
+  1600,
+  0.90,
+  0.70,
+  0.70 ;
+Material,
+  LAHOF_Mineralwolle_035_4cm,
+  Rough,
+  0.04,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Mineralwolle_035_5cm,
+  Rough,
+  0.05,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Mineralwolle_035_7p5cm,
+  Rough,
+  0.075,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Mineralwolle_039_8cm,
+  Rough,
+  0.08,
+  0.039,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_FSP1_035_16cm,
+  Rough,
+  0.16,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Winddichtung_sd0p2_0p04cm,
+  Smooth,
+  0.0004,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
 Material:AirGap,
-    AT_Luftschicht_5cm,          !- Name
-    0.18;                        !- Thermal Resistance {m2-K/W}
-Material:AirGap,
-    AT_Luftschicht_10cm,         !- Name
-    0.16;                        !- Thermal Resistance {m2-K/W}
-! ========================================================================
-! KONSTRUKTIONEN - AUSSENWÄNDE
-! ========================================================================
-Construction,
-    AT_Außenwand_WDVS_Standard,  !- Name
-    AT_Kalkzementputz_2cm,       !- Outside Layer
-    AT_Ziegel_25cm,              !- Layer 2
-    AT_EPS_WDVS_16cm,            !- Layer 3
-    AT_Gipskarton_1.25cm;        !- Layer 4
-Construction,
-    AT_Außenwand_2schalig,       !- Name
-    AT_Kalkzementputz_2cm,       !- Outside Layer
-    AT_Ziegel_25cm,              !- Layer 2
-    AT_Steinwolle_16cm,          !- Layer 3
-    AT_Luftschicht_5cm,          !- Layer 4
-    AT_Ziegel_25cm;              !- Layer 5
-Construction,
-    AT_Außenwand_Holzbau,        !- Name
-    AT_Kalkzementputz_2cm,       !- Outside Layer
-    AT_OSB_Platte_1.5cm,         !- Layer 2
-    AT_Steinwolle_16cm,          !- Layer 3
-    AT_OSB_Platte_1.5cm,         !- Layer 4
-    AT_Gipskarton_1.25cm;        !- Layer 5
-Construction,
-    AT_Außenwand_Passivhaus,     !- Name
-    AT_Kalkzementputz_2cm,       !- Outside Layer
-    AT_Ziegel_38cm,              !- Layer 2
-    AT_EPS_WDVS_16cm,            !- Layer 3
-    AT_Steinwolle_16cm,          !- Layer 4
-    AT_Gipskarton_1.25cm;        !- Layer 5
-! ========================================================================
-! KONSTRUKTIONEN - INNENWÄNDE
-! ========================================================================
-Construction,
-    AT_Innenwand_Ziegel_14cm,    !- Name
-    AT_Gipskarton_1.25cm,        !- Layer 1
-    AT_Ziegel_25cm,              !- Layer 2
-    AT_Gipskarton_1.25cm;        !- Layer 3
-Construction,
-    AT_Trennwand_Leichtbau,      !- Name
-    AT_Gipskarton_1.25cm,        !- Layer 1
-    AT_Steinwolle_16cm,          !- Layer 2
-    AT_Gipskarton_1.25cm;        !- Layer 3
-! ========================================================================
-! KONSTRUKTIONEN - DÄCHER
-! ========================================================================
-Construction,
-    AT_Steildach_Standard,       !- Name
-    AT_Tondachziegel,            !- Outside Layer
-    AT_Luftschicht_5cm,          !- Layer 2
-    AT_OSB_Platte_1.5cm,         !- Layer 3
-    AT_Steinwolle_16cm,          !- Layer 4
-    AT_Gipskarton_1.25cm;        !- Layer 5
-Construction,
-    AT_Flachdach_Warmdach,       !- Name
-    AT_Bitumen_Abdichtung,       !- Outside Layer
-    AT_PUR_Dachdämmung_20cm,     !- Layer 2
-    AT_Stahlbeton_20cm,          !- Layer 3
-    AT_Gipskarton_1.25cm;        !- Layer 4
-Construction,
-    AT_Dach_Passivhaus,          !- Name
-    AT_Tondachziegel,            !- Outside Layer
-    AT_Luftschicht_5cm,          !- Layer 2
-    AT_OSB_Platte_1.5cm,         !- Layer 3
-    AT_Zellulose_Dämmung_18cm,   !- Layer 4
-    AT_Steinwolle_16cm,          !- Layer 5
-    AT_Gipskarton_1.25cm;        !- Layer 6
-! ========================================================================
-! KONSTRUKTIONEN - BÖDEN/DECKEN
-! ========================================================================
-Construction,
-    AT_Bodenplatte_Standard,     !- Name
-    AT_Stahlbeton_20cm,          !- Layer 1
-    AT_EPS_WDVS_16cm,            !- Layer 2 (Perimeterdämmung)
-    AT_Bitumen_Abdichtung;       !- Layer 3
-Construction,
-    AT_Zwischendecke_Standard,   !- Name
-    AT_Gipskarton_1.25cm,        !- Layer 1
-    AT_Stahlbeton_20cm,          !- Layer 2
-    AT_Gipskarton_1.25cm;        !- Layer 3
-Construction,
-    AT_Oberste_Geschoßdecke,     !- Name
-    AT_Gipskarton_1.25cm,        !- Layer 1
-    AT_Stahlbeton_20cm,          !- Layer 2
-    AT_Steinwolle_16cm;          !- Layer 3
-! ========================================================================
-! FENSTER & TÜREN
-! ========================================================================
-! Österreichische Standard-Fenster nach OIB Richtlinie 6
-WindowMaterial:SimpleGlazingSystem,
-    AT_3fach_Verglasung,         !- Name
-    0.8,                         !- U-Factor {W/m2-K}
-    0.6,                         !- Solar Heat Gain Coefficient
-    0.8;                         !- Visible Transmittance
-Construction,
-    AT_Fenster_3fach_Standard,   !- Name
-    AT_3fach_Verglasung;         !- Outside Layer
-WindowMaterial:SimpleGlazingSystem,
-    AT_Passivhaus_Fenster,       !- Name
-    0.6,                         !- U-Factor {W/m2-K}
-    0.55,                        !- Solar Heat Gain Coefficient
-    0.75;                        !- Visible Transmittance
-Construction,
-    AT_Fenster_Passivhaus,       !- Name
-    AT_Passivhaus_Fenster;       !- Outside Layer
-! Türen
-Construction,
-    AT_Haustür_gedämmt,          !- Name
-    AT_Massivholz_BSH_20cm,      !- Layer 1
-    AT_Steinwolle_16cm,          !- Layer 2
-    AT_Massivholz_BSH_20cm;      !- Layer 3
-Construction,
-    AT_Innentür_Standard,        !- Name
-    AT_Massivholz_BSH_20cm;      !- Layer 1
-! ========================================================================
-! THERMISCHE BRÜCKEN & ZUSÄTZLICHE MATERIALIEN
-! ========================================================================
+  LAHOF_Luftschicht_hinterlueftet_3cm,
+  0.15 ;
 Material,
-    AT_Thermische_Trennung,      !- Name
-    Smooth,                      !- Roughness
-    0.05,                        !- Thickness {m}
-    0.035,                       !- Conductivity {W/m-K}
-    30,                          !- Density {kg/m3}
-    1000,                        !- Specific Heat {J/kg-K}
-    0.9,                         !- Thermal Absorptance
-    0.4,                         !- Solar Absorptance
-    0.4;                         !- Visible Absorptance
+  LAHOF_Holzschalung_2cm,
+  MediumSmooth,
+  0.02,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78 ;
+Material,
+  LAHOF_Klebemoertel_0p5cm,
+  MediumRough,
+  0.005,
+  0.87,
+  1800,
+  1000,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_EPS_F_PLUS_031_20cm,
+  Rough,
+  0.20,
+  0.031,
+  20,
+  1450,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Unterputz_0p6cm,
+  Smooth,
+  0.006,
+  0.87,
+  1800,
+  1000,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Deckputz_0p3cm,
+  Smooth,
+  0.003,
+  0.87,
+  1800,
+  1000,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Kies_6cm,
+  MediumRough,
+  0.06,
+  1.40,
+  1800,
+  800,
+  0.90,
+  0.30,
+  0.30 ;
+Material,
+  LAHOF_Kies_8cm,
+  MediumRough,
+  0.08,
+  1.40,
+  1800,
+  800,
+  0.90,
+  0.30,
+  0.30 ;
+Material,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  Smooth,
+  0.0004,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Fliesen_1cm,
+  Smooth,
+  0.01,
+  1.30,
+  2200,
+  850,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Alternativabdichtung_0p2cm,
+  Smooth,
+  0.002,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90 ;
+Material:AirGap,
+  LAHOF_Luftschicht_0p5cm_R0p09,
+  0.09 ;
+Material:AirGap,
+  LAHOF_Luftschicht_2p5cm_R0p10,
+  0.10 ;
+Material:AirGap,
+  LAHOF_Luftschicht_5cm_R0p18,
+  0.18 ;
+! -------------------------
+! MATERIALIEN – DACH/BEGRÜNUNG
+! -------------------------
+Material,
+  LAHOF_Systemerde_8cm,
+  MediumRough,
+  0.08,
+  0.40,
+  1000,
+  1200,
+  0.90,
+  0.30,
+  0.30 ;
+Material,
+  LAHOF_Filtervlies_PP_0p2cm,
+  Smooth,
+  0.002,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Draenagematte_2p5cm,
+  MediumRough,
+  0.025,
+  0.30,
+  400,
+  1400,
+  0.90,
+  0.30,
+  0.30 ;
+Material,
+  LAHOF_Speicherschutz_PP_0p5cm,
+  Smooth,
+  0.005,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  Smooth,
+  0.01,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90 ;
+Material,
+  LAHOF_Bitumen_Dachabdichtung_0p4cm,
+  Smooth,
+  0.004,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90 ;
+Material,
+  LAHOF_Bitumen_Dachabdichtung_1cm,
+  Smooth,
+  0.01,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90 ;
+Material,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  Rough,
+  0.10,
+  0.040,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  Rough,
+  0.12,
+  0.040,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  Smooth,
+  0.005,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90 ;
+Material,
+  LAHOF_Vegetationsschicht_30cm,
+  MediumRough,
+  0.30,
+  0.40,
+  900,
+  1200,
+  0.90,
+  0.30,
+  0.30 ;
+Material,
+  LAHOF_Schutzvlies_0p4cm,
+  Smooth,
+  0.004,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50 ;
+Material,
+  LAHOF_XPS_12cm,
+  Rough,
+  0.12,
+  0.035,
+  35,
+  1400,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_XPS_5cm,
+  Rough,
+  0.05,
+  0.035,
+  35,
+  1400,
+  0.90,
+  0.40,
+  0.40 ;
+Material,
+  LAHOF_Bitumen_Abdichtung_1cm,
+  Smooth,
+  0.01,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90 ;
 ! ========================================================================
-! KOMMENTARE UND HINWEISE
+! KONSTRUKTIONEN – AUFBAUTEN
 ! ========================================================================
-! Diese Bibliothek entspricht den österreichischen Baustandards und
-! der OIB-Richtlinie 6 (Energieeinsparung und Wärmeschutz).
-!
-! U-Werte entsprechen typischen österreichischen Konstruktionen:
-! - Außenwand Standard: ca. 0.35 W/m²K
-! - Außenwand Passivhaus: ca. 0.15 W/m²K
-! - Dach Standard: ca. 0.20 W/m²K
-! - Fenster Standard: 0.8 W/m²K
-! - Fenster Passivhaus: 0.6 W/m²K
-!
-! Verwendung:
-! 1. Diese Datei in den /resources/ Ordner kopieren
-! 2. In der Haupt-IDF mit "##include resources/AT_Baumaterialien.idf"
-! 3. Konstruktionsnamen in BuildingSurface:Detailed verwenden
-!
-! Anpassungen:
-! - Dicken können projektspezifisch angepasst werden
-! - Neue Materialien nach gleichem Schema hinzufügen
-! - Farben über Solar/Visible Absorptance definieren
-!
+Construction,
+  LAHOF_EK01_Boden_Erdreich,
+  LAHOF_Sauberkeitsschicht_7cm,
+  LAHOF_XPS_035_10cm,
+  LAHOF_PE_Folie_0p2mm,
+  LAHOF_Stahlbeton_30cm ;
+Construction,
+  LAHOF_EK02_Boden_Erdreich,
+  LAHOF_Sauberkeitsschicht_7cm,
+  LAHOF_Stahlbeton_30cm,
+  LAHOF_Epoxidharz_Beschichtung_0p5cm ;
+Construction,
+  LAHOF_ID01_Decke_TG_geschlossen,
+  LAHOF_Tektalan_A2_SD100_10cm,
+  LAHOF_Stahlbeton_30cm,
+  LAHOF_Daemmschuettung_050_14p5cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_PE_Folie_0p2mm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm ;
+Construction,
+  LAHOF_KD01_Decke_Keller,
+  LAHOF_Tektalan_A2_SD100_10cm,
+  LAHOF_Stahlbeton_30cm,
+  LAHOF_Daemmschuettung_050_14p5cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_PE_Folie_0p2mm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm ;
+Construction,
+  LAHOF_ID02_Decke_Radgarage,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Mineralwolle_039_8cm,
+  LAHOF_Massivholz_BSH_24cm,
+  LAHOF_Kies_8cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm ;
+Construction,
+  LAHOF_DD10_Boden_zu_TG_Abfahrt_H4,
+  LAHOF_Holzwolle_Steinwolle_20cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_Daemmschuettung_050_8cm,
+  LAHOF_Dampfbremse_sd250_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm ;
+Construction,
+  LAHOF_EW01_Wand_Erdreich,
+  LAHOF_Noppenmatte_Grundmauerschutz_1p5cm,
+  LAHOF_XPS_035_10cm,
+  LAHOF_Bauwerksabdichtung_OENORM_B3692_1cm,
+  LAHOF_Stahlbeton_WU_30cm ;
+Construction,
+  LAHOF_AW01_Aussenwand_39_hinterlueftet,
+  LAHOF_Holzschalung_2cm,
+  LAHOF_Luftschicht_hinterlueftet_3cm,
+  LAHOF_Winddichtung_sd0p2_0p04cm,
+  LAHOF_FSP1_035_16cm,
+  LAHOF_Massivholz_BSH_12cm,
+  LAHOF_Mineralwolle_035_4cm,
+  LAHOF_Gipskarton_GKF15_1p5cm ;
+Construction,
+  LAHOF_AW02_Aussenwand_37_hinterlueftet,
+  LAHOF_Holzschalung_2cm,
+  LAHOF_Luftschicht_hinterlueftet_3cm,
+  LAHOF_Winddichtung_sd0p2_0p04cm,
+  LAHOF_FSP1_035_16cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Mineralwolle_035_4cm,
+  LAHOF_Gipskarton_GKF15_1p5cm ;
+Construction,
+  LAHOF_AW10_Aussenwand_Stahlbeton_H4,
+  LAHOF_Deckputz_0p3cm,
+  LAHOF_Unterputz_0p6cm,
+  LAHOF_EPS_F_PLUS_031_20cm,
+  LAHOF_Klebemoertel_0p5cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_Duennputzspachtel_0p2cm ;
+Construction,
+  LAHOF_AW11_Aussenwand_TG_Abfahrt_H4,
+  LAHOF_Duennputzspachtel_0p2cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_Holzwolle_Steinwolle_20cm ;
+Construction,
+  LAHOF_IW03_Wand_Keller_Tiefgarage,
+  LAHOF_Tektalan_A2_SD100_10cm,
+  LAHOF_Stahlbeton_20cm ;
+Construction,
+  LAHOF_IW01_Wand_EG_Radgarage,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Steinwolle_Trennwand_035_3cm,
+  LAHOF_Massivholz_BSH_12cm,
+  LAHOF_Mineralwolle_035_5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm ;
+Construction,
+  LAHOF_IW10_Wand_Radgarage_Haus4,
+  LAHOF_Duennputzspachtel_0p2cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_Holzwolle_Steinwolle_10cm ;
+Construction,
+  LAHOF_ZW01_Wohnungstrennwand,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Steinwolle_Trennwand_035_3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm ;
+Construction,
+  LAHOF_ZW02_Aufzugswand_Holz_Wohnung,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Massivholz_BSH_12cm,
+  LAHOF_Akustic_HWP2_3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Mineralwolle_035_7p5cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm ;
+Construction,
+  LAHOF_ZW03_Wohnung_zu_Stgh,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Mineralwolle_035_5cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Steinwolle_Trennwand_035_3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Luftschicht_0p5cm_R0p09,
+  LAHOF_Mineralwolle_035_5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm ;
+Construction,
+  LAHOF_ZW04_Wohnung_zu_Gang,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Luftschicht_0p5cm_R0p09,
+  LAHOF_Mineralwolle_035_7p5cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm ;
+Construction,
+  LAHOF_ZW05_Zwischenwand_GK_doppelt,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Mineralwolle_035_7p5cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm ;
+Construction,
+  LAHOF_ZW06_Zwischenwand_GK_einfach,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Mineralwolle_035_5cm,
+  LAHOF_Luftschicht_2p5cm_R0p10,
+  LAHOF_Gipskarton_GKF12p5_1p3cm ;
+Construction,
+  LAHOF_ZW07_Schachtwand_Aufenthaltsraum,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Mineralwolle_035_7p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm ;
+Construction,
+  LAHOF_ZW08_Schachtwand_HKLS_Var,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Mineralwolle_035_7p5cm ;
+Construction,
+  LAHOF_ZD01_Zwischendecke_Wohnungen,
+  LAHOF_Massivholz_BSH_20cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Kies_8cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm ;
+Construction,
+  LAHOF_ZD02_Zwischendecke_Wohnungen_Feuchtraum,
+  LAHOF_Gipskarton_GKB12p5_1p5cm,  ! jetzt außen/unten
+  LAHOF_Luftschicht_5cm_R0p18,     ! AirGap innerhalb der Konstruktion
+  LAHOF_Massivholz_BSH_20cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Kies_8cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Fliesen_1cm ;
+Construction,
+  LAHOF_ZD03_Zwischendecke_Gang_Stgh,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Massivholz_BSH_20cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Kies_6cm,
+  LAHOF_Daemmschuettung_050_4cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm ;
+Construction,
+  LAHOF_ZD10_Zwischendecke_EG_H4,
+  LAHOF_Tektalan_A2_SD100_10cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Daemmschuettung_050_8cm,
+  LAHOF_Dampfbremse_sd250_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm ;
+Construction,
+  LAHOF_ZD11_Zwischendecke_Wohnungen_H4,
+  LAHOF_Massivholz_Dreischicht_2p4cm,
+  LAHOF_Massivholz_BSH_22cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Kies_8cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm ;
+Construction,
+  LAHOF_FD01_Flachdach_begruent,
+  LAHOF_Systemerde_8cm,
+  LAHOF_Filtervlies_PP_0p2cm,
+  LAHOF_Draenagematte_2p5cm,
+  LAHOF_Speicherschutz_PP_0p5cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Dachabdichtung_0p4cm,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  LAHOF_Massivholz_BSH_20cm ;
+Construction,
+  LAHOF_FD02_Flachdach_Kies,
+  LAHOF_Kies_6cm,
+  LAHOF_Filtervlies_PP_0p2cm,
+  LAHOF_Bitumen_Dachabdichtung_1cm,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  LAHOF_Massivholz_BSH_20cm ;
+Construction,
+  LAHOF_FD03_Flachdach_Stiegenhaus,
+  LAHOF_Systemerde_8cm,
+  LAHOF_PP_Filter_Speicher_0p7cm,
+  LAHOF_Draenagematte_2p5cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Dachabdichtung_0p4cm,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  LAHOF_Massivholz_BSH_18cm,
+  LAHOF_Gipskarton_GKF15_1p5cm ;
+Construction,
+  LAHOF_FD04_KG_Decke_begruent_12XPS,
+  LAHOF_Vegetationsschicht_30cm,
+  LAHOF_Schutzvlies_0p4cm,
+  LAHOF_XPS_12cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Abdichtung_1cm,
+  LAHOF_Stahlbeton_30cm ;
+Construction,
+  LAHOF_FD05_KG_Decke_begruent_5XPS,
+  LAHOF_Vegetationsschicht_30cm,
+  LAHOF_Schutzvlies_0p4cm,
+  LAHOF_XPS_5cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Abdichtung_1cm,
+  LAHOF_Stahlbeton_30cm ;
+Construction,
+  LAHOF_FD06_Flachdach_begruent_H4,
+  LAHOF_Systemerde_8cm,
+  LAHOF_PP_Filter_Speicher_0p7cm,
+  LAHOF_Draenagematte_2p5cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Dachabdichtung_0p4cm,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  LAHOF_Massivholz_BSH_20cm,
+  LAHOF_Massivholz_Dreischicht_2p4cm ;
+! ============================================================================
+! SCHEDULE TEMPLATES LIBRARY
+! Generic schedules and ScheduleTypeLimits for the LIB_* internal load templates.
+! ============================================================================
+ScheduleTypeLimits,
+    Fraction,                              !- Name
+    0.0,                                   !- Lower Limit Value
+    1.0,                                   !- Upper Limit Value
+    Continuous;                            !- Numeric Type
+ScheduleTypeLimits,
+    On/Off,                                !- Name
+    0,                                     !- Lower Limit Value
+    1,                                     !- Upper Limit Value
+    Discrete;                              !- Numeric Type
+ScheduleTypeLimits,
+    Activity Level,                        !- Name
+    0,                                     !- Lower Limit Value
+    1000,                                  !- Upper Limit Value
+    Continuous;                            !- Numeric Type
+! ---- Always ON / OFF ----
+Schedule:Compact,
+    LIB_SCH_On,                            !- Name
+    On/Off,                                !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,1 ;
+Schedule:Compact,
+    LIB_SCH_Off,                           !- Name
+    On/Off,                                !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,0 ;
+! ---- Office archetype ----
+Schedule:Compact,
+    LIB_SCH_Office_Occupancy,              !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: Weekdays,
+    Until: 08:00,0.0,
+    Until: 12:00,0.9,
+    Until: 13:00,0.5,                      !- lunchtime dip
+    Until: 18:00,0.9,
+    Until: 24:00,0.1,
+    For: AllOtherDays,
+    Until: 24:00,0.1 ;
+Schedule:Compact,
+    LIB_SCH_Office_Activity,               !- Name
+    Activity Level,                        !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,120;                      !- ~120 W/person
+Schedule:Compact,
+    LIB_SCH_Office_Lighting,               !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: Weekdays,
+    Until: 07:00,0.05,
+    Until: 08:00,0.3,
+    Until: 18:00,0.8,
+    Until: 24:00,0.1,
+    For: AllOtherDays,
+    Until: 24:00,0.1 ;
+Schedule:Compact,
+    LIB_SCH_Office_Equipment,              !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: Weekdays,
+    Until: 08:00,0.2,
+    Until: 18:00,1.0,
+    Until: 24:00,0.3,
+    For: AllOtherDays,
+    Until: 24:00,0.2 ;
+! ---- Storage / Nebenraum ----
+Schedule:Compact,
+    LIB_SCH_Storage_Occupancy,             !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,0.1 ;
+Schedule:Compact,
+    LIB_SCH_Storage_Lighting,              !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: Weekdays,
+    Until: 08:00,0.0,
+    Until: 18:00,0.3,
+    Until: 24:00,0.0,
+    For: AllOtherDays,
+    Until: 24:00,0.0 ;
+! ---- Corridor / Flur (occupancy-sensor-like) ----
+Schedule:Compact,
+    LIB_SCH_Corridor_Lighting,             !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 06:00,0.05,
+    Until: 22:00,0.2,
+    Until: 24:00,0.05 ;
+! ---- Activity helper schedules ----
+Schedule:Compact,
+    LIB_SCH_Activity_80W,                  !- Name
+    Activity Level,                        !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,80 ;
+! (optional) weitere Bibliotheken wie HVAC hier includen
+! ##include //.../resources/hvac/<deine_hvac>.idf
 !-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
 SimulationControl,
     No,                      !- Do Zone Sizing Calculation
@@ -346,7 +1080,7 @@ SimulationControl,
     1;                       !- Maximum Number of HVAC Sizing Simulation Passes
 !-   ===========  ALL OBJECTS IN CLASS: BUILDING ===========
 Building,
-    None,                    !- Name
+    LAHOF_Haus4,             !- Name
     0,                       !- North Axis {deg}
     Suburbs,                 !- Terrain
     0.04,                    !- Loads Convergence Tolerance Value {W}
@@ -384,173 +1118,172 @@ GlobalGeometryRules,
     UpperLeftCorner,         !- Starting Vertex Position
     CounterClockWise,        !- Vertex Entry Direction
     World;                   !- Coordinate System
-!-   ===========  GEOMETRIE: EINFACHE EINZELZONE ===========
+!-   ===========  INCLUDE ZONES (mit EP-Macro-Bindings) ===========
+! ========================================================================
+! LAHOF H4 KINDERWAGENRAUM - Erdgeschoss
+! Abmessungen: 6,135m x 4,24m x 2,605m
+! Unbeheizt
+! ========================================================================
 Zone,
-    Wohnzimmer,              !- Name
-    0,                       !- Direction of Relative North {deg}
-    0,                       !- X Origin {m}
-    0,                       !- Y Origin {m}
-    0,                       !- Z Origin {m}
-    1,                       !- Type
-    1,                       !- Multiplier
-    autocalculate,           !- Ceiling Height {m}
-    autocalculate;           !- Volume {m3}
-! Boden (Ground: Space Name leer + NoSun/NoWind + autocalculate)
+    LAHOF_H4_Kinderwagenraum, !- Name
+    0,                        !- Direction of Relative North {deg}
+    0,                        !- X Origin {m}
+    0,                        !- Y Origin {m}
+    0,                        !- Z Origin {m}
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height {m}
+    autocalculate;            !- Volume {m3}
+! LAHOF_KD01_Decke_Keller (KD01)
 BuildingSurface:Detailed,
-    Wohnzimmer_Boden,        !- Name
-    Floor,                   !- Surface Type
-    AT_Zwischendecke_Standard, !- Construction Name
-    Wohnzimmer,              !- Zone Name
-    ,                        !- Space Name
-    Ground,                  !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    NoSun,                   !- Sun Exposure
-    NoWind,                  !- Wind Exposure
-    autocalculate,           !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.0,0.0,0.0,             !- X,Y,Z ==> Vertex 1 {m}
-    0.0,6.0,0.0,             !- X,Y,Z ==> Vertex 2 {m}
-    5.0,6.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
-    5.0,0.0,0.0;             !- X,Y,Z ==> Vertex 4 {m}
-! Dach oben (Outdoors: Roof)
+    Kinderwagenraum_Boden,    !- Name
+    Floor,                    !- Surface Type
+    LAHOF_KD01_Decke_Keller,  !- Construction Name
+    LAHOF_H4_Kinderwagenraum, !- Zone Name
+    ,                         !- Space Name
+    Ground,                   !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    4,                        !- Number of Vertices
+    0.0,0.0,0.0,
+    0.0,4.24,0.0,
+    6.135,4.24,0.0,
+    6.135,0.0,0.0 ;
+! Kinderwagenraum Decke (ZD10)
 BuildingSurface:Detailed,
-    Wohnzimmer_Decke,        !- Name
-    Roof,                    !- Surface Type
-    AT_Zwischendecke_Standard, !- Construction Name
-    Wohnzimmer,              !- Zone Name
-    ,                        !- Space Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    0,                       !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.0,0.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
-    5.0,0.0,2.7,             !- X,Y,Z ==> Vertex 2 {m}
-    5.0,6.0,2.7,             !- X,Y,Z ==> Vertex 3 {m}
-    0.0,6.0,2.7;             !- X,Y,Z ==> Vertex 4 {m}
-! Süd-Wand
+    Kinderwagenraum_Decke,    !- Name
+    Ceiling,                  !- Surface Type
+    LAHOF_ZD10_Zwischendecke_EG_H4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum, !- Zone Name
+    ,                         !- Space Name
+    Adiabatic,                !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
+    4,                        !- Number of Vertices
+    0.0,0.0,2.605,
+    6.135,0.0,2.605,
+    6.135,4.24,2.605,
+    0.0,4.24,2.605 ;
+! Süd-Wand (AW11)
 BuildingSurface:Detailed,
-    Wohnzimmer_Wand_Sued,    !- Name
-    Wall,                    !- Surface Type
-    AT_Außenwand_WDVS_Standard, !- Construction Name
-    Wohnzimmer,              !- Zone Name
-    ,                        !- Space Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    0.5,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.0,0.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
-    0.0,0.0,0.0,             !- X,Y,Z ==> Vertex 2 {m}
-    5.0,0.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
-    5.0,0.0,2.7;             !- X,Y,Z ==> Vertex 4 {m}
-! Nord-Wand
+    Kinderwagenraum_Wand_Sued, !- Name
+    Wall,                     !- Surface Type
+    LAHOF_AW11_Aussenwand_TG_Abfahrt_H4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum, !- Zone Name
+    ,                         !- Space Name
+    Outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    0.5,                      !- View Factor to Ground
+    4,                        !- Number of Vertices
+    0.0,0.0,2.605,
+    0.0,0.0,0.0,
+    6.135,0.0,0.0,
+    6.135,0.0,2.605 ;
+! Nord-Wand (AW10)
 BuildingSurface:Detailed,
-    Wohnzimmer_Wand_Nord,    !- Name
-    Wall,                    !- Surface Type
-    AT_Außenwand_WDVS_Standard, !- Construction Name
-    Wohnzimmer,              !- Zone Name
-    ,                        !- Space Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    0.5,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    5.0,6.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
-    0.0,6.0,2.7,             !- X,Y,Z ==> Vertex 2 {m}
-    0.0,6.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
-    5.0,6.0,0.0;             !- X,Y,Z ==> Vertex 4 {m}
-! West-Wand
+    Kinderwagenraum_Wand_Nord, !- Name
+    Wall,                      !- Surface Type
+    LAHOF_AW10_Aussenwand_Stahlbeton_H4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum,  !- Zone Name
+    ,                           !- Space Name
+    Outdoors,                   !- Outside Boundary Condition
+    ,                           !- Outside Boundary Condition Object
+    SunExposed,                 !- Sun Exposure
+    WindExposed,                !- Wind Exposure
+    0.5,                        !- View Factor to Ground
+    4,                          !- Number of Vertices
+    6.135,4.24,2.605,
+    6.135,4.24,0.0,
+    0.0,4.24,0.0,
+    0.0,4.24,2.605 ;
+! West-Wand (AW10)
 BuildingSurface:Detailed,
-    Wohnzimmer_Wand_West,    !- Name
-    Wall,                    !- Surface Type
-    AT_Außenwand_WDVS_Standard, !- Construction Name
-    Wohnzimmer,              !- Zone Name
-    ,                        !- Space Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    0.5,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    0.0,0.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
-    0.0,6.0,2.7,             !- X,Y,Z ==> Vertex 2 {m}
-    0.0,6.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
-    0.0,0.0,0.0;             !- X,Y,Z ==> Vertex 4 {m}
-! Ost-Wand
+    Kinderwagenraum_Wand_West, !- Name
+    Wall,                      !- Surface Type
+    LAHOF_AW10_Aussenwand_Stahlbeton_H4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum,  !- Zone Name
+    ,                           !- Space Name
+    Outdoors,                   !- Outside Boundary Condition
+    ,                           !- Outside Boundary Condition Object
+    SunExposed,                 !- Sun Exposure
+    WindExposed,                !- Wind Exposure
+    0.5,                        !- View Factor to Ground
+    4,                          !- Number of Vertices
+    0.0,0.0,2.605,
+    0.0,4.24,2.605,
+    0.0,4.24,0.0,
+    0.0,0.0,0.0 ;
+! Ost-Wand (IW10 - Innenwand)
 BuildingSurface:Detailed,
-    Wohnzimmer_Wand_Ost,     !- Name
-    Wall,                    !- Surface Type
-    AT_Außenwand_WDVS_Standard, !- Construction Name
-    Wohnzimmer,              !- Zone Name
-    ,                        !- Space Name
-    Outdoors,                !- Outside Boundary Condition
-    ,                        !- Outside Boundary Condition Object
-    SunExposed,              !- Sun Exposure
-    WindExposed,             !- Wind Exposure
-    0.5,                     !- View Factor to Ground
-    4,                       !- Number of Vertices
-    5.0,0.0,2.7,             !- X,Y,Z ==> Vertex 1 {m}
-    5.0,0.0,0.0,             !- X,Y,Z ==> Vertex 2 {m}
-    5.0,6.0,0.0,             !- X,Y,Z ==> Vertex 3 {m}
-    5.0,6.0,2.7;             !- X,Y,Z ==> Vertex 4 {m}
-! Süd-Fenster
-FenestrationSurface:Detailed,
-    Wohnzimmer_Fenster_Sued, !- Name
-    Window,                  !- Surface Type
-    AT_Fenster_3fach_Standard, !- Construction Name
-    Wohnzimmer_Wand_Sued,    !- Building Surface Name
-    ,                        !- Outside Boundary Condition Object
-    0.5,                     !- View Factor to Ground
-    ,                        !- Frame and Divider Name
-    1,                       !- Multiplier
-    4,                       !- Number of Vertices
-    0.5,0.0,2.2,             !- X,Y,Z ==> Vertex 1 {m}
-    0.5,0.0,0.8,             !- X,Y,Z ==> Vertex 2 {m}
-    4.5,0.0,0.8,             !- X,Y,Z ==> Vertex 3 {m}
-    4.5,0.0,2.2;             !- X,Y,Z ==> Vertex 4 {m}
+    Kinderwagenraum_Wand_Ost,  !- Name
+    Wall,                      !- Surface Type
+    LAHOF_IW10_Wand_Radgarage_Haus4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum,  !- Zone Name
+    ,                           !- Space Name
+    Adiabatic,                  !- Outside Boundary Condition
+    ,                           !- Outside Boundary Condition Object
+    NoSun,                      !- Sun Exposure
+    NoWind,                     !- Wind Exposure
+    0.5,                        !- View Factor to Ground
+    4,                          !- Number of Vertices
+    6.135,0.0,2.605,
+    6.135,0.0,0.0,
+    6.135,4.24,0.0,
+    6.135,4.24,2.605 ;
+! ========================================================================
+! Per-Zone Konfiguration (EP-Macro): Auswahl der Zeitpläne & Parameter
+! Schedules müssen in LAHOF_Schedules.idf vorhanden sein.
+! ========================================================================
 !-   ===========  OUTPUTS ===========
-Output:VariableDictionary,
-    Regular;                 !- Key Field
-Output:Table:SummaryReports,
-    AllSummary;              !- Report 1 Name
 OutputControl:Table:Style,
-    HTML;                    !- Column Separator
+    CommaAndHTML ;
+! Output:VariableDictionary, Regular;  ! optional fürs Debugging
 Output:Variable,
-    *,                       !- Key Value
-    Site Outdoor Air Drybulb Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
+    LAHOF_H4_Kinderwagenraum,
+    Zone Mean Air Temperature,
+    Hourly ;
 Output:Variable,
-    *,                       !- Key Value
-    Site Outdoor Air Wetbulb Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-Output:Variable,
-    *,                       !- Key Value
-    Site Outdoor Air Dewpoint Temperature,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-Output:Variable,
-    *,                       !- Key Value
-    Site Solar Azimuth Angle,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-Output:Variable,
-    *,                       !- Key Value
-    Site Solar Altitude Angle,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-Output:Variable,
-    *,                       !- Key Value
-    Site Direct Solar Radiation Rate per Area,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-Output:Variable,
-    *,                       !- Key Value
-    Site Diffuse Solar Radiation Rate per Area,  !- Variable Name
-    Timestep;                !- Reporting Frequency
-Output:Variable,
-    Wohnzimmer,              !- Key Value
-    Zone Air Temperature,    !- Variable Name
-    Timestep;                !- Reporting Frequency
-Output:Meter:MeterFileOnly,
-    Electricity:Facility,    !- Name (beliebiger Standard-Meter)
-    Hourly;                  !- Reporting Frequency
+    LAHOF_H4_Kinderwagenraum,
+    Zone Air Relative Humidity,
+    Hourly ;
+  Output:PreprocessorMessage, EPMacro, Severe,
+    at approximately input line number=131: column=11,
+    cannot find/read include file,
+    symbol="//cadfemhost/work/ansys01/MLu/lahof/Building simulation/energyplus_pr,
+    refer to <file>.epmdet for details.;
+  Output:PreprocessorMessage, EPMacro, Severe,
+    at approximately input line number=132: column=3,
+    unrecognizible macro command,
+    symbol=set,
+    refer to <file>.epmdet for details.;
+  Output:PreprocessorMessage, EPMacro, Severe,
+    at approximately input line number=133: column=3,
+    unrecognizible macro command,
+    symbol=set,
+    refer to <file>.epmdet for details.;
+  Output:PreprocessorMessage, EPMacro, Severe,
+    at approximately input line number=134: column=3,
+    unrecognizible macro command,
+    symbol=set,
+    refer to <file>.epmdet for details.;
+  Output:PreprocessorMessage, EPMacro, Severe,
+    at approximately input line number=135: column=3,
+    unrecognizible macro command,
+    symbol=set,
+    refer to <file>.epmdet for details.;
+  Output:PreprocessorMessage, EPMacro, Severe,
+    at approximately input line number=136: column=3,
+    unrecognizible macro command,
+    symbol=set,
+    refer to <file>.epmdet for details.;
+  Output:PreprocessorMessage, EPMacro, Severe,
+    at approximately input line number=137: column=3,
+    unrecognizible macro command,
+    symbol=set,
+    refer to <file>.epmdet for details.;

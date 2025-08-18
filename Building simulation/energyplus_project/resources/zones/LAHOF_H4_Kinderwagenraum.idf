@@ -1,0 +1,138 @@
+! ========================================================================
+! LAHOF H4 KINDERWAGENRAUM - Erdgeschoss
+! Abmessungen: 6,135m x 4,24m x 2,605m
+! Unbeheizt
+! ========================================================================
+
+Zone,
+    LAHOF_H4_Kinderwagenraum, !- Name
+    0,                        !- Direction of Relative North {deg}
+    0,                        !- X Origin {m}
+    0,                        !- Y Origin {m}
+    0,                        !- Z Origin {m}
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height {m}
+    autocalculate;            !- Volume {m3}
+
+! LAHOF_KD01_Decke_Keller (KD01)
+BuildingSurface:Detailed,
+    Kinderwagenraum_Boden,    !- Name
+    Floor,                    !- Surface Type
+    LAHOF_KD01_Decke_Keller,  !- Construction Name
+    LAHOF_H4_Kinderwagenraum, !- Zone Name
+    ,                         !- Space Name
+    Ground,                   !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    4,                        !- Number of Vertices
+    0.0,0.0,0.0,
+    0.0,4.24,0.0,
+    6.135,4.24,0.0,
+    6.135,0.0,0.0;
+
+! Kinderwagenraum Decke (ZD10)
+BuildingSurface:Detailed,
+    Kinderwagenraum_Decke,    !- Name
+    Ceiling,                  !- Surface Type
+    LAHOF_ZD10_Zwischendecke_EG_H4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum, !- Zone Name
+    ,                         !- Space Name
+    Adiabatic,                !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
+    4,                        !- Number of Vertices
+    0.0,0.0,2.605,
+    6.135,0.0,2.605,
+    6.135,4.24,2.605,
+    0.0,4.24,2.605;
+
+! Süd-Wand (AW11)
+BuildingSurface:Detailed,
+    Kinderwagenraum_Wand_Sued, !- Name
+    Wall,                     !- Surface Type
+    LAHOF_AW11_Aussenwand_TG_Abfahrt_H4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum, !- Zone Name
+    ,                         !- Space Name
+    Outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    0.5,                      !- View Factor to Ground
+    4,                        !- Number of Vertices
+    0.0,0.0,2.605,
+    0.0,0.0,0.0,
+    6.135,0.0,0.0,
+    6.135,0.0,2.605;
+
+! Nord-Wand (AW10)
+BuildingSurface:Detailed,
+    Kinderwagenraum_Wand_Nord, !- Name
+    Wall,                      !- Surface Type
+    LAHOF_AW10_Aussenwand_Stahlbeton_H4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum,  !- Zone Name
+    ,                           !- Space Name
+    Outdoors,                   !- Outside Boundary Condition
+    ,                           !- Outside Boundary Condition Object
+    SunExposed,                 !- Sun Exposure
+    WindExposed,                !- Wind Exposure
+    0.5,                        !- View Factor to Ground
+    4,                          !- Number of Vertices
+    6.135,4.24,2.605,
+    6.135,4.24,0.0,
+    0.0,4.24,0.0,
+    0.0,4.24,2.605;
+
+! West-Wand (AW10)
+BuildingSurface:Detailed,
+    Kinderwagenraum_Wand_West, !- Name
+    Wall,                      !- Surface Type
+    LAHOF_AW10_Aussenwand_Stahlbeton_H4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum,  !- Zone Name
+    ,                           !- Space Name
+    Outdoors,                   !- Outside Boundary Condition
+    ,                           !- Outside Boundary Condition Object
+    SunExposed,                 !- Sun Exposure
+    WindExposed,                !- Wind Exposure
+    0.5,                        !- View Factor to Ground
+    4,                          !- Number of Vertices
+    0.0,0.0,2.605,
+    0.0,4.24,2.605,
+    0.0,4.24,0.0,
+    0.0,0.0,0.0;
+
+! Ost-Wand (IW10 - Innenwand)
+BuildingSurface:Detailed,
+    Kinderwagenraum_Wand_Ost,  !- Name
+    Wall,                      !- Surface Type
+    LAHOF_IW10_Wand_Radgarage_Haus4, !- Construction Name
+    LAHOF_H4_Kinderwagenraum,  !- Zone Name
+    ,                           !- Space Name
+    Adiabatic,                  !- Outside Boundary Condition
+    ,                           !- Outside Boundary Condition Object
+    NoSun,                      !- Sun Exposure
+    NoWind,                     !- Wind Exposure
+    0.5,                        !- View Factor to Ground
+    4,                          !- Number of Vertices
+    6.135,0.0,2.605,
+    6.135,0.0,0.0,
+    6.135,4.24,0.0,
+    6.135,4.24,2.605;
+
+! ========================================================================
+! Per-Zone Konfiguration (EP-Macro): Auswahl der Zeitpläne & Parameter
+! Schedules müssen in LAHOF_Schedules.idf vorhanden sein.
+! ========================================================================
+
+##include "//cadfemhost/work/ansys01/MLu/lahof/Building simulation/energyplus_project/resources/bindings/INTERNAL_LOADS_BINDING.idf"
+##set ZN=LAHOF_H4_Kinderwagenraum
+##set PEOPLE_N=0.1
+##set OCC_SCH=Nebenraum_Anwesenheit
+##set ACT_SCH=Nebenraum_Aktivitaet
+##set LIGHT_WM2=3.0
+##set LGT_SCH=Nebenraum_Beleuchtung
+

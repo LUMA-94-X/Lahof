@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 DEFAULT_CSV = Path(r"y:/ansys01/MLu/lahof/Building simulation/energyplus_project/output/eplusout.csv")
 DEFAULT_OUT = DEFAULT_CSV.parent / "figures"
 DEFAULT_ZONE = None  # z. B. "WOHNZIMMER" für nur eine Zone; None = alle
-DEFAULT_VARS = ["Zone Air Temperature"]  # weitere z. B. "Zone Operative Temperature"
+DEFAULT_VARS = ["Zone Air Temperature", "Zone Air Relative Humidity"]  # weitere z. B. "Zone Operative Temperature"
 DEFAULT_YEAR = 2013  # Jahr anfügen, wenn CSV keines enthält (dein Run startet 2013)
 DEFAULT_DPI = 150
 # ==============================================================================

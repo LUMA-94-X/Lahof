@@ -7,521 +7,1056 @@
 ! MATERIALIEN – BASIS/ALLGEMEIN
 ! -------------------------
 
-! Sauberkeitsschicht (Magerbeton), 7 cm
 Material,
-    LAHOF_Sauberkeitsschicht_7cm,
-    MediumRough, 0.07, 1.40, 2000, 1000, 0.90, 0.65, 0.65;
+  LAHOF_Sauberkeitsschicht_7cm,
+  MediumRough,
+  0.07,
+  1.40,
+  2000,
+  1000,
+  0.90,
+  0.65,
+  0.65;
 
-! XPS 035 Perimeterdämmung, 10 cm
 Material,
-    LAHOF_XPS_035_10cm,
-    Rough, 0.10, 0.035, 35, 1400, 0.90, 0.40, 0.40;
+  LAHOF_XPS_035_10cm,
+  Rough,
+  0.10,
+  0.035,
+  35,
+  1400,
+  0.90,
+  0.40,
+  0.40;
 
-! PE-Folie (Trennlage), 0,2 mm
 Material,
-    LAHOF_PE_Folie_0p2mm,
-    Smooth, 0.0002, 0.33, 950, 1900, 0.90, 0.50, 0.50;
+  LAHOF_PE_Folie_0p2mm,
+  Smooth,
+  0.0002,
+  0.33,
+  950,
+  1900,
+  0.90,
+  0.50,
+  0.50;
 
-! Stahlbeton, 30 cm
 Material,
-    LAHOF_Stahlbeton_30cm,
-    MediumRough, 0.30, 2.30, 2300, 1000, 0.90, 0.65, 0.65;
+  LAHOF_Stahlbeton_30cm,
+  MediumRough,
+  0.30,
+  2.30,
+  2300,
+  1000,
+  0.90,
+  0.65,
+  0.65;
 
-! Epoxidharz-Beschichtung, 0,5 cm
 Material,
-    LAHOF_Epoxidharz_Beschichtung_0p5cm,
-    Smooth, 0.005, 0.20, 1200, 1200, 0.90, 0.50, 0.50;
+  LAHOF_Epoxidharz_Beschichtung_0p5cm,
+  Smooth,
+  0.005,
+  0.20,
+  1200,
+  1200,
+  0.90,
+  0.50,
+  0.50;
 
-! Noppenmatte Grundmauerschutz, 1,5 cm
 Material,
-    LAHOF_Noppenmatte_Grundmauerschutz_1p5cm,
-    MediumRough, 0.015, 0.40, 920, 1900, 0.90, 0.50, 0.50;
+  LAHOF_Noppenmatte_Grundmauerschutz_1p5cm,
+  MediumRough,
+  0.015,
+  0.40,
+  920,
+  1900,
+  0.90,
+  0.50,
+  0.50;
 
-! Bauwerksabdichtung lt. ÖNORM B 3692, 1 cm
 Material,
-    LAHOF_Bauwerksabdichtung_OENORM_B3692_1cm,
-    Smooth, 0.01, 0.17, 1100, 1000, 0.90, 0.90, 0.90;
+  LAHOF_Bauwerksabdichtung_OENORM_B3692_1cm,
+  Smooth,
+  0.01,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90;
 
-! Stahlbeton WU, 30 cm
 Material,
-    LAHOF_Stahlbeton_WU_30cm,
-    MediumRough, 0.30, 2.30, 2300, 1000, 0.90, 0.65, 0.65;
+  LAHOF_Stahlbeton_WU_30cm,
+  MediumRough,
+  0.30,
+  2.30,
+  2300,
+  1000,
+  0.90,
+  0.65,
+  0.65;
 
-! Tektalan A2-SD 100 (dreischichtig), 10 cm
 Material,
-    LAHOF_Tektalan_A2_SD100_10cm,
-    MediumRough, 0.10, 0.085, 350, 1400, 0.90, 0.60, 0.60;
+  LAHOF_Tektalan_A2_SD100_10cm,
+  MediumRough,
+  0.10,
+  0.085,
+  350,
+  1400,
+  0.90,
+  0.60,
+  0.60;
 
-! Stahlbeton, 20 cm
 Material,
-    LAHOF_Stahlbeton_20cm,
-    MediumRough, 0.20, 2.30, 2300, 1000, 0.90, 0.65, 0.65;
+  LAHOF_Stahlbeton_20cm,
+  MediumRough,
+  0.20,
+  2.30,
+  2300,
+  1000,
+  0.90,
+  0.65,
+  0.65;
 
-! Dünnputz/Spachtelung, 0,2 cm
 Material,
-    LAHOF_Duennputzspachtel_0p2cm,
-    Smooth, 0.002, 0.87, 1800, 1000, 0.90, 0.50, 0.50;
+  LAHOF_Duennputzspachtel_0p2cm,
+  Smooth,
+  0.002,
+  0.87,
+  1800,
+  1000,
+  0.90,
+  0.50,
+  0.50;
 
-! Holzwolle-Mehrschichtplatte mit Steinwollekern, 10/20 cm
 Material,
-    LAHOF_Holzwolle_Steinwolle_10cm,
-    MediumRough, 0.10, 0.09, 350, 1400, 0.90, 0.60, 0.60;
-Material,
-    LAHOF_Holzwolle_Steinwolle_20cm,
-    MediumRough, 0.20, 0.09, 350, 1400, 0.90, 0.60, 0.60;
+  LAHOF_Holzwolle_Steinwolle_10cm,
+  MediumRough,
+  0.10,
+  0.09,
+  350,
+  1400,
+  0.90,
+  0.60,
+  0.60;
 
-! Bodenbelag, 1 cm
 Material,
-    LAHOF_Bodenbelag_1cm,
-    MediumSmooth, 0.01, 0.20, 1200, 1200, 0.90, 0.50, 0.50;
+  LAHOF_Holzwolle_Steinwolle_20cm,
+  MediumRough,
+  0.20,
+  0.09,
+  350,
+  1400,
+  0.90,
+  0.60,
+  0.60;
 
-! Heizestrich E225, 7,5 cm
 Material,
-    LAHOF_Heizestrich_E225_7p5cm,
-    MediumRough, 0.075, 1.40, 2000, 1000, 0.90, 0.65, 0.65;
+  LAHOF_Bodenbelag_1cm,
+  MediumSmooth,
+  0.01,
+  0.20,
+  1200,
+  1200,
+  0.90,
+  0.50,
+  0.50;
 
-! Trittschalldämmplatte MW T033, 3 cm
 Material,
-    LAHOF_Trittschalldaemm_MW_T033_3cm,
-    Rough, 0.03, 0.033, 40, 1030, 0.90, 0.40, 0.40;
+  LAHOF_Heizestrich_E225_7p5cm,
+  MediumRough,
+  0.075,
+  1.40,
+  2000,
+  1000,
+  0.90,
+  0.65,
+  0.65;
 
-! Dampfbremsen (sd > 100 / sd > 250 m), 0,04 cm
 Material,
-    LAHOF_Dampfbremse_sd100_0p04cm,
-    Smooth, 0.0004, 0.33, 950, 1900, 0.90, 0.50, 0.50;
-Material,
-    LAHOF_Dampfbremse_sd250_0p04cm,
-    Smooth, 0.0004, 0.33, 950, 1900, 0.90, 0.50, 0.50;
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  Rough,
+  0.03,
+  0.033,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40;
 
-! Dämmschüttung 050 gebunden (14,5 / 8 / 4 cm)
 Material,
-    LAHOF_Daemmschuettung_050_14p5cm,
-    Rough, 0.145, 0.050, 120, 1000, 0.90, 0.40, 0.40;
-Material,
-    LAHOF_Daemmschuettung_050_8cm,
-    Rough, 0.08, 0.050, 120, 1000, 0.90, 0.40, 0.40;
-Material,
-    LAHOF_Daemmschuettung_050_4cm,
-    Rough, 0.04, 0.050, 120, 1000, 0.90, 0.40, 0.40;
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  Smooth,
+  0.0004,
+  0.33,
+  950,
+  1900,
+  0.90,
+  0.50,
+  0.50;
 
-! Gipskarton – GKF 15 (1,5 cm) & GKF 12,5 (1,3 cm) & GKB 12,5 (1,5 cm)
 Material,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    Smooth, 0.015, 0.25, 900, 1000, 0.90, 0.50, 0.50;
-Material,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    Smooth, 0.013, 0.25, 900, 1000, 0.90, 0.50, 0.50;
-Material,
-    LAHOF_Gipskarton_GKB12p5_1p5cm,
-    Smooth, 0.015, 0.25, 900, 1000, 0.90, 0.50, 0.50;
+  LAHOF_PP_Filter_Speicher_0p7cm,  !- Kombi aus 0,2 cm Filtervlies + 0,5 cm Speicherschutz
+  Smooth,
+  0.007,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50;
 
-! Massivholz BBS/BSH – 10 / 12 / 18 / 20 / 22 / 24 cm + Dreischicht 2,4 cm
 Material,
-    LAHOF_Massivholz_BSH_10cm,  MediumSmooth, 0.10, 0.13, 500, 1600, 0.90, 0.78, 0.78;
-Material,
-    LAHOF_Massivholz_BSH_12cm,  MediumSmooth, 0.12, 0.13, 500, 1600, 0.90, 0.78, 0.78;
-Material,
-    LAHOF_Massivholz_BSH_18cm,  MediumSmooth, 0.18, 0.13, 500, 1600, 0.90, 0.78, 0.78;
-Material,
-    LAHOF_Massivholz_BSH_20cm,  MediumSmooth, 0.20, 0.13, 500, 1600, 0.90, 0.78, 0.78;
-Material,
-    LAHOF_Massivholz_BSH_22cm,  MediumSmooth, 0.22, 0.13, 500, 1600, 0.90, 0.78, 0.78;
-Material,
-    LAHOF_Massivholz_BSH_24cm,  MediumSmooth, 0.24, 0.13, 500, 1600, 0.90, 0.78, 0.78;
-Material,
-    LAHOF_Massivholz_Dreischicht_2p4cm,
-    MediumSmooth, 0.024, 0.13, 480, 1600, 0.90, 0.78, 0.78;
+  LAHOF_Dampfbremse_sd250_0p04cm,
+  Smooth,
+  0.0004,
+  0.33,
+  950,
+  1900,
+  0.90,
+  0.50,
+  0.50;
 
-! Stein-/Mineralwollen
 Material,
-    LAHOF_Steinwolle_Trennwand_035_3cm,
-    Rough, 0.03, 0.035, 40, 1030, 0.90, 0.40, 0.40;
-Material,
-    LAHOF_Mineralwolle_035_4cm,
-    Rough, 0.04, 0.035, 40, 1030, 0.90, 0.40, 0.40;
-Material,
-    LAHOF_Mineralwolle_035_5cm,
-    Rough, 0.05, 0.035, 40, 1030, 0.90, 0.40, 0.40;
-Material,
-    LAHOF_Mineralwolle_035_7p5cm,
-    Rough, 0.075, 0.035, 40, 1030, 0.90, 0.40, 0.40;
-Material,
-    LAHOF_Mineralwolle_039_8cm,
-    Rough, 0.08, 0.039, 40, 1030, 0.90, 0.40, 0.40;
+  LAHOF_Daemmschuettung_050_14p5cm,
+  Rough,
+  0.145,
+  0.050,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40;
 
-! Fassadendämmplatte ISOVER Kontur FSP1-035 – 16 cm
 Material,
-    LAHOF_FSP1_035_16cm,
-    Rough, 0.16, 0.035, 40, 1030, 0.90, 0.40, 0.40;
+  LAHOF_Daemmschuettung_050_8cm,
+  Rough,
+  0.08,
+  0.050,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40;
 
-! Winddichtung diffusionsoffen (sd < 0,2 m), 0,04 cm
 Material,
-    LAHOF_Winddichtung_sd0p2_0p04cm,
-    Smooth, 0.0004, 0.20, 900, 1900, 0.90, 0.50, 0.50;
+  LAHOF_Daemmschuettung_050_4cm,
+  Rough,
+  0.04,
+  0.050,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40;
 
-! Hinterlüftete Luftschicht 3 cm
+Material,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  Smooth,
+  0.015,
+  0.25,
+  900,
+  1000,
+  0.90,
+  0.50,
+  0.50;
+
+Material,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  Smooth,
+  0.013,
+  0.25,
+  900,
+  1000,
+  0.90,
+  0.50,
+  0.50;
+
+Material,
+  LAHOF_Gipskarton_GKB12p5_1p5cm,
+  Smooth,
+  0.015,
+  0.25,
+  900,
+  1000,
+  0.90,
+  0.50,
+  0.50;
+
+Material,
+  LAHOF_Massivholz_BSH_10cm,
+  MediumSmooth,
+  0.10,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78;
+
+Material,
+  LAHOF_Massivholz_BSH_12cm,
+  MediumSmooth,
+  0.12,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78;
+
+Material,
+  LAHOF_Massivholz_BSH_18cm,
+  MediumSmooth,
+  0.18,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78;
+
+Material,
+  LAHOF_Massivholz_BSH_20cm,
+  MediumSmooth,
+  0.20,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78;
+
+Material,
+  LAHOF_Massivholz_BSH_22cm,
+  MediumSmooth,
+  0.22,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78;
+
+Material,
+  LAHOF_Massivholz_BSH_24cm,
+  MediumSmooth,
+  0.24,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78;
+
+Material,
+  LAHOF_Massivholz_Dreischicht_2p4cm,
+  MediumSmooth,
+  0.024,
+  0.13,
+  480,
+  1600,
+  0.90,
+  0.78,
+  0.78;
+
+Material,
+  LAHOF_Steinwolle_Trennwand_035_3cm,
+  Rough,
+  0.03,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_Akustic_HWP2_3cm,
+  MediumRough,
+  0.03,
+  0.09,
+  600,
+  1600,
+  0.90,
+  0.70,
+  0.70;
+
+Material,
+  LAHOF_Mineralwolle_035_4cm,
+  Rough,
+  0.04,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_Mineralwolle_035_5cm,
+  Rough,
+  0.05,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_Mineralwolle_035_7p5cm,
+  Rough,
+  0.075,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_Mineralwolle_039_8cm,
+  Rough,
+  0.08,
+  0.039,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_FSP1_035_16cm,
+  Rough,
+  0.16,
+  0.035,
+  40,
+  1030,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_Winddichtung_sd0p2_0p04cm,
+  Smooth,
+  0.0004,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50;
+
 Material:AirGap,
-    LAHOF_Luftschicht_hinterlueftet_3cm,
-    0.15;
+  LAHOF_Luftschicht_hinterlueftet_3cm,
+  0.15;
 
-! Holzschalung 2 cm
 Material,
-    LAHOF_Holzschalung_2cm,
-    MediumSmooth, 0.02, 0.13, 500, 1600, 0.90, 0.78, 0.78;
+  LAHOF_Holzschalung_2cm,
+  MediumSmooth,
+  0.02,
+  0.13,
+  500,
+  1600,
+  0.90,
+  0.78,
+  0.78;
 
-! Klebemörtel 0,5 cm
 Material,
-    LAHOF_Klebemoertel_0p5cm,
-    MediumRough, 0.005, 0.87, 1800, 1000, 0.90, 0.50, 0.50;
+  LAHOF_Klebemoertel_0p5cm,
+  MediumRough,
+  0.005,
+  0.87,
+  1800,
+  1000,
+  0.90,
+  0.50,
+  0.50;
 
-! EPS-F PLUS WLG 031, 20 cm
 Material,
-    LAHOF_EPS_F_PLUS_031_20cm,
-    Rough, 0.20, 0.031, 20, 1450, 0.90, 0.40, 0.40;
+  LAHOF_EPS_F_PLUS_031_20cm,
+  Rough,
+  0.20,
+  0.031,
+  20,
+  1450,
+  0.90,
+  0.40,
+  0.40;
 
-! Unter-/Deckputz
 Material,
-    LAHOF_Unterputz_0p6cm,
-    Smooth, 0.006, 0.87, 1800, 1000, 0.90, 0.50, 0.50;
-Material,
-    LAHOF_Deckputz_0p3cm,
-    Smooth, 0.003, 0.87, 1800, 1000, 0.90, 0.50, 0.50;
+  LAHOF_Unterputz_0p6cm,
+  Smooth,
+  0.006,
+  0.87,
+  1800,
+  1000,
+  0.90,
+  0.50,
+  0.50;
 
-! Kies-Schüttung 6 / 8 cm & PP-Rieselschutzvlies 0,04 cm
 Material,
-    LAHOF_Kies_6cm, MediumRough, 0.06, 1.40, 1800, 800, 0.90, 0.30, 0.30;
-Material,
-    LAHOF_Kies_8cm, MediumRough, 0.08, 1.40, 1800, 800, 0.90, 0.30, 0.30;
-Material,
-    LAHOF_PP_Rieselschutzvlies_0p04cm,
-    Smooth, 0.0004, 0.20, 900, 1900, 0.90, 0.50, 0.50;
+  LAHOF_Deckputz_0p3cm,
+  Smooth,
+  0.003,
+  0.87,
+  1800,
+  1000,
+  0.90,
+  0.50,
+  0.50;
 
-! Fliesen 1 cm + Alternativabdichtung 0,2 cm
 Material,
-    LAHOF_Fliesen_1cm, Smooth, 0.01, 1.30, 2200, 850, 0.90, 0.50, 0.50;
-Material,
-    LAHOF_Alternativabdichtung_0p2cm, Smooth, 0.002, 0.17, 1100, 1000, 0.90, 0.90, 0.90;
+  LAHOF_Kies_6cm,
+  MediumRough,
+  0.06,
+  1.40,
+  1800,
+  800,
+  0.90,
+  0.30,
+  0.30;
 
-! Luftschichten (Allg.)
-Material:AirGap, LAHOF_Luftschicht_0p5cm_R0p09, 0.09;
-Material:AirGap, LAHOF_Luftschicht_2p5cm_R0p10, 0.10;
-Material:AirGap, LAHOF_Luftschicht_5cm_R0p18,  0.18;
+Material,
+  LAHOF_Kies_8cm,
+  MediumRough,
+  0.08,
+  1.40,
+  1800,
+  800,
+  0.90,
+  0.30,
+  0.30;
+
+Material,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  Smooth,
+  0.0004,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50;
+
+Material,
+  LAHOF_Fliesen_1cm,
+  Smooth,
+  0.01,
+  1.30,
+  2200,
+  850,
+  0.90,
+  0.50,
+  0.50;
+
+Material,
+  LAHOF_Alternativabdichtung_0p2cm,
+  Smooth,
+  0.002,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90;
+
+Material:AirGap,
+  LAHOF_Luftschicht_0p5cm_R0p09,
+  0.09;
+
+Material:AirGap,
+  LAHOF_Luftschicht_2p5cm_R0p10,
+  0.10;
+
+Material:AirGap,
+  LAHOF_Luftschicht_5cm_R0p18,
+  0.18;
 
 ! -------------------------
 ! MATERIALIEN – DACH/BEGRÜNUNG
 ! -------------------------
 
-! Begrünte Dachschichten
 Material,
-    LAHOF_Systemerde_8cm, MediumRough, 0.08, 0.40, 1000, 1200, 0.90, 0.30, 0.30;
-Material,
-    LAHOF_Filtervlies_PP_0p2cm, Smooth, 0.002, 0.20, 900, 1900, 0.90, 0.50, 0.50;
-Material,
-    LAHOF_Draenagematte_2p5cm, MediumRough, 0.025, 0.30, 400, 1400, 0.90, 0.30, 0.30;
-Material,
-    LAHOF_Speicherschutz_PP_0p5cm, Smooth, 0.005, 0.20, 900, 1900, 0.90, 0.50, 0.50;
-Material,
-    LAHOF_Bitumenbahn_wurzelfest_1cm, Smooth, 0.01, 0.17, 1100, 1000, 0.90, 0.90, 0.90;
-Material,
-    LAHOF_Bitumen_Dachabdichtung_0p4cm, Smooth, 0.004, 0.17, 1100, 1000, 0.90, 0.90, 0.90;
-Material,
-    LAHOF_Bitumen_Dachabdichtung_1cm, Smooth, 0.01, 0.17, 1100, 1000, 0.90, 0.90, 0.90;  ! für FD02
-Material,
-    LAHOF_Steinwolle_Gefaelle_10cm, Rough, 0.10, 0.040, 120, 1000, 0.90, 0.40, 0.40;
-Material,
-    LAHOF_Steinwolle_Dachdaemm_12cm, Rough, 0.12, 0.040, 120, 1000, 0.90, 0.40, 0.40;
-Material,
-    LAHOF_Bitumen_Dampfsperre_0p5cm, Smooth, 0.005, 0.17, 1100, 1000, 0.90, 0.90, 0.90;
+  LAHOF_Systemerde_8cm,
+  MediumRough,
+  0.08,
+  0.40,
+  1000,
+  1200,
+  0.90,
+  0.30,
+  0.30;
 
-! FD04/05 (Vegetation, Schutzvlies, XPS 5/12, Abdichtung)
 Material,
-    LAHOF_Vegetationsschicht_30cm, MediumRough, 0.30, 0.40, 900, 1200, 0.90, 0.30, 0.30;
+  LAHOF_Filtervlies_PP_0p2cm,
+  Smooth,
+  0.002,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50;
+
 Material,
-    LAHOF_Schutzvlies_0p4cm, Smooth, 0.004, 0.20, 900, 1900, 0.90, 0.50, 0.50;
+  LAHOF_Draenagematte_2p5cm,
+  MediumRough,
+  0.025,
+  0.30,
+  400,
+  1400,
+  0.90,
+  0.30,
+  0.30;
+
 Material,
-    LAHOF_XPS_12cm, Rough, 0.12, 0.035, 35, 1400, 0.90, 0.40, 0.40;
+  LAHOF_Speicherschutz_PP_0p5cm,
+  Smooth,
+  0.005,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50;
+
 Material,
-    LAHOF_XPS_5cm, Rough, 0.05, 0.035, 35, 1400, 0.90, 0.40, 0.40;
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  Smooth,
+  0.01,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90;
+
 Material,
-    LAHOF_Bitumen_Abdichtung_1cm, Smooth, 0.01, 0.17, 1100, 1000, 0.90, 0.90, 0.90;
+  LAHOF_Bitumen_Dachabdichtung_0p4cm,
+  Smooth,
+  0.004,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90;
+
+Material,
+  LAHOF_Bitumen_Dachabdichtung_1cm,
+  Smooth,
+  0.01,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90;
+
+Material,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  Rough,
+  0.10,
+  0.040,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  Rough,
+  0.12,
+  0.040,
+  120,
+  1000,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  Smooth,
+  0.005,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90;
+
+Material,
+  LAHOF_Vegetationsschicht_30cm,
+  MediumRough,
+  0.30,
+  0.40,
+  900,
+  1200,
+  0.90,
+  0.30,
+  0.30;
+
+Material,
+  LAHOF_Schutzvlies_0p4cm,
+  Smooth,
+  0.004,
+  0.20,
+  900,
+  1900,
+  0.90,
+  0.50,
+  0.50;
+
+Material,
+  LAHOF_XPS_12cm,
+  Rough,
+  0.12,
+  0.035,
+  35,
+  1400,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_XPS_5cm,
+  Rough,
+  0.05,
+  0.035,
+  35,
+  1400,
+  0.90,
+  0.40,
+  0.40;
+
+Material,
+  LAHOF_Bitumen_Abdichtung_1cm,
+  Smooth,
+  0.01,
+  0.17,
+  1100,
+  1000,
+  0.90,
+  0.90,
+  0.90;
 
 ! ========================================================================
 ! KONSTRUKTIONEN – AUFBAUTEN
 ! ========================================================================
 
-! ------------------ Böden/Decken gegen Erdreich & Garage ------------------
-
-! EK01 – erdanliegender Fußboden (unkonditionierter Keller)
 Construction,
-    LAHOF_EK01_Boden_Erdreich,
-    LAHOF_Sauberkeitsschicht_7cm,
-    LAHOF_XPS_035_10cm,
-    LAHOF_PE_Folie_0p2mm,
-    LAHOF_Stahlbeton_30cm;
+  LAHOF_EK01_Boden_Erdreich,
+  LAHOF_Sauberkeitsschicht_7cm,
+  LAHOF_XPS_035_10cm,
+  LAHOF_PE_Folie_0p2mm,
+  LAHOF_Stahlbeton_30cm;
 
-! EK02 – erdanliegender Fußboden (unkonditionierter Keller)
 Construction,
-    LAHOF_EK02_Boden_Erdreich,
-    LAHOF_Sauberkeitsschicht_7cm,
-    LAHOF_Stahlbeton_30cm,
-    LAHOF_Epoxidharz_Beschichtung_0p5cm;
+  LAHOF_EK02_Boden_Erdreich,
+  LAHOF_Sauberkeitsschicht_7cm,
+  LAHOF_Stahlbeton_30cm,
+  LAHOF_Epoxidharz_Beschichtung_0p5cm;
 
-! ID01 – Decke zu geschlossener Tiefgarage (unten TG -> oben Raum)
 Construction,
-    LAHOF_ID01_Decke_TG_geschlossen,
-    LAHOF_Tektalan_A2_SD100_10cm,
-    LAHOF_Stahlbeton_30cm,
-    LAHOF_Daemmschuettung_050_14p5cm,
-    LAHOF_Dampfbremse_sd100_0p04cm,
-    LAHOF_Trittschalldaemm_MW_T033_3cm,
-    LAHOF_PE_Folie_0p2mm,
-    LAHOF_Heizestrich_E225_7p5cm,
-    LAHOF_Bodenbelag_1cm;
+  LAHOF_ID01_Decke_TG_geschlossen,
+  LAHOF_Tektalan_A2_SD100_10cm,
+  LAHOF_Stahlbeton_30cm,
+  LAHOF_Daemmschuettung_050_14p5cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_PE_Folie_0p2mm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm;
 
-! KD01 – Decke zu Keller (unten Keller -> oben Raum)
 Construction,
-    LAHOF_KD01_Decke_Keller,
-    LAHOF_Tektalan_A2_SD100_10cm,
-    LAHOF_Stahlbeton_30cm,
-    LAHOF_Daemmschuettung_050_14p5cm,
-    LAHOF_Dampfbremse_sd100_0p04cm,
-    LAHOF_Trittschalldaemm_MW_T033_3cm,
-    LAHOF_PE_Folie_0p2mm,
-    LAHOF_Heizestrich_E225_7p5cm,
-    LAHOF_Bodenbelag_1cm;
+  LAHOF_KD01_Decke_Keller,
+  LAHOF_Tektalan_A2_SD100_10cm,
+  LAHOF_Stahlbeton_30cm,
+  LAHOF_Daemmschuettung_050_14p5cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_PE_Folie_0p2mm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm;
 
-! ID02 – 1.OG Decke zu Radgarage (unten TG -> oben Raum)
 Construction,
-    LAHOF_ID02_Decke_Radgarage,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Mineralwolle_039_8cm,
-    LAHOF_Massivholz_BSH_24cm,
-    LAHOF_Kies_8cm,
-    LAHOF_PP_Rieselschutzvlies_0p04cm,
-    LAHOF_Trittschalldaemm_MW_T033_3cm,
-    LAHOF_Dampfbremse_sd100_0p04cm,
-    LAHOF_Heizestrich_E225_7p5cm,
-    LAHOF_Bodenbelag_1cm;
+  LAHOF_ID02_Decke_Radgarage,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Mineralwolle_039_8cm,
+  LAHOF_Massivholz_BSH_24cm,
+  LAHOF_Kies_8cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm;
 
-! DD10 – Boden 1. OG zu TG-Abfahrt Haus 4 (unten TG-Abfahrt -> oben Raum)
 Construction,
-    LAHOF_DD10_Boden_zu_TG_Abfahrt_H4,
-    LAHOF_Holzwolle_Steinwolle_20cm,
-    LAHOF_Stahlbeton_20cm,
-    LAHOF_Daemmschuettung_050_8cm,
-    LAHOF_Dampfbremse_sd250_0p04cm,
-    LAHOF_Trittschalldaemm_MW_T033_3cm,
-    LAHOF_Heizestrich_E225_7p5cm,
-    LAHOF_Bodenbelag_1cm;
+  LAHOF_DD10_Boden_zu_TG_Abfahrt_H4,
+  LAHOF_Holzwolle_Steinwolle_20cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_Daemmschuettung_050_8cm,
+  LAHOF_Dampfbremse_sd250_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm;
 
-! ------------------ Außenwände ------------------
-
-! EW01 – erdanliegende Wand
 Construction,
-    LAHOF_EW01_Wand_Erdreich,
-    LAHOF_Noppenmatte_Grundmauerschutz_1p5cm,
-    LAHOF_XPS_035_10cm,
-    LAHOF_Bauwerksabdichtung_OENORM_B3692_1cm,
-    LAHOF_Stahlbeton_WU_30cm;
+  LAHOF_EW01_Wand_Erdreich,
+  LAHOF_Noppenmatte_Grundmauerschutz_1p5cm,
+  LAHOF_XPS_035_10cm,
+  LAHOF_Bauwerksabdichtung_OENORM_B3692_1cm,
+  LAHOF_Stahlbeton_WU_30cm;
 
-! AW01 – Außenwand 39, hinterlüftet
 Construction,
-    LAHOF_AW01_Aussenwand_39_hinterlueftet,
-    LAHOF_Holzschalung_2cm,
-    LAHOF_Luftschicht_hinterlueftet_3cm,
-    LAHOF_Winddichtung_sd0p2_0p04cm,
-    LAHOF_FSP1_035_16cm,
-    LAHOF_Massivholz_BSH_12cm,
-    LAHOF_Mineralwolle_035_4cm,
-    LAHOF_Gipskarton_GKF15_1p5cm;
+  LAHOF_AW01_Aussenwand_39_hinterlueftet,
+  LAHOF_Holzschalung_2cm,
+  LAHOF_Luftschicht_hinterlueftet_3cm,
+  LAHOF_Winddichtung_sd0p2_0p04cm,
+  LAHOF_FSP1_035_16cm,
+  LAHOF_Massivholz_BSH_12cm,
+  LAHOF_Mineralwolle_035_4cm,
+  LAHOF_Gipskarton_GKF15_1p5cm;
 
-! AW02 – Außenwand 37, hinterlüftet
 Construction,
-    LAHOF_AW02_Aussenwand_37_hinterlueftet,
-    LAHOF_Holzschalung_2cm,
-    LAHOF_Luftschicht_hinterlueftet_3cm,
-    LAHOF_Winddichtung_sd0p2_0p04cm,
-    LAHOF_FSP1_035_16cm,
-    LAHOF_Massivholz_BSH_10cm,
-    LAHOF_Mineralwolle_035_4cm,
-    LAHOF_Gipskarton_GKF15_1p5cm;
+  LAHOF_AW02_Aussenwand_37_hinterlueftet,
+  LAHOF_Holzschalung_2cm,
+  LAHOF_Luftschicht_hinterlueftet_3cm,
+  LAHOF_Winddichtung_sd0p2_0p04cm,
+  LAHOF_FSP1_035_16cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Mineralwolle_035_4cm,
+  LAHOF_Gipskarton_GKF15_1p5cm;
 
-! AW10 – Außenwand Stahlbeton Haus 4 (ETICS außen)
 Construction,
-    LAHOF_AW10_Aussenwand_Stahlbeton_H4,
-    LAHOF_Deckputz_0p3cm,
-    LAHOF_Unterputz_0p6cm,
-    LAHOF_EPS_F_PLUS_031_20cm,
-    LAHOF_Klebemoertel_0p5cm,
-    LAHOF_Stahlbeton_20cm,
-    LAHOF_Duennputzspachtel_0p2cm;
+  LAHOF_AW10_Aussenwand_Stahlbeton_H4,
+  LAHOF_Deckputz_0p3cm,
+  LAHOF_Unterputz_0p6cm,
+  LAHOF_EPS_F_PLUS_031_20cm,
+  LAHOF_Klebemoertel_0p5cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_Duennputzspachtel_0p2cm;
 
-! AW11 – Außenwand zu TG-Abfahrt Haus 4
 Construction,
-    LAHOF_AW11_Aussenwand_TG_Abfahrt_H4,
-    LAHOF_Duennputzspachtel_0p2cm,
-    LAHOF_Stahlbeton_20cm,
-    LAHOF_Holzwolle_Steinwolle_20cm;
+  LAHOF_AW11_Aussenwand_TG_Abfahrt_H4,
+  LAHOF_Duennputzspachtel_0p2cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_Holzwolle_Steinwolle_20cm;
 
-! ------------------ Innen-/Trennwände ------------------
-
-! IW03 – Wand Keller zu Tiefgarage (TG -> Keller)
 Construction,
-    LAHOF_IW03_Wand_Keller_Tiefgarage,
-    LAHOF_Tektalan_A2_SD100_10cm,
-    LAHOF_Stahlbeton_20cm;
+  LAHOF_IW03_Wand_Keller_Tiefgarage,
+  LAHOF_Tektalan_A2_SD100_10cm,
+  LAHOF_Stahlbeton_20cm;
 
-! IW01 – Wand EG zu geschlossener Radgarage (Garage -> EG)
 Construction,
-    LAHOF_IW01_Wand_EG_Radgarage,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Massivholz_BSH_10cm,
-    LAHOF_Steinwolle_Trennwand_035_3cm,
-    LAHOF_Massivholz_BSH_12cm,
-    LAHOF_Mineralwolle_035_5cm,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Gipskarton_GKF15_1p5cm;
+  LAHOF_IW01_Wand_EG_Radgarage,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Steinwolle_Trennwand_035_3cm,
+  LAHOF_Massivholz_BSH_12cm,
+  LAHOF_Mineralwolle_035_5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm;
 
-! IW10 – Wand zu Radgarage Haus 4 (Garage -> Haus 4)
 Construction,
-    LAHOF_IW10_Wand_Radgarage_Haus4,
-    LAHOF_Duennputzspachtel_0p2cm,
-    LAHOF_Stahlbeton_20cm,
-    LAHOF_Holzwolle_Steinwolle_10cm;
+  LAHOF_IW10_Wand_Radgarage_Haus4,
+  LAHOF_Duennputzspachtel_0p2cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_Holzwolle_Steinwolle_10cm;
 
-! ------------------ Wohnungstrenn- & Schachtwände ------------------
-
-! ZW01 – Wohnungstrennwand
 Construction,
-    LAHOF_ZW01_Wohnungstrennwand,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Massivholz_BSH_10cm,
-    LAHOF_Steinwolle_Trennwand_035_3cm,
-    LAHOF_Massivholz_BSH_10cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm;
+  LAHOF_ZW01_Wohnungstrennwand,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Steinwolle_Trennwand_035_3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm;
 
-! ZW02 – Aufzugswand Holz zu Wohnung
 Construction,
-    LAHOF_ZW02_Aufzugswand_Holz_Wohnung,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Massivholz_BSH_12cm,
-    LAHOF_Akustic_HWP2_3cm,
-    LAHOF_Massivholz_BSH_10cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Mineralwolle_035_7p5cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm;
+  LAHOF_ZW02_Aufzugswand_Holz_Wohnung,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Massivholz_BSH_12cm,
+  LAHOF_Akustic_HWP2_3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Mineralwolle_035_7p5cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm;
 
-! ZW03 – Wohnung zu Stiegenhaus
 Construction,
-    LAHOF_ZW03_Wohnung_zu_Stgh,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Mineralwolle_035_5cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Massivholz_BSH_10cm,
-    LAHOF_Steinwolle_Trennwand_035_3cm,
-    LAHOF_Massivholz_BSH_10cm,
-    LAHOF_Luftschicht_0p5cm_R0p09,
-    LAHOF_Mineralwolle_035_5cm,
-    LAHOF_Gipskarton_GKF15_1p5cm;
+  LAHOF_ZW03_Wohnung_zu_Stgh,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Mineralwolle_035_5cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Steinwolle_Trennwand_035_3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Luftschicht_0p5cm_R0p09,
+  LAHOF_Mineralwolle_035_5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm;
 
-! ZW04 – Wohnungstrennwand zu Gang
 Construction,
-    LAHOF_ZW04_Wohnung_zu_Gang,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Massivholz_BSH_10cm,
-    LAHOF_Luftschicht_0p5cm_R0p09,
-    LAHOF_Mineralwolle_035_7p5cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm;
+  LAHOF_ZW04_Wohnung_zu_Gang,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Massivholz_BSH_10cm,
+  LAHOF_Luftschicht_0p5cm_R0p09,
+  LAHOF_Mineralwolle_035_7p5cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm;
 
-! ZW05 – Zwischenwand GK 12,5 doppelt
 Construction,
-    LAHOF_ZW05_Zwischenwand_GK_doppelt,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Mineralwolle_035_7p5cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Gipskarton_GKF12p5_1p3cm;
+  LAHOF_ZW05_Zwischenwand_GK_doppelt,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Mineralwolle_035_7p5cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Gipskarton_GKF12p5_1p3cm;
 
-! ZW06 – Zwischenwand GK 10,0 einfach
 Construction,
-    LAHOF_ZW06_Zwischenwand_GK_einfach,
-    LAHOF_Gipskarton_GKF12p5_1p3cm,
-    LAHOF_Mineralwolle_035_5cm,
-    LAHOF_Luftschicht_2p5cm_R0p10,
-    LAHOF_Gipskarton_GKF12p5_1p3cm;
+  LAHOF_ZW06_Zwischenwand_GK_einfach,
+  LAHOF_Gipskarton_GKF12p5_1p3cm,
+  LAHOF_Mineralwolle_035_5cm,
+  LAHOF_Luftschicht_2p5cm_R0p10,
+  LAHOF_Gipskarton_GKF12p5_1p3cm;
 
-! ZW07 – Schachtwand zu Aufenthaltsraum GK
 Construction,
-    LAHOF_ZW07_Schachtwand_Aufenthaltsraum,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Mineralwolle_035_7p5cm,
-    LAHOF_Gipskarton_GKF15_1p5cm;
+  LAHOF_ZW07_Schachtwand_Aufenthaltsraum,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Mineralwolle_035_7p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm;
 
-! ZW08 – HKLS Schachtwand zu Nebenraum GK – Variante
 Construction,
-    LAHOF_ZW08_Schachtwand_HKLS_Var,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Mineralwolle_035_7p5cm;
+  LAHOF_ZW08_Schachtwand_HKLS_Var,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Mineralwolle_035_7p5cm;
 
-! ------------------ Warme Zwischendecken ------------------
-
-! ZD01 – Wohnungen (unten -> oben)
 Construction,
-    LAHOF_ZD01_Zwischendecke_Wohnungen,
-    LAHOF_Massivholz_BSH_20cm,
-    LAHOF_PP_Rieselschutzvlies_0p04cm,
-    LAHOF_Kies_8cm,
-    LAHOF_Trittschalldaemm_MW_T033_3cm,
-    LAHOF_Dampfbremse_sd100_0p04cm,
-    LAHOF_Heizestrich_E225_7p5cm,
-    LAHOF_Bodenbelag_1cm;
+  LAHOF_ZD01_Zwischendecke_Wohnungen,
+  LAHOF_Massivholz_BSH_20cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Kies_8cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm;
 
-! ZD02 – Wohnungen Feuchtraum (unten -> oben)
 Construction,
-    LAHOF_ZD02_Zwischendecke_Wohnungen_Feuchtraum,
-    LAHOF_Luftschicht_5cm_R0p18,
-    LAHOF_Gipskarton_GKB12p5_1p5cm,
-    LAHOF_Massivholz_BSH_20cm,
-    LAHOF_PP_Rieselschutzvlies_0p04cm,
-    LAHOF_Kies_8cm,
-    LAHOF_Trittschalldaemm_MW_T033_3cm,
-    LAHOF_Dampfbremse_sd100_0p04cm,
-    LAHOF_Heizestrich_E225_7p5cm,
-    LAHOF_Fliesen_1cm;
+  LAHOF_ZD02_Zwischendecke_Wohnungen_Feuchtraum,
+  LAHOF_Gipskarton_GKB12p5_1p5cm,  ! jetzt außen/unten
+  LAHOF_Luftschicht_5cm_R0p18,     ! AirGap innerhalb der Konstruktion
+  LAHOF_Massivholz_BSH_20cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Kies_8cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Fliesen_1cm;
 
-! ZD03 – Gang/Stiegenhaus (unten -> oben)
 Construction,
-    LAHOF_ZD03_Zwischendecke_Gang_Stgh,
-    LAHOF_Gipskarton_GKF15_1p5cm,
-    LAHOF_Massivholz_BSH_20cm,
-    LAHOF_PP_Rieselschutzvlies_0p04cm,
-    LAHOF_Kies_6cm,
-    LAHOF_Daemmschuettung_050_4cm,
-    LAHOF_Trittschalldaemm_MW_T033_3cm,
-    LAHOF_Dampfbremse_sd100_0p04cm,
-    LAHOF_Heizestrich_E225_7p5cm,
-    LAHOF_Bodenbelag_1cm;
+  LAHOF_ZD03_Zwischendecke_Gang_Stgh,
+  LAHOF_Gipskarton_GKF15_1p5cm,
+  LAHOF_Massivholz_BSH_20cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Kies_6cm,
+  LAHOF_Daemmschuettung_050_4cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm;
 
-! ZD10 – EG Wohnungen Haus 4 (unten -> oben)
 Construction,
-    LAHOF_ZD10_Zwischendecke_EG_H4,
-    LAHOF_Tektalan_A2_SD100_10cm,
-    LAHOF_Stahlbeton_20cm,
-    LAHOF_PP_Rieselschutzvlies_0p04cm,
-    LAHOF_Daemmschuettung_050_8cm,
-    LAHOF_Dampfbremse_sd250_0p04cm,
-    LAHOF_Trittschalldaemm_MW_T033_3cm,
-    LAHOF_Heizestrich_E225_7p5cm,
-    LAHOF_Bodenbelag_1cm;
+  LAHOF_ZD10_Zwischendecke_EG_H4,
+  LAHOF_Tektalan_A2_SD100_10cm,
+  LAHOF_Stahlbeton_20cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Daemmschuettung_050_8cm,
+  LAHOF_Dampfbremse_sd250_0p04cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm;
 
-! ZD11 – Wohnungen Haus 4 (unten -> oben)
 Construction,
-    LAHOF_ZD11_Z
+  LAHOF_ZD11_Zwischendecke_Wohnungen_H4,
+  LAHOF_Massivholz_Dreischicht_2p4cm,
+  LAHOF_Massivholz_BSH_22cm,
+  LAHOF_PP_Rieselschutzvlies_0p04cm,
+  LAHOF_Kies_8cm,
+  LAHOF_Trittschalldaemm_MW_T033_3cm,
+  LAHOF_Dampfbremse_sd100_0p04cm,
+  LAHOF_Heizestrich_E225_7p5cm,
+  LAHOF_Bodenbelag_1cm;
+
+Construction,
+  LAHOF_FD01_Flachdach_begruent,
+  LAHOF_Systemerde_8cm,
+  LAHOF_Filtervlies_PP_0p2cm,
+  LAHOF_Draenagematte_2p5cm,
+  LAHOF_Speicherschutz_PP_0p5cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Dachabdichtung_0p4cm,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  LAHOF_Massivholz_BSH_20cm;
+
+Construction,
+  LAHOF_FD02_Flachdach_Kies,
+  LAHOF_Kies_6cm,
+  LAHOF_Filtervlies_PP_0p2cm,
+  LAHOF_Bitumen_Dachabdichtung_1cm,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  LAHOF_Massivholz_BSH_20cm;
+
+Construction,
+  LAHOF_FD03_Flachdach_Stiegenhaus,
+  LAHOF_Systemerde_8cm,
+  LAHOF_PP_Filter_Speicher_0p7cm,
+  LAHOF_Draenagematte_2p5cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Dachabdichtung_0p4cm,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  LAHOF_Massivholz_BSH_18cm,
+  LAHOF_Gipskarton_GKF15_1p5cm;
+
+Construction,
+  LAHOF_FD04_KG_Decke_begruent_12XPS,
+  LAHOF_Vegetationsschicht_30cm,
+  LAHOF_Schutzvlies_0p4cm,
+  LAHOF_XPS_12cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Abdichtung_1cm,
+  LAHOF_Stahlbeton_30cm;
+
+Construction,
+  LAHOF_FD05_KG_Decke_begruent_5XPS,
+  LAHOF_Vegetationsschicht_30cm,
+  LAHOF_Schutzvlies_0p4cm,
+  LAHOF_XPS_5cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Abdichtung_1cm,
+  LAHOF_Stahlbeton_30cm;
+
+Construction,
+  LAHOF_FD06_Flachdach_begruent_H4,
+  LAHOF_Systemerde_8cm,
+  LAHOF_PP_Filter_Speicher_0p7cm,
+  LAHOF_Draenagematte_2p5cm,
+  LAHOF_Bitumenbahn_wurzelfest_1cm,
+  LAHOF_Bitumen_Dachabdichtung_0p4cm,
+  LAHOF_Steinwolle_Gefaelle_10cm,
+  LAHOF_Steinwolle_Dachdaemm_12cm,
+  LAHOF_Bitumen_Dampfsperre_0p5cm,
+  LAHOF_Massivholz_BSH_20cm,
+  LAHOF_Massivholz_Dreischicht_2p4cm;

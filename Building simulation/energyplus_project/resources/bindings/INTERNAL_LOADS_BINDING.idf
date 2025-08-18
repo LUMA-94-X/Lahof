@@ -1,0 +1,104 @@
+! ============================================================================
+! INTERNAL_LOADS_BINDING.idf (robust ${...} macro syntax)
+! EP-Macro binding for per-zone internal loads with schedule selection.
+! Usage inside a zone file (above the ##include):
+!   ##set ZN        = LAHOF_H4_Kinderwagenraum
+!   ##set PEOPLE_N  = 0.1
+!   ##set OCC_SCH   = Nebenraum_Anwesenheit
+!   ##set ACT_SCH   = Nebenraum_Aktivitaet
+!   ##set LIGHT_WM2 = 3.0
+!   ##set LGT_SCH   = Nebenraum_Beleuchtung
+! Then include (quote paths that contain spaces):
+!   ##include "//cadfemhost/work/ansys01/MLu/lahof/Building simulation/energyplus_project/resources/bindings/INTERNAL_LOADS_BINDING.idf"
+!
+! Requirements:
+!   - Referenced schedules and their ScheduleTypeLimits must exist.
+!   - Run EnergyPlus with --epmacro so macros are expanded.
+! ============================================================================
+
+##ifndef PEOPLE_N
+##set PEOPLE_N = 0.1
+##endif
+
+##ifndef LIGHT_WM2
+##set LIGHT_WM2 = 3.0
+##endif
+
+People,
+    ${ZN}_People,                    !- Name
+    ${ZN},                           !- Zone or ZoneList Name
+    ${OCC_SCH},                      !- Number of People Schedule Name
+    people,                          !- Number of People Calculation Method
+    ${PEOPLE_N},                     !- Number of People
+    ,                                !- People per Zone Floor Area {person/m2}
+    ,                                !- Zone Floor Area per Person {m2/person}
+    0.3,                             !- Fraction Radiant
+    ,                                !- Sensible Heat Fraction
+    ${ACT_SCH};                      !- Activity Level Schedule Name
+
+Lights,
+    ${ZN}_Lights,                    !- Name
+    ${ZN},                           !- Zone or ZoneList Name
+    ${LGT_SCH},                      !- Schedule Name
+    Watts/Area,                      !- Design Level Calculation Method
+    ,                                !- Lighting Level {W}
+    ${LIGHT_WM2},                    !- Watts per Zone Floor Area {W/m2}
+    ,                                !- Watts per Person {W/person}
+    0,                               !- Return Air Fraction
+    0.4,                             !- Fraction Radiant
+    0.2,                             !- Fraction Visible
+    1.0,                             !- Fraction Replaceable
+    General,                         !- End-Use Subcategory
+    No;                              !- Return Air Fraction Calculated from Plenum Temperature
+! ============================================================================
+! INTERNAL_LOADS_BINDING.idf (robust ${...} macro syntax)
+! EP-Macro binding for per-zone internal loads with schedule selection.
+! Usage inside a zone file (above the ##include):
+!   ##set ZN        = LAHOF_H4_Kinderwagenraum
+!   ##set PEOPLE_N  = 0.1
+!   ##set OCC_SCH   = Nebenraum_Anwesenheit
+!   ##set ACT_SCH   = Nebenraum_Aktivitaet
+!   ##set LIGHT_WM2 = 3.0
+!   ##set LGT_SCH   = Nebenraum_Beleuchtung
+! Then include (quote paths that contain spaces):
+!   ##include "//cadfemhost/work/ansys01/MLu/lahof/Building simulation/energyplus_project/resources/bindings/INTERNAL_LOADS_BINDING.idf"
+!
+! Requirements:
+!   - Referenced schedules and their ScheduleTypeLimits must exist.
+!   - Run EnergyPlus with --epmacro so macros are expanded.
+! ============================================================================
+
+##ifndef PEOPLE_N
+##set PEOPLE_N = 0.1
+##endif
+
+##ifndef LIGHT_WM2
+##set LIGHT_WM2 = 3.0
+##endif
+
+People,
+    ${ZN}_People,                    !- Name
+    ${ZN},                           !- Zone or ZoneList Name
+    ${OCC_SCH},                      !- Number of People Schedule Name
+    people,                          !- Number of People Calculation Method
+    ${PEOPLE_N},                     !- Number of People
+    ,                                !- People per Zone Floor Area {person/m2}
+    ,                                !- Zone Floor Area per Person {m2/person}
+    0.3,                             !- Fraction Radiant
+    ,                                !- Sensible Heat Fraction
+    ${ACT_SCH};                      !- Activity Level Schedule Name
+
+Lights,
+    ${ZN}_Lights,                    !- Name
+    ${ZN},                           !- Zone or ZoneList Name
+    ${LGT_SCH},                      !- Schedule Name
+    Watts/Area,                      !- Design Level Calculation Method
+    ,                                !- Lighting Level {W}
+    ${LIGHT_WM2},                    !- Watts per Zone Floor Area {W/m2}
+    ,                                !- Watts per Person {W/person}
+    0,                               !- Return Air Fraction
+    0.4,                             !- Fraction Radiant
+    0.2,                             !- Fraction Visible
+    1.0,                             !- Fraction Replaceable
+    General,                         !- End-Use Subcategory
+    No;                              !- Return Air Fraction Calculated from Plenum Temperature

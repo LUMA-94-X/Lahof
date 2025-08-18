@@ -1,0 +1,118 @@
+! ============================================================================
+! INTERNAL LOAD TEMPLATES LIBRARY
+! Reusable internal load objects (People, Lights, Equipment) with generic schedules.
+! Usage:
+!   - Replace @ZONE_NAME@ with your actual Zone (or create a ZoneList and replace with it).
+!   - Keep object names (LIB_...) or duplicate & rename as needed.
+!   - Combine with SCHEDULE_TEMPLATES.idf for the required schedules and ScheduleTypeLimits.
+! ============================================================================
+
+! --- OFFICE STANDARD ---
+People,
+    LIB_People_Office_Standard,           !- Name
+    @ZONE_NAME@,                           !- Zone or ZoneList Name
+    LIB_SCH_Office_Occupancy,             !- Number of People Schedule Name
+    People/Area,                           !- Number of People Calculation Method
+    ,                                      !- Number of People
+    0.05,                                  !- People per Zone Floor Area {person/m2}
+    ,                                      !- Zone Floor Area per Person {m2/person}
+    0.3,                                   !- Fraction Radiant
+    ,                                      !- Sensible Heat Fraction
+    LIB_SCH_Office_Activity;              !- Activity Level Schedule Name
+
+Lights,
+    LIB_Lights_Office_Standard,           !- Name
+    @ZONE_NAME@,                           !- Zone or ZoneList Name
+    LIB_SCH_Office_Lighting,              !- Schedule Name
+    Watts/Area,                            !- Design Level Calculation Method
+    ,                                      !- Lighting Level {W}
+    8.0,                                   !- Watts per Zone Floor Area {W/m2}
+    ,                                      !- Watts per Person {W/person}
+    0.0,                                   !- Return Air Fraction
+    0.4,                                   !- Fraction Radiant
+    0.2,                                   !- Fraction Visible
+    1.0,                                   !- Fraction Replaceable
+    General,                               !- End-Use Subcategory
+    No;                                    !- Return Air Fraction Calculated from Plenum Temperature
+
+ElectricEquipment,
+    LIB_ElecEq_Office_Standard,           !- Name
+    @ZONE_NAME@,                           !- Zone or ZoneList Name
+    LIB_SCH_Office_Equipment,             !- Schedule Name
+    Watts/Area,                            !- Design Level Calculation Method
+    ,                                      !- Design Level {W}
+    10.0,                                  !- Watts per Zone Floor Area {W/m2}
+    ,                                      !- Watts per Person {W/person}
+    0.0,                                   !- Fraction Latent
+    0.5,                                   !- Fraction Radiant
+    0.0,                                   !- Fraction Lost
+    General;                               !- End-Use Subcategory
+
+! --- STORAGE / NEBENRAUM MINIMAL ---
+People,
+    LIB_People_Storage_Min,               !- Name
+    @ZONE_NAME@,                           !- Zone or ZoneList Name
+    LIB_SCH_Storage_Occupancy,            !- Number of People Schedule Name
+    People/Area,                           !- Number of People Calculation Method
+    ,                                      !- Number of People
+    0.02,                                  !- People per Zone Floor Area {person/m2}
+    ,                                      !- Zone Floor Area per Person {m2/person}
+    0.3,                                   !- Fraction Radiant
+    ,                                      !- Sensible Heat Fraction
+    LIB_SCH_Activity_80W;                 !- Activity Level Schedule Name
+
+Lights,
+    LIB_Lights_Storage_Min,               !- Name
+    @ZONE_NAME@,                           !- Zone or ZoneList Name
+    LIB_SCH_Storage_Lighting,             !- Schedule Name
+    Watts/Area,                            !- Design Level Calculation Method
+    ,                                      !- Lighting Level {W}
+    3.0,                                   !- Watts per Zone Floor Area {W/m2}
+    ,                                      !- Watts per Person {W/person}
+    0.0,                                   !- Return Air Fraction
+    0.4,                                   !- Fraction Radiant
+    0.2,                                   !- Fraction Visible
+    1.0,                                   !- Fraction Replaceable
+    General,                               !- End-Use Subcategory
+    No;                                    !- Return Air Fraction Calculated from Plenum Temperature
+
+ElectricEquipment,
+    LIB_ElecEq_Storage_Min,               !- Name
+    @ZONE_NAME@,                           !- Zone or ZoneList Name
+    LIB_SCH_Off,                          !- Schedule Name
+    Watts/Area,                            !- Design Level Calculation Method
+    ,                                      !- Design Level {W}
+    0.5,                                   !- Watts per Zone Floor Area {W/m2}
+    ,                                      !- Watts per Person {W/person}
+    0.0,                                   !- Fraction Latent
+    0.5,                                   !- Fraction Radiant
+    0.0,                                   !- Fraction Lost
+    General;                               !- End-Use Subcategory
+
+! --- CORRIDOR / FLUR LOW ---
+People,
+    LIB_People_Corridor_Low,              !- Name
+    @ZONE_NAME@,                           !- Zone or ZoneList Name
+    LIB_SCH_Off,                          !- Number of People Schedule Name (rare occupancy)
+    People/Area,                           !- Number of People Calculation Method
+    ,                                      !- Number of People
+    0.01,                                  !- People per Zone Floor Area {person/m2}
+    ,                                      !- Zone Floor Area per Person {m2/person}
+    0.3,                                   !- Fraction Radiant
+    ,                                      !- Sensible Heat Fraction
+    LIB_SCH_Activity_80W;                 !- Activity Level Schedule Name
+
+Lights,
+    LIB_Lights_Corridor_Low,              !- Name
+    @ZONE_NAME@,                           !- Zone or ZoneList Name
+    LIB_SCH_Corridor_Lighting,            !- Schedule Name
+    Watts/Area,                            !- Design Level Calculation Method
+    ,                                      !- Lighting Level {W}
+    5.0,                                   !- Watts per Zone Floor Area {W/m2}
+    ,                                      !- Watts per Person {W/person}
+    0.0,                                   !- Return Air Fraction
+    0.4,                                   !- Fraction Radiant
+    0.2,                                   !- Fraction Visible
+    1.0,                                   !- Fraction Replaceable
+    General,                               !- End-Use Subcategory
+    No;                                    !- Return Air Fraction Calculated from Plenum Temperature

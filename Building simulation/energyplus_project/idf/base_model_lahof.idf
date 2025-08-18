@@ -1,0 +1,96 @@
+! ========================================================================
+! BASE MODEL - LAHOF Haus 4
+! Nutzt EP-Macro-Includes. Beim Start: energyplus --epmacro ...
+! ========================================================================
+
+Version,
+    25.1;                    !- Version Identifier
+
+!-   ===========  Used Resources ===========
+
+##include //cadfemhost/work/ansys01/MLu/lahof/Building simulation/energyplus_project/resources/materials/LAHOF_Konstruktionen.idf
+##include //cadfemhost/work/ansys01/MLu/lahof/Building simulation/energyplus_project/resources/schedules/LAHOF_Schedules.idf
+! (optional) weitere Bibliotheken wie HVAC hier includen
+! ##include //.../resources/hvac/<deine_hvac>.idf
+
+!-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
+
+SimulationControl,
+    No,                      !- Do Zone Sizing Calculation
+    No,                      !- Do System Sizing Calculation
+    No,                      !- Do Plant Sizing Calculation
+    No,                      !- Run Simulation for Sizing Periods
+    Yes,                     !- Run Simulation for Weather File Run Periods
+    No,                      !- Do HVAC Sizing Simulation for Sizing Periods
+    1;                       !- Maximum Number of HVAC Sizing Simulation Passes
+
+!-   ===========  ALL OBJECTS IN CLASS: BUILDING ===========
+
+Building,
+    LAHOF_Haus4,             !- Name
+    0,                       !- North Axis {deg}
+    Suburbs,                 !- Terrain
+    0.04,                    !- Loads Convergence Tolerance Value {W}
+    0.40,                    !- Temperature Convergence Tolerance Value {deltaC}
+    FullInteriorAndExterior, !- Solar Distribution
+    25,                      !- Maximum Number of Warmup Days
+    6;                       !- Minimum Number of Warmup Days
+
+!-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
+
+Timestep,
+    6;                       !- Number of Timesteps per Hour
+
+!-   ===========  ALL OBJECTS IN CLASS: SITE:LOCATION ===========
+
+Site:Location,
+    Salzburg.AP_SZ_AUT Design_Conditions,  !- Name
+    47.79,                   !- Latitude {deg}
+    13.00,                   !- Longitude {deg}
+    1.00,                    !- Time Zone {hr}
+    445.00;                  !- Elevation {m}
+
+!-   ===========  ALL OBJECTS IN CLASS: RUNPERIOD ===========
+
+RunPeriod,
+    Run Period 1,            !- Name
+    1,                       !- Begin Month
+    1,                       !- Begin Day of Month
+    ,                        !- Begin Year
+    12,                      !- End Month
+    31,                      !- End Day of Month
+    ,                        !- End Year
+    Tuesday,                 !- Day of Week for Start Day
+    Yes,                     !- Use Weather File Holidays and Special Days
+    Yes,                     !- Use Weather File Daylight Saving Period
+    No,                      !- Apply Weekend Holiday Rule
+    Yes,                     !- Use Weather File Rain Indicators
+    Yes;                     !- Use Weather File Snow Indicators
+
+!-   ===========  ALL OBJECTS IN CLASS: GLOBALGEOMETRYRULES ===========
+
+GlobalGeometryRules,
+    UpperLeftCorner,         !- Starting Vertex Position
+    CounterClockWise,        !- Vertex Entry Direction
+    World;                   !- Coordinate System
+
+!-   ===========  INCLUDE ZONES (mit EP-Macro-Bindings) ===========
+
+##include //cadfemhost/work/ansys01/MLu/lahof/Building simulation/energyplus_project/resources/zones/LAHOF_H4_Kinderwagenraum.idf
+
+!-   ===========  OUTPUTS ===========
+
+OutputControl:Table:Style,
+    CommaAndHTML;
+
+! Output:VariableDictionary, Regular;  ! optional fürs Debugging
+
+Output:Variable,
+    LAHOF_H4_Kinderwagenraum,
+    Zone Mean Air Temperature,
+    Hourly;
+
+Output:Variable,
+    LAHOF_H4_Kinderwagenraum,
+    Zone Air Relative Humidity,
+    Hourly;

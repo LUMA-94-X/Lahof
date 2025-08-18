@@ -1,0 +1,118 @@
+! ============================================================================
+! SCHEDULE TEMPLATES LIBRARY
+! Generic schedules and ScheduleTypeLimits for the LIB_* internal load templates.
+! ============================================================================
+
+ScheduleTypeLimits,
+    Fraction,                              !- Name
+    0.0,                                   !- Lower Limit Value
+    1.0,                                   !- Upper Limit Value
+    Continuous;                            !- Numeric Type
+
+ScheduleTypeLimits,
+    On/Off,                                !- Name
+    0,                                     !- Lower Limit Value
+    1,                                     !- Upper Limit Value
+    Discrete;                              !- Numeric Type
+
+ScheduleTypeLimits,
+    Activity Level,                        !- Name
+    0,                                     !- Lower Limit Value
+    1000,                                  !- Upper Limit Value
+    Continuous;                            !- Numeric Type
+
+! ---- Always ON / OFF ----
+Schedule:Compact,
+    LIB_SCH_On,                            !- Name
+    On/Off,                                !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,1;
+
+Schedule:Compact,
+    LIB_SCH_Off,                           !- Name
+    On/Off,                                !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,0;
+
+! ---- Office archetype ----
+Schedule:Compact,
+    LIB_SCH_Office_Occupancy,              !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: Weekdays,
+    Until: 08:00,0.0,
+    Until: 12:00,0.9,
+    Until: 13:00,0.5,                      !- lunchtime dip
+    Until: 18:00,0.9,
+    Until: 24:00,0.1,
+    For: AllOtherDays,
+    Until: 24:00,0.1;
+
+Schedule:Compact,
+    LIB_SCH_Office_Activity,               !- Name
+    Activity Level,                        !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,120;                      !- ~120 W/person
+
+Schedule:Compact,
+    LIB_SCH_Office_Lighting,               !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: Weekdays,
+    Until: 07:00,0.05,
+    Until: 08:00,0.3,
+    Until: 18:00,0.8,
+    Until: 24:00,0.1,
+    For: AllOtherDays,
+    Until: 24:00,0.1;
+
+Schedule:Compact,
+    LIB_SCH_Office_Equipment,              !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: Weekdays,
+    Until: 08:00,0.2,
+    Until: 18:00,1.0,
+    Until: 24:00,0.3,
+    For: AllOtherDays,
+    Until: 24:00,0.2;
+
+! ---- Storage / Nebenraum ----
+Schedule:Compact,
+    LIB_SCH_Storage_Occupancy,             !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,0.1;
+
+Schedule:Compact,
+    LIB_SCH_Storage_Lighting,              !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: Weekdays,
+    Until: 08:00,0.0,
+    Until: 18:00,0.3,
+    Until: 24:00,0.0,
+    For: AllOtherDays,
+    Until: 24:00,0.0;
+
+! ---- Corridor / Flur (occupancy-sensor-like) ----
+Schedule:Compact,
+    LIB_SCH_Corridor_Lighting,             !- Name
+    Fraction,                              !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 06:00,0.05,
+    Until: 22:00,0.2,
+    Until: 24:00,0.05;
+
+! ---- Activity helper schedules ----
+Schedule:Compact,
+    LIB_SCH_Activity_80W,                  !- Name
+    Activity Level,                        !- Schedule Type Limits Name
+    Through: 12/31,
+    For: AllDays,
+    Until: 24:00,80;
